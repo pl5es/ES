@@ -8,8 +8,8 @@ const LoginFormik = () => (
       onSubmit={values => console.log(values)}
     >
       <Form>
-        <Field type="text" name="username" /><br/>
-        <Field type="password" name="password" /><br/>
+        <Field type="text" name="username" placeholder="Username"/><br/>
+        <Field type="password" name="password" placeholder="Password"/><br/>
         <button type="submit">Submit</button>
       </Form>
     </Formik>
