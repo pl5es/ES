@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Login from './Components/Login';
-import Feed from './Components/Feed';
+import App from './Components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Login />, document.getElementById('login'));
-ReactDOM.render(<Feed />, document.getElementById('feed'));
+import { BrowserRouter } from 'react-router-dom';
+
+ReactDOM.render((
+	<BrowserRouter>
+		<App />
+	</BrowserRouter> ),
+	document.getElementById('root'));
+
 registerServiceWorker();

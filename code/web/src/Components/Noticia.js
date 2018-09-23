@@ -14,6 +14,7 @@ export default class Noticia extends Component {
             <li key={this.state.noticia.title}>
                 <a href={this.state.noticia.src} id="header">{this.state.noticia.title}</a>
                 <p>{this.state.noticia.desc}</p>
-            </li>)
+            </li>
+        )
     }
 }
