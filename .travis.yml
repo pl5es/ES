@@ -1,0 +1,11 @@
+addons:
+  postgresql: 9.6
+before_install:
+  - cd code/server
+dist: trusty
+language: ruby
+rvm:
+  - 2.4.1
+script:
+  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rspec
