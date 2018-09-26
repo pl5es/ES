@@ -13,13 +13,13 @@ services:
       - "3001:3001"
     depends_on:
       - db
-  web:
-    build: ./web
-    command: bash -c "cd web && /bin/bash run.sh start"
-    volumes:
-      - .:/web
-    ports:
-      - "3000:3000"
-    depends_on:
-      - db
-      - server
+  #web:
+    #build: ./web
+    #command: bash -c "cd web && /bin/bash run.sh start"
+    #volumes:
+      #- .:/web
+    #ports:
+      #- "3000:3000"
+    #depends_on:
+      #- db
+      #- server
