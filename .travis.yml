@@ -9,3 +9,5 @@ rvm:
 script:
   - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec
+notifications:
+  slack: pl5es:84Pa1a9D0o7hXNvlby4JeYl2
