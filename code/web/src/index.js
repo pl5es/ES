@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FirstPage from 'pages/FirstPage';
+import Login from 'pages/Login';
 // import registerServiceWorker from "./registerServiceWorker";
 
-ReactDOM.render(<FirstPage />, document.getElementById('root'));
+ReactDOM.render(<Login />, document.getElementById('root'));
 // registerServiceWorker();
