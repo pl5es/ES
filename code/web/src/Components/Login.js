@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Formik, Form, Field } from 'formik';
+import { Link } from 'react-router-dom';
 
 export default class Login extends Component {
   render() {
@@ -15,6 +16,7 @@ export default class Login extends Component {
             <button type='submit'>Submit</button>
           </Form>
         </Formik>
+        <li><Link to='/register'>New? Register here</Link></li>
       </div>
     );
   }
