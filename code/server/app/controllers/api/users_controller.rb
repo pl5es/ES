@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
+    byebug
     if @user.save
       render json: @user.slice(:id, :username, :email, :description, :name, :ORCID, :research_area, :institution, :created_at)
     else
