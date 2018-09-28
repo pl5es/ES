@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     use_doorkeeper do
       skip_controllers :applications, :authorized_applications, :authorizations
     end
-    resources :users#, only: [:create, :update]
+
+    resources :users, only: [:create, :show, :index]
+
+    put 'users', to: 'users#update'
+
   end
 end
