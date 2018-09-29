@@ -3,11 +3,11 @@ class User < ApplicationRecord
 
   has_many :interests
 
-  validates_presence_of :username, :email, :description, :name, :ORCID, :research_area, :institution
+  validates_presence_of :username, :description, :name, :orcid, :research_area, :institution
 
-  validates_uniqueness_of :username, :email, :ORCID
+  validates_uniqueness_of :username, :email, :orcid
 
   def info
-    slice(:id, :username, :email, :description, :name, :ORCID, :research_area, :institution, :updated_at, :created_at)
+    as_json(except: [:password_digest])
   end
 end

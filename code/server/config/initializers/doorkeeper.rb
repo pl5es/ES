@@ -12,7 +12,7 @@ Doorkeeper.configure do
 
   # In this flow, a token is requested in exchange for the resource owner credentials (username and password)
   resource_owner_from_credentials do |routes|
-    user = User.where("username = ? OR email = ?", params[:identifier], params[:identifier]).first
+    user = User.where("username = ? OR email = ? OR orcid = ?", params[:identifier], params[:identifier], params[:identifier]).first
     user.try(:authenticate, params[:password]) ? user : nil
   end
 

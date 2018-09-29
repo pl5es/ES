@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.string :description
       t.string :name
-      t.bigint :ORCID
+      t.string :orcid
       t.string :research_area
       t.string :institution
       t.timestamps
