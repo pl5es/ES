@@ -8,6 +8,6 @@ class User < ApplicationRecord
   validates_uniqueness_of :username, :email, :orcid
 
   def info
-    as_json(except: [:password_digest])
+    as_json(except: [:password_digest], include: :interests)
   end
 end
