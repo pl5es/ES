@@ -1,5 +1,6 @@
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
+import { connect } from 'react-redux';
 import InputField from 'components/InputField';
 
 import {signUp} from 'utils/api';
