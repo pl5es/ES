@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_09_28_151222) do
     t.string "password_digest"
     t.string "description"
     t.string "name"
-    t.bigint "ORCID"
+    t.string "orcid"
     t.string "research_area"
     t.string "institution"
     t.datetime "created_at", null: false
