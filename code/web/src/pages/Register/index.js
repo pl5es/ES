@@ -1,31 +1,24 @@
-import React, { Component } from "react";
-import new_values from "utils/dummyUser";
-import { Formik, Field, Form, FieldArray } from "formik";
-import InputField from "components/InputField";
-import TagField from "components/TagField";
+import React from 'react';
+import { Formik, Field, Form } from 'formik';
+import InputField from 'components/InputField';
+
+import {signUp} from 'utils/api';
 
 const Register = () => (
   <div>
     <Formik
       initialvalues={{
-        username: "",
-        name: "",
-        email: "",
-        ORCID: "",
-        photo_url: "",
-        research_area: "",
-        institution: "",
-        description: ""
+        username: '',
+        name: '',
+        email: '',
+        ORCID: '',
+        photo_url: '',
+        research_area: '',
+        institution: '',
+        description: '',
       }}
       onSubmit={values => {
-        fetch("http://localhost:3000/api/users.json", {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(values)
-        });
+        signUp(values);
       }}
       render={({ values }) => (
         <Form>
@@ -80,8 +73,6 @@ const Register = () => (
             component={InputField}
             type="text"
           />
-
-          {/* <FieldArray name="interests" component={TagField} /> */}
 
           <button type="submit">CONFIRM REGISTRATION</button>
         </Form>

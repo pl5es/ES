@@ -1,4 +1,6 @@
-class Api::UsersController < ApplicationController
+class UsersController < ApplicationController
+  skip_before_action :doorkeeper_authorize!, only: [:create]
+
   def create
     @user = User.new(user_params)
     byebug
@@ -10,17 +12,15 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      render json: @user.info
+    if current_resource_owner.update_attributes(user_params)
+      render json: current_resource_owner.info
     else
-      render json: @user.errors
+      render json: current_resource_owner.errors
     end
   end
 
   def show
-    @user = User.find(params[:id])
-    render json: @user.info
+    render json: current_resource_owner.info
   end
 
   def index

@@ -40,7 +40,6 @@ const Login = () => (
         </Form>
       )}
     />
-    <Register />
   </div>
 );
 

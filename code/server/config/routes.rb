@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  namespace :api do
-    resources :users#, only: [:create, :update]
+  scope 'api' do
+    use_doorkeeper do
+      skip_controllers :applications, :authorized_applications, :authorizations
+    end
+
+    resources :users, only: [:create, :show, :index]
+
+    put 'users', to: 'users#update'
+
   end
 end

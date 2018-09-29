@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Login from 'pages/Login';
+import RouterApp from 'router/';
 // import registerServiceWorker from "./registerServiceWorker";
 
-ReactDOM.render(<Login />, document.getElementById('root'));
+ReactDOM.render(<RouterApp />, document.getElementById('root'));
 // registerServiceWorker();
