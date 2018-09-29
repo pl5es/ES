@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  scope 'api' do
+    use_doorkeeper do
+      skip_controllers :applications, :authorized_applications, :authorizations
+    end
+
+    resources :users, only: [:create, :show, :index]
+
+    put 'users', to: 'users#update'
+
+  end
 end
