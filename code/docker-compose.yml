@@ -6,20 +6,20 @@ services:
       - ./tmp/db:/var/lib/postgresql/data
   server:
     build: ./server
-    command: bash -c "cd server && bundle exec rails db:create db:migrate && bundle exec rails s -p 3001 -b '0.0.0.0'"
+    command: bash -c "cd server && bundle exec rails db:create db:migrate && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/server
-    ports:
-      - "3001:3001"
-    depends_on:
-      - db
-  web:
-    build: ./web
-    command: bash -c "cd web && /bin/bash run.sh start"
-    volumes:
-      - .:/web
     ports:
       - "3000:3000"
     depends_on:
       - db
-      - server
+  #web:
+    #build: ./web
+    #command: bash -c "cd web && /bin/bash run.sh start"
+    #volumes:
+      #- .:/web
+    #ports:
+      #- "3000:3000"
+    #depends_on:
+      #- db
+      #- server

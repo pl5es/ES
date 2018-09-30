@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Feed from './pages/Feed';
+import RouterApp from './router';
 // import registerServiceWorker from "./registerServiceWorker";
 
-ReactDOM.render(<Feed />, document.getElementById('root'));
+ReactDOM.render(<RouterApp />, document.getElementById('root'));
 // registerServiceWorker();
