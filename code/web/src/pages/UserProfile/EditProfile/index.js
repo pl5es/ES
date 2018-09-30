@@ -1,6 +1,6 @@
-import React from 'react';
-import { Formik, Field, Form } from 'formik';
-import InputField from 'components/InputField';
+import React from "react";
+import { Formik, Field, Form } from "formik";
+import InputField from "../../../components/InputField";
 
 const EditProfile = props => (
   <div>

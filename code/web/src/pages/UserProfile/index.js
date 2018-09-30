@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
-import ShowProfile from 'pages/UserProfile/ShowProfile';
-import EditProfile from 'pages/UserProfile/EditProfile';
-import Navbar from 'components/Navbar';
-import user from "utils/dummyUser";
+import React, { Component } from "react";
+import ShowProfile from "./ShowProfile";
+import EditProfile from "./EditProfile";
+import Navbar from "../../components/Navbar";
+import user from "../../utils/dummyUser";
 
 class UserProfile extends Component {
   state = {
-    currentScreen: 'show',
-    values: user,
+    currentScreen: "show",
+    values: user
   };
 
   setEditProfile = () => {
     this.setState({
-      currentScreen: 'edit',
+      currentScreen: "edit"
     });
   };
 
   setShowProfile = () => {
     this.setState({
-      currentScreen: 'show',
+      currentScreen: "show"
     });
   };
 
@@ -26,15 +26,15 @@ class UserProfile extends Component {
     const {
       state: { currentScreen, values },
       setEditProfile,
-      setShowProfile,
+      setShowProfile
     } = this;
 
-    console.log(values)
+    console.log(values);
     return (
       <div>
         <Navbar />
         <h1>User Profile</h1>
-        {currentScreen === 'show' ? (
+        {currentScreen === "show" ? (
           <ShowProfile setEditProfile={setEditProfile} values={values} />
         ) : (
           <EditProfile setShowProfile={setShowProfile} values={values} />
