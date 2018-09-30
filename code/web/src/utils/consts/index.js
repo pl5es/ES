@@ -1,3 +1,5 @@
-import newsdata from "./news_data.js"
+import newsdata from './news_data.js';
 
-export const news_data=newsdata;
+const NewsData = newsdata;
+
+export default NewsData;
