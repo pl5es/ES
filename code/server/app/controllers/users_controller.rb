@@ -2,8 +2,11 @@ class UsersController < ApplicationController
   skip_before_action :doorkeeper_authorize!, only: [:create]
 
   def create
-    @user = User.new(user_params)
+    params = user_params
+    @user = User.new(params.except(:interests))
+
     if @user.save
+      @user.create_interests(params)
       render json: @user.info
     else
       render json: @user.errors
@@ -11,10 +14,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_resource_owner.update_attributes(user_params)
-      render json: current_resource_owner.info
+    params = user_params
+    user = current_resource_owner
+    if user.update_attributes(params.except(:interests))
+      user.create_interests(params)
+      render json: user.info
     else
-      render json: current_resource_owner.errors
+      render json: user.errors
     end
   end
 
@@ -30,7 +36,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:username, :name, :password, :email, :description, :orcid, :research_area, :institution, :interests)
+    params.permit(:username, :name, :password, :email, :description, :orcid, :research_area, :institution, interests: [])
   end
-
 end
