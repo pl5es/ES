@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Formik, Field, Form } from 'formik';
 import InputField from 'components/InputField';
-import Register from 'pages/Register';
 
 import { signIn } from 'utils/api';
 
-const handleLogin = values => {
+const handleLogin = (values, history) => {
   signIn(values)
     .then(response => {
-      response.status == 200 &&
-      localStorage.setItem('access_token', response.data.access_token )
-      localStorage.setItem('refresh_token', response.data.refresh_token )
-
+      if (response.status === 200) {
+        localStorage.setItem('access_token', response.data.access_token);
+        localStorage.setItem('refresh_token', response.data.refresh_token);
+        history.push('/protected');
+      }
     })
     .catch(response => {
       console.log(response);
     });
 };
 
-const Login = () => (
+const Login = ({ history }) => (
   <div>
     <Formik
       initialValues={{
@@ -27,7 +28,7 @@ const Login = () => (
         grant_type: 'password',
       }}
       onSubmit={values => {
-        handleLogin(values);
+        handleLogin(values, history);
       }}
       render={({ values }) => (
         <Form>
@@ -53,7 +54,14 @@ const Login = () => (
         </Form>
       )}
     />
+    <button type="button" onClick={() => history.push('/register')}>
+      REGISTER
+    </button>
   </div>
 );
+
+Login.propTypes = {
+  history: PropTypes.func.isRequired,
+};
 
 export default Login;

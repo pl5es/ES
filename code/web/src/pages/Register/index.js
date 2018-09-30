@@ -1,85 +1,115 @@
 import React from 'react';
-import { Formik, Field, Form } from 'formik';
-import { connect } from 'react-redux';
+import { FieldArray, Field, Form, Formik } from 'formik';
+import TagField from 'components/TagField';
 import InputField from 'components/InputField';
+import * as yup from 'yup';
 
-import {signUp} from 'utils/api';
+import { signUp } from 'utils/api';
 
-const Register = () => (
-  <div>
-    <Formik
-      initialvalues={{
-        username: '',
-        name: '',
-        email: '',
-        ORCID: '',
-        photo_url: '',
-        research_area: '',
-        institution: '',
-        description: '',
-      }}
-      onSubmit={values => {
-        signUp(values);
-      }}
-      render={({ values }) => (
-        <Form>
-          <h1>CREATE YOUR ACCOUNT</h1>
+const validationSchema = yup.object().shape({
+  email: yup
+    .string()
+    .email('E-mail is not valid!')
+    .required('E-mail is required!'),
+  password: yup
+    .string()
+    .min(6, 'Password has to be longer than 6 characters!')
+    .required('Password is required!'),
+  name: yup.string().required('Name is required!'),
+  research_area: yup.string().required('Research Area is required!'),
+  institution: yup.string().required('Institution is required!'),
+  orcid: yup.number().required('ORCID number is required!'),
+});
+
+const handleRegister = (values, history) => {
+  signUp(values)
+    .then(response => {
+      if (response.status === 200) {
+        history.push('/login');
+      }
+    })
+    .catch(response => {
+      console.log(response);
+    });
+};
+
+const SignUp = ({ history }) => (
+  <Formik
+    onSubmit={values => handleRegister(values, history)}
+    validationSchema={validationSchema}
+    initialValues={{
+      username: '',
+      email: '',
+      company_position: '',
+      interests: '',
+      orcid: '',
+      name: '',
+      research_area: '',
+      institution: '',
+      description: '',
+    }}
+    render={({ handleSubmit }) => (
+      <div>
+        <Form onSubmit={handleSubmit}>
+          <h1 className="labelQuestion">Company</h1>
           <Field
-            label="User Name"
             name="username"
-            component={InputField}
             type="text"
+            component={InputField}
+            label="Username"
           />
-
           <Field
-            label="E-mail"
             name="email"
-            component={InputField}
             type="text"
-          />
-
-          <Field
-            label="ORCID Number"
-            name="ORCID"
             component={InputField}
-            type="text"
+            label="Email"
           />
-
           <Field
-            label="Password"
+            name="orcid"
+            type="text"
+            component={InputField}
+            label="Orcid Number"
+          />
+          <Field
             name="password"
-            component={InputField}
             type="password"
+            component={InputField}
+            label="Password"
           />
 
-          <h2>Detailed Info</h2>
-          <Field label="Name" name="name" component={InputField} type="text" />
+          <h1>Detailed Info</h1>
+          <Field name="name" type="text" component={InputField} label="Name" />
+
           <Field
-            label="Research Area"
             name="research_area"
-            component={InputField}
             type="text"
+            component={InputField}
+            label="Research Area"
           />
 
           <Field
-            label="Institution"
             name="institution"
-            component={InputField}
             type="text"
+            component={InputField}
+            label="Institution"
           />
 
           <Field
-            label="Description"
             name="description"
-            component={InputField}
             type="text"
+            component={InputField}
+            label="Description"
           />
 
-          <button type="submit">CONFIRM REGISTRATION</button>
+          <FieldArray
+            name="interests"
+            component={props => <TagField {...props} label="Interests" />}
+          />
+          <button>Confirm</button>
         </Form>
-      )}
-    />
-  </div>
+      </div>
+    )}
+  />
 );
 
-export default Register;
+export default SignUp;

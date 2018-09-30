@@ -2,9 +2,11 @@ import React from 'react';
 
 const InputField = ({ label, field, form: { touched, errors }, ...props }) => (
   <div>
-    <label>{label}</label>
+    <h3>{label}</h3>
     <input type="text" {...field} {...props} />
-    <br/>
+    {touched[field.name] &&
+      errors[field.name] && <div className="error">{errors[field.name]}</div>}
+    <br />
   </div>
 );
 

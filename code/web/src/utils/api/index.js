@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { API_URL } from 'utils/config';
 
-
 const post = (endpoint, data) => {
   return axios.post(`${API_URL}/${endpoint}`, data);
 };
