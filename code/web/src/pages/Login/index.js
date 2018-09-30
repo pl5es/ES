@@ -20,43 +20,70 @@ const handleLogin = (values, history) => {
 };
 
 const Login = ({ history }) => (
-  <div>
-    <Formik
-      initialValues={{
-        identifier: '',
-        password: '',
-        grant_type: 'password',
-      }}
-      onSubmit={values => {
-        handleLogin(values, history);
-      }}
-      render={({ values }) => (
-        <Form>
-          <Field
-            label="E-mail/ Username"
-            name="identifier"
-            component={InputField}
-            type="text"
-          />
-          {/* <Field
+  <div className="container">
+    <div className="row">
+      <div className="col-8" />
+      <div className="col-4 shadow-lg text-center rounded border border-light p-5">
+        <Formik
+          initialValues={{
+            identifier: '',
+            password: '',
+            grant_type: 'password',
+          }}
+          onSubmit={values => {
+            handleLogin(values, history);
+          }}
+          render={({ values }) => (
+            <Form>
+              <p className="h4 mb-4">Log in</p>
+              <Field
+                label="E-mail/ Username"
+                name="identifier"
+                component={InputField}
+                type="text"
+                className="form-control mb-4"
+              />
+              {/* <Field
             label="ORCID number"
             name="orcid"
             component={InputField}
             type="text"
           /> */}
-          <Field
-            label="Password"
-            name="password"
-            component={InputField}
-            type="password"
-          />
-          <button type="submit">LOG IN</button>
-        </Form>
-      )}
-    />
-    <button type="button" onClick={() => history.push('/register')}>
-      REGISTER
-    </button>
+              <Field
+                label="Password"
+                name="password"
+                component={InputField}
+                type="password"
+                className="form-control mb-4"
+              />
+              <button type="submit" className="btn btn-info btn-block my-4">
+                Enter
+              </button>
+            </Form>
+          )}
+        />
+      </div>
+    </div>
+    <div className="row" style={{marginTop: "50px"}}>
+      <div className="col-8" />
+      <div
+        className="col-4 shadow-lg rounded text-center border border-light p-5"
+        style={{ backgroundColor: '#0d47a1' }}
+      >
+        <div className="row">
+          <p className="h1 white-text">Register</p>
+        </div>
+        <div className="row">
+          <button
+            type="button"
+            className="btn btn-blue-grey my-4"
+            onClick={() => history.push('/register')}
+          >
+            Create New Account
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 );
 
