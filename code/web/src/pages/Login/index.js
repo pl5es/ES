@@ -8,7 +8,10 @@ import { signIn } from 'utils/api';
 const handleLogin = values => {
   signIn(values)
     .then(response => {
-      response.status == 200 && alert('logged in');
+      response.status == 200 &&
+      localStorage.setItem('access_token', response.data.access_token )
+      localStorage.setItem('refresh_token', response.data.refresh_token )
+
     })
     .catch(response => {
       console.log(response);
