@@ -1,21 +1,19 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
-import NewsData from '../../utils/consts';
-import NewsFeed from '../../components/NewsFeed';
-import '../../styles/feed.css';
+import NewsData from 'utils/consts';
+import NewsFeed from 'components/NewsFeed';
+import 'styles/feed.css';
 
 export default class Feed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      noticias: NewsData,
+      _news: NewsData,
       search_results: [],
     };
-    this.handleNewPost = this.handleNewPost.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
   }
 
-  handleNewPost(values) {
+  handleNewPost = values => {
     this.setState(currentState => {
       var newPost = {
         title: `My post from ${Date().toLocaleString()}`,
@@ -23,26 +21,26 @@ export default class Feed extends React.Component {
         src: '',
       };
       return {
-        noticias: [newPost].concat(currentState.noticias),
+        _news: [newPost].concat(currentState._news),
       };
     });
-  }
+  };
 
-  handleSearch(values) {
+  handleSearch = values => {
     if (!values.search) {
       return;
     }
     this.setState(currentState => {
       return {
-        search_results: currentState.noticias.filter(noticia =>
-          noticia.title.toLowerCase().includes(values.search.toLowerCase()),
+        search_results: currentState._news.filter(_new =>
+          _new.title.toLowerCase().includes(values.search.toLowerCase()),
         ),
       };
     });
-  }
+  };
 
   render() {
-    const { search_results: SearchResults, noticias: NewsResults } = this.state;
+    const { search_results: SearchResults, _news: NewsResults } = this.state;
     return (
       <div id="Feed">
         <div id="Search">
@@ -68,10 +66,10 @@ export default class Feed extends React.Component {
           </Formik>
         </div>
         <div id="SearchResults">
-          <NewsFeed noticias={SearchResults} nome="Search Results" />
+          <NewsFeed _news={SearchResults} nome="Search Results" />
         </div>
         <div id="NewsFeed">
-          <NewsFeed noticias={NewsResults} nome="News Feed" />
+          <NewsFeed _news={NewsResults} nome="News Feed" />
         </div>
       </div>
     );
