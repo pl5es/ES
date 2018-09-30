@@ -10,4 +10,13 @@ class User < ApplicationRecord
   def info
     as_json(except: [:password_digest], include: :interests)
   end
+
+  def create_interests(params)
+    interests.delete_all
+    if params["interests"]
+      params["interests"].each do |interest|
+        interests.create(hashtag: interest)
+      end
+    end
+  end
 end

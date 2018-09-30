@@ -5,24 +5,22 @@ class UsersController < ApplicationController
     params = user_params
     @user = User.new(params.except(:interests))
 
-    unless @user.save
+    if @user.save
+      @user.create_interests(params)
+      render json: @user.info
+    else
       render json: @user.errors
     end
-
-    if params["interests"]
-      params["interests"].each do |interest|
-        Interest.create(hashtag: interest, user_id: @user.id)
-      end
-    end
-
-    render json: @user.info
   end
 
   def update
-    if current_resource_owner.update_attributes(user_params)
-      render json: current_resource_owner.info
+    params = user_params
+    user = current_resource_owner
+    if user.update_attributes(params.except(:interests))
+      user.create_interests(params)
+      render json: user.info
     else
-      render json: current_resource_owner.errors
+      render json: user.errors
     end
   end
 
@@ -40,5 +38,4 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:username, :name, :password, :email, :description, :orcid, :research_area, :institution, interests: [])
   end
-
 end
