@@ -25,7 +25,7 @@ const validationSchema = yup.object().shape({
 const handleRegister = (values, history) => {
   signUp(values)
     .then(response => {
-      if (response.status === 200) {
+      if (response.status === 201) {
         history.push("/login");
       }
     })
