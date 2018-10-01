@@ -1,8 +1,11 @@
+require 'file_size_validator'
+
 class User < ApplicationRecord
   has_secure_password
   has_many :interests
   validates_presence_of :username, :name, :orcid, :research_area, :institution
   validates_uniqueness_of :username, :email, :orcid
+  validates :avatar, file_size: { maximum: 2.megabytes }
 
   mount_uploader :avatar, AvatarUploader
 
@@ -11,8 +14,7 @@ class User < ApplicationRecord
       except: [:password_digest, :avatar],
       include: [:interests, {
         avatar: {
-          only: :url,
-          methods: to_s
+          only: :url
         }
       }])
   end
