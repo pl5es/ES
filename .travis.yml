@@ -2,14 +2,16 @@ dist: trusty
 language: ruby
 rvm:
   - 2.5.1
+
 addons:
   postgresql: 9.6
+
 notifications:
   slack: pl5es:84Pa1a9D0o7hXNvlby4JeYl2
+
 jobs:
   include:
-  stage:
-    - stage: tests
+    - stage: api tests
       before_install:
         - cd code/server
       before_script:
