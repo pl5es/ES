@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class FileSizeValidator < ActiveModel::EachValidator
-  MESSAGES  = { :is => :wrong_size, :minimum => :size_too_small, :maximum => :size_too_big }.freeze
-  CHECKS    = { :is => :==, :minimum => :>=, :maximum => :<= }.freeze
+  MESSAGES  = { is: :wrong_size, minimum: :size_too_small, maximum: :size_too_big }.freeze
+  CHECKS    = { is: :==, minimum: :>=, maximum: :<= }.freeze
 
   DEFAULT_TOKENIZER = lambda { |value| value.split(//) }
   RESERVED_OPTIONS  = [:minimum, :maximum, :within, :is, :tokenizer, :too_short, :too_long]
@@ -19,7 +21,7 @@ class FileSizeValidator < ActiveModel::EachValidator
     keys = CHECKS.keys & options.keys
 
     if keys.empty?
-      raise ArgumentError, 'Range unspecified. Specify the :within, :maximum, :minimum, or :is option.'
+      raise ArgumentError, "Range unspecified. Specify the :within, :maximum, :minimum, or :is option."
     end
 
     keys.each do |key|
