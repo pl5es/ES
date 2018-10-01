@@ -1,4 +1,6 @@
-require 'file_size_validator'
+# frozen_string_literal: true
+
+require "file_size_validator"
 
 class User < ApplicationRecord
   has_secure_password
