@@ -20,3 +20,12 @@ jobs:
       script:
         - bundle exec rails db:migrate RAILS_ENV=test
         - bundle exec rspec
+    - stage: api tests 2
+      before_install:
+        - cd code/server
+      before_script:
+        - cp config/database.yml.travis config/database.yml
+        - psql -c 'create database travis_ci_test;' -U postgres
+      script:
+        - bundle exec rails db:migrate RAILS_ENV=test
+        - bundle exec rspec
