@@ -48,8 +48,15 @@ class SignUp extends Component {
 
   valuesToFormData(values, history) {
     const bodyFormData = new FormData();
-    Object.keys(values).map(value => bodyFormData.append(value, values[value]));
+    Object.keys(values).map(value => {
+      if (value !== "interests") {
+        bodyFormData.append(value, values[value]);
+      }
+    });
 
+    for (var i = 0; i < values.interests.length; i++) {
+      bodyFormData.append("interests[]", values.interests[i]);
+    }
     handleRegister(bodyFormData, history);
   }
 
