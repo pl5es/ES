@@ -30,7 +30,7 @@ export const PublicRoute = ({ component: Component, ...rest }) => (
       isAuthenticated() === false ? (
         <Component {...props} />
       ) : (
-        <Redirect to="/protected" />
+        <Redirect to="/profile" />
       )
     }
   />

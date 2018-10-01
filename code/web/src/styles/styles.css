@@ -8,6 +8,16 @@ body {
   width: 100%;
   background-color: #393f50;
   height: 70px;
+  float: right;
+}
+
+.navbar a{
+  color: white;
+  margin-right: 20px;
+}
+
+.navbar-right{
+  float: right;
 }
 
 input {
@@ -26,6 +36,7 @@ button {
   border: none;
   outline: none;
   box-shadow: 2px 5px #888888;
+  font-size: 20px;
 }
 
 .profile {
@@ -37,7 +48,7 @@ button {
   box-shadow: 4px 5px #888888;
   border-collapse: separate;
   border-spacing: 15px;
-  margin-top: 20px;
+  margin-top: 80px;
   width: 400px;
   height: 190px;
   padding-left: 10px;
@@ -90,7 +101,7 @@ button {
   margin-left: 10px;
   text-align: center;
   line-height: 50%;
-  padding-top: 25px;
+  padding-top: 80px;
 }
 
 .follow h4 {
@@ -100,4 +111,10 @@ button {
 .bio-text {
   font-style: italic;
   width: 700px;
+}
+
+textarea{
+  width: 80%;
+  height: 90px;
+  text-align: center;
 }

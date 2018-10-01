@@ -7,9 +7,9 @@ class UsersController < ApplicationController
 
     if @user.save
       @user.create_interests(params)
-      render json: @user.info
+      render json: @user.info, status: 201
     else
-      render json: @user.errors
+      render json: @user.errors, status: 400
     end
   end
 

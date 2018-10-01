@@ -40,7 +40,6 @@ const SignUp = ({ history }) => (
     initialValues={{
       username: '',
       email: '',
-      company_position: '',
       interests: '',
       orcid: '',
       name: '',
@@ -51,7 +50,7 @@ const SignUp = ({ history }) => (
     render={({ handleSubmit }) => (
       <div>
         <Form onSubmit={handleSubmit}>
-          <h1 className="labelQuestion">Company</h1>
+          <h1>Register</h1>
           <Field
             name="username"
             type="text"
@@ -68,7 +67,7 @@ const SignUp = ({ history }) => (
             name="orcid"
             type="text"
             component={InputField}
-            label="Orcid Number"
+            label="ORCID Number"
           />
           <Field
             name="password"

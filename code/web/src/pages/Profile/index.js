@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getMyInfo } from "utils/api";
-import  Navbar from 'components/Navbar'
+import Navbar from "components/Navbar";
 
 class Profile extends Component {
   state = {
@@ -22,7 +22,7 @@ class Profile extends Component {
     console.log(user);
     return (
       <div>
-        <Navbar />
+        <Navbar history={this.props.history} />
         <div className="profile">
           <div className="text-info">
             <h1 className="info-nome">{user.name}</h1>
@@ -30,7 +30,7 @@ class Profile extends Component {
               {user.orcid}
               <span className="span-orcid"> ORCID ID</span>
             </h3>
-            <h3 className="info-institute">{user.institute}</h3>
+            <h3 className="info-institute">{user.institution}</h3>
             <h3 className="info-area">{user.research_area}</h3>
           </div>
 

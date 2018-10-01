@@ -1,14 +1,20 @@
-import { signUp } from 'utils/api';
-import { REGISTER_SUCCESS, REGISTER_ERROR } from 'actions/types';
+import { signIn } from 'utils/api';
 
-export function signup({ email, password }) {
+export function login(values) {
   return dispatch =>
-    signUp
+    signIn(values)
       .then(res => {
-        dispatch({ type: REGISTER_SUCCESS, payload: res.data });
-        this.props.history.push('/');
+        localStorage.setItem('access_token', res.data.access_token);
+        dispatch({ type: 'LOGIN_SUCCESS' });
       })
       .catch(err => {
-        dispatch({ type: REGISTER_ERROR, payload: err });
+        dispatch({ type: 'LOGIN_ERROR', err });
       });
+}
+
+export function logout() {
+  return dispatch => {
+    localStorage.removeItem('access_token');
+    dispatch({ type: 'LOGOUT' });
+  };
 }
