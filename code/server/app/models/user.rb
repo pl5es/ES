@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   has_many :interests
 
-  validates_presence_of :username, :description, :name, :orcid, :research_area, :institution
+ validates_presence_of :username, :name, :orcid, :research_area, :institution
 
   validates_uniqueness_of :username, :email, :orcid
 
