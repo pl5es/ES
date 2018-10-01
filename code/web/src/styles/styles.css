@@ -118,3 +118,7 @@ textarea{
   height: 90px;
   text-align: center;
 }
+
+#avatar{
+  max-height:200px;
+}
