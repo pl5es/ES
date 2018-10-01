@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   skip_before_action :doorkeeper_authorize!, only: [:create]
 
@@ -30,10 +32,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    render json: @users.attributes.map {|u| u.info}
+    render json: @users.attributes.map { |u| u.info }
   end
 
-  private
+private
 
   def user_params
     params.permit(
