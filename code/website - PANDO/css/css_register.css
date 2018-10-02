@@ -1,0 +1,73 @@
+#bg{
+    position: absolute;
+    width: 90%;
+}
+#titulo{
+    font-family: Union;
+    color: black;
+}
+
+#titulo_medio, label{
+    font-family: Calibri ;
+    font-style: italic;
+}
+
+input, h5{
+    font-family: Calibri ;
+}
+
+h5{
+    font-weight: 600;
+    color: #2B3F73;
+}
+
+button{
+    margin-top: 10%;
+    border: none;
+    border-radius: 30px;
+    background-color: #F1F452;
+}
+.form-wrapper{
+    width:367px;
+}
+
+#description_container textarea{
+    background-color: gainsboro;
+    width: 250%;
+    height: 50%;
+    color: none; 
+    border-bottom: none;
+    border-radius: 15px;
+}
+
+
+.container{
+    width:367px ;
+     margin: auto ;
+}
+
+input:focus{
+    color: #003366;
+    font-weight: bold;
+}
+
+#logo{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width:30%;
+}
+
+.footer{
+    width: 100vw;
+    float: left;
+}
+footer{
+    margin-top:10%;
+    padding-bottom: 15%;
+    width: 100%;
+    height: 50%;
+    background-color: #F1F452;
+}
+
+
+
