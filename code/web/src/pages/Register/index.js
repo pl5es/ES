@@ -26,7 +26,7 @@ const handleRegister = (values, history) => {
   signUp(values)
     .then(response => {
       if (response.status === 201) {
-        history.push("/login");
+        history.push("/");
       }
     })
     .catch(response => {
@@ -57,6 +57,7 @@ class SignUp extends Component {
     for (var i = 0; i < values.interests.length; i++) {
       bodyFormData.append("interests[]", values.interests[i]);
     }
+
     handleRegister(bodyFormData, history);
   }
 
@@ -64,7 +65,6 @@ class SignUp extends Component {
     const {
       props: { history }
     } = this;
-    console.log(this.props);
     return (
       <div>
         <body className="wrapper">
