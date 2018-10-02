@@ -10,22 +10,25 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="css/normalize.css" media="all">
     <link rel="stylesheet" type="text/css" href="css/skeleton.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/css_register.css" media="all">
 </head>
 
 <body class="wrapper">
+    <img src="imgs/register_bg_Prancheta 1.png" id="bg">
     <div class="container">
         <div class="row">
-            <img href="">
-            <h1>Create Your Account</h1>
-            <h5>All fields with a * must be filled out</h5>
+            <img id="logo" src="imgs/pando_logo_tipo.png">
+            <h2 id="titulo">CREATE YOUR ACCOUNT</h2>
+            <h6 id="titulo_medio">All fields with a * must be filled out</h5>
         </div>
         <div class="row">
             <div class="register">
                 <form>
                     <div class="row">
-                        <div class="six columns">
+                        
+                        <div class="six columns form-wrapper" style="width:70%">
                             <label>User name</label>
-                            <input placeholder="Enter your name *" type="text">
+                            <input placeholder="Enter your name *" type="text" >
                             <label>E-mail</label>
                             <input placeholder="Enter your e-mail *" type="email">
                             <label>ORCID number</label>
@@ -33,38 +36,44 @@
                             <label>Password</label>
                             <input placeholder="Enter your password *" type="password">
 
-                            <h3>Detailed Info</h3>
+                            <h5>Detailed Info</h5>
                             <label>Name</label>
                             <input placeholder="Enter your name" type="text">
                             <label>Investigation Subject /</label>
-                            <input placeholder="Enter your investigation subject" type="text">
+                            <input placeholder="Enter your subject" type="text">
                             <label>Institute</label>
                             <input placeholder="Enter your institute" type="text">
                         </div>
                         <div class="six columns">
                             <div class="register_image">
                             </div>
-                            <a href=""></a>
-
-                            <h3>Description</h3>
-                            <input placeholder="Enter your description" type="text">
+                            <div class="row">
+                                <a href="">
+                                    <img src="./register.png" >
+                                </a>
+                                <h6 id="titulo_medio">add profile picture</h6>
+                            </div>
+                       
+                            
+                            <h5>Description</h5>
+                        <div id="description_container">
+                            <textarea rows="4" cols="50" name="comment" form="usrform">
+                                    </textarea>                                    
                         </div>
                     </div>
-                    <div class="row">
-                        <h3>Interests</h3>
-                        
-                    </div>
-
-                    <button type="submit">Confirm Registration</button>
+                    <div class="button_centered">
+                    <button type="submit">CONFIRM REGISTRATION</button>
+                    </div> 
                 </form>
             </div>
         </div>
-        <div class="row">
+    </div>
+        <div class="footer">
             <footer>
                 <p>Information Contacts</p>
             </footer>
         </div>
-    </div>
+    
 </body>
 
 </html>
