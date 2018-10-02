@@ -8,6 +8,8 @@ import { connect } from 'react-redux';
 import { signup } from 'actions/auth';
 import { Redirect } from 'react-router-dom';
 
+import 'styles/register.css';
+
 const validationSchema = yup.object().shape({
   username: yup.string().required('Username is required!'),
   email: yup
@@ -66,11 +68,13 @@ class SignUp extends Component {
         ) : (
           <div>
             <body className="wrapper">
+            <img id="bg" src={require('assets/register_bg_Prancheta 1.png')} />
               <div className="container">
                 <div className="row">
                   <img href="" />
-                  <h1>Create Your Account</h1>
-                  <h5>All fields with a * must be filled out</h5>
+                  <img id="logo" src={require('assets/pando_logotipo.png')} />
+                  <h2 id="titulo">Create Your Account</h2>
+                  <h6 id="titulo_medio">All fields with a * must be filled out</h6>
                 </div>
                 <div className="row">
                   <div className="register">
@@ -94,84 +98,57 @@ class SignUp extends Component {
                         <div>
                           <Form>
                             <div className="row">
-                              <div className="six columns">
-                                {}
-                                <h1>Register</h1>
+                              <div className="one-half column form-wrapper">
                                 <Field
                                   name="username"
                                   type="text"
                                   component={InputField}
                                   label="Username *"
+                                  placeholder="Enter your username"
                                 />
                                 <Field
                                   name="email"
                                   type="text"
                                   component={InputField}
                                   label="Email *"
+                                  placeholder="Enter your e-mail"
                                 />
                                 <Field
                                   name="orcid"
                                   type="text"
                                   component={InputField}
                                   label="ORCID Number *"
+                                  placeholder="Enter your ORCID number"
                                 />
                                 <Field
                                   name="password"
                                   type="password"
                                   component={InputField}
                                   label="Password *"
+                                  placeholder="Enter your password"
                                 />
-
-                                <label>Avatar</label>
-
-                                <Dropzone
-                                  onDrop={ev => this.onDrop(setFieldValue, ev)}
-                                  multiple={false}
-                                >
-                                  <div>
-                                    {this.state.imageFiles.length > 0 && (
-                                      <div>
-                                        <div>
-                                          {this.state.imageFiles.map(file => (
-                                            <img
-                                              id="avatar"
-                                              src={file.preview}
-                                            />
-                                          ))}
-                                        </div>
-                                      </div>
-                                    )}
-                                  </div>
-                                </Dropzone>
-
-                                <h3>Detailed Info</h3>
+                                <h5>Detailed Info</h5>
                                 <Field
                                   name="name"
                                   type="text"
                                   component={InputField}
                                   label="Name *"
+                                  placeholder="Enter your name"
                                 />
-
                                 <Field
                                   name="research_area"
                                   type="text"
                                   component={InputField}
                                   label="Research Area *"
+                                  placeholder="Enter your subject"
                                 />
-
                                 <Field
                                   name="institution"
                                   type="text"
                                   component={InputField}
                                   label="Institution *"
+                                  placeholder="Enter the name of your institution"
                                 />
-                                <Field
-                                  name="description"
-                                  type="text"
-                                  component={InputField}
-                                  label="Description"
-                                />
-
                                 <FieldArray
                                   name="interests"
                                   component={props => (
@@ -179,9 +156,45 @@ class SignUp extends Component {
                                   )}
                                 />
                                 {registerError ? <p>{registerError}</p> : null}
-                                <button type="submit">Confirm</button>
+                                </div>
+                                <div className="one-half column">
+                                  <div className="register_image"></div>
+                                  <div className="row">
+                                    <Dropzone
+                                      onDrop={ev => this.onDrop(setFieldValue, ev)}
+                                      multiple={false}
+                                    >
+                                      <div>
+                                        {this.state.imageFiles.length > 0 && (
+                                          <div>
+                                            <div>
+                                              {this.state.imageFiles.map(file => (
+                                                <img
+                                                  id="avatar"
+                                                  src={file.preview}
+                                                />
+                                              ))}
+                                            </div>
+                                          </div>
+                                        )}
+                                      </div>
+                                    </Dropzone>
+                                    </div>
+                                    <div id="description_container">
+                                    <Field
+                                      name="description"
+                                      type="textarea"
+                                      component={InputField}
+                                      label="Description"
+                                    />
+                                    </div>
+                                
                               </div>
+                              
                             </div>
+                            <div className="four column offset-by-four u-center-block">
+                                  <button type="submit">Confirm Registration</button>
+                                </div>
                           </Form>
                         </div>
                       )}
