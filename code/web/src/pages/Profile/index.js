@@ -1,23 +1,23 @@
-import React, { Component } from "react";
-import { getMyInfo } from "utils/api";
-import Navbar from "components/Navbar";
+import React, { Component } from 'react';
+import { getMyInfo } from 'utils/api';
+import Navbar from 'components/Navbar';
 
 class Profile extends Component {
   state = {
-    user: {}
+    user: {},
   };
 
   componentDidMount() {
     getMyInfo().then(res => {
       this.setState({
-        user: res.data
+        user: res.data,
       });
     });
   }
 
   render() {
     const {
-      state: { user }
+      state: { user },
     } = this;
     console.log(user);
     return (

@@ -1,0 +1,139 @@
+
+
+form{
+    margin: 0 0 0 0;
+}
+
+input{
+    margin-left: 13%;
+    margin-bottom: 5px;
+    width: 75%;
+}
+
+
+.login{
+    background-color: #F5F5F5;
+    box-shadow: 0 3px 5px 0 lightgray;
+}
+
+h2#log{
+    font-family: "Union";
+    margin-left: 15%;
+    margin-bottom: 10%;
+    padding-top: 25%;
+    color: #001a33;
+}
+
+.register_redirect h2{
+    font-family: "Union";
+    color: white;
+    margin-left: 15%;
+    margin-bottom: 10%;
+    padding-top: 5%;
+}
+
+.register_redirect a{
+    text-decoration: none;
+    font-size: 1.8vw;
+    font-family: Union;
+    background-color: #A1A1A1;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 13px 5px 13px;
+    margin-left: 15%;
+}
+
+.register_redirect a:hover {
+    box-shadow: 0 4px 10px 1px #001a33;
+}
+
+div.register_redirect{
+    margin-top: 10px;
+    background-color: #2B3F73;
+    padding-bottom: 30px;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button#logbut{
+    padding: 0 8% 0 8%;
+    position: static;
+    margin-left: 50%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+
+a#forgotpass{
+    margin: 0 0 2% 15%;
+    font-size: 10px;
+    font-style: italic;
+    color: #222222;
+    text-decoration: none;
+}
+
+textarea{
+    color: #F1F452;
+}
+
+input:focus::-webkit-input-placeholder {
+    color:transparent;
+}
+
+input::-webkit-input-placeholder{
+    color: lightgray;
+    font-weight: normal;
+    font-style: italic;
+}
+
+p#info{
+    font-style: italic;
+    font-weight: lighter;
+    color: #9F9F9F;
+    text-indent: 50px;
+    line-height: 1.4;
+    font-size: 13px;
+    margin: 2% 10% 0 10%;
+}
+
+footer{
+    margin-top: 10%;
+    padding-bottom: 15%;
+    width: 100%;
+    height: 50%;
+    background-color: #F1F452;
+}
+
+#logotipo{
+    margin-top: 30%;
+    width: 70%;
+    height: 70%;
+}
+
+header{
+    margin-left: 10%;
+    margin-top: 7%;
+    font-size: 18px;
+    color: #666666;
+}
+
+#fundo{
+    margin-top: 0;
+    width: 80%;
+    height: 110%;
+    position: absolute;
+}
+
+#log-button{
+    background-color: #F1F452;
+    font-size: 18px;
+    margin-left: 10%;
+}
+#register-button{
+    background-color: rgb(161, 161, 161);
+    font-size: 18px;
+    margin-left: 10%;
+} 
+
+label{
+    margin-left: 5%;
+}

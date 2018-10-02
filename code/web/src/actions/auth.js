@@ -1,4 +1,5 @@
-import { signIn } from 'utils/api';
+import { signIn, signUp } from 'utils/api';
+import { errorMessage } from 'utils/errors';
 
 export function login(values) {
   return dispatch =>
@@ -17,4 +18,15 @@ export function logout() {
     localStorage.removeItem('access_token');
     dispatch({ type: 'LOGOUT' });
   };
+}
+
+export function signup(values) {
+  return dispatch =>
+    signUp(values)
+      .then(res => {
+        dispatch({ type: 'REGISTER_SUCCESS' });
+      })
+      .catch(err => {
+        dispatch({ type: 'REGISTER_ERROR', payload: errorMessage(err) });
+      });
 }

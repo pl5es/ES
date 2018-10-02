@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Formik, Field, Form } from "formik";
-import { Redirect } from "react-router-dom";
-import InputField from "components/InputField";
-import { connect } from "react-redux";
-import { login } from "actions/auth";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Formik, Field, Form } from 'formik';
+import { Redirect } from 'react-router-dom';
+import InputField from 'components/InputField';
+import { connect } from 'react-redux';
+import { login } from 'actions/auth';
 
 const Login = ({ history, login, authError, authenticated }) =>
   authenticated === true ? (
@@ -12,12 +12,17 @@ const Login = ({ history, login, authError, authenticated }) =>
   ) : (
     <div>
       <body className="wrapper">
+        <img id="fundo" src={require('assets/fundo1.png')} />
         <div className="container">
-          <div claclassNamess="row">
-            <div cclassNamelass="eight columns">
-              <img href="" alt="Pando Logo" />
+          <div className="row">
+            <div className="eight columns">
+              <img
+                id="logotipo"
+                src={require('assets/pando_logotipo.png')}
+                alt="Pando Logo"
+              />
               <header>The investigators social media</header>
-              <p>
+              <p id="info">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 eni m ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -30,12 +35,12 @@ const Login = ({ history, login, authError, authenticated }) =>
             </div>
             <div className="four columns">
               <div className="login">
-                <h2>Login</h2>
+                <h2 id="log">Login</h2>
                 <Formik
                   initialValues={{
-                    identifier: "",
-                    password: "",
-                    grant_type: "password"
+                    identifier: '',
+                    password: '',
+                    grant_type: 'password',
                   }}
                   onSubmit={values => {
                     login(values);
@@ -45,27 +50,41 @@ const Login = ({ history, login, authError, authenticated }) =>
                       <Field
                         label="E-mail/ Username"
                         name="identifier"
+                        placeholder="E-mail / Username"
                         component={InputField}
                         type="text"
                       />
                       <Field
                         label="Password"
                         name="password"
+                        placeholder="Password"
                         component={InputField}
                         type="password"
                       />
-                      <button type="submit">LOG IN</button>
+                      <button id="log-button" type="submit">
+                        ENTER
+                      </button>
                     </Form>
                   )}
                 />
               </div>
               <div className="register_redirect">
-                <button type="button" onClick={() => history.push("/register")}>
-                  REGISTER
+                <h2>Register</h2>
+                <button
+                  id="register-button"
+                  type="button"
+                  onClick={() => history.push('/register')}
+                >
+                  CREATE NEW ACCOUNT
                 </button>
               </div>
               {authError ? <p>{authError}</p> : null}
             </div>
+          </div>
+          <div className="row">
+            <footer>
+              <p>Information Contacts</p>
+            </footer>
           </div>
         </div>
       </body>
@@ -74,22 +93,22 @@ const Login = ({ history, login, authError, authenticated }) =>
 
 const mapDispatchToProps = dispatch => {
   return {
-    login: creds => dispatch(login(creds))
+    login: creds => dispatch(login(creds)),
   };
 };
 
 const mapStateToProps = state => {
   return {
     authError: state.auth.authError,
-    authenticated: state.auth.authenticated
+    authenticated: state.auth.authenticated,
   };
 };
 
 Login.propTypes = {
-  history: PropTypes.func.isRequired
+  history: PropTypes.func.isRequired,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Login);

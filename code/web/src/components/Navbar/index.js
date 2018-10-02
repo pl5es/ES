@@ -1,29 +1,29 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: ""
+      query: '',
     };
   }
 
   logout = () => {
-    localStorage.removeItem("access_token");
-    this.props.history.push("/");
+    localStorage.removeItem('access_token');
+    this.props.history.push('/');
   };
 
   handleInputChange = ev => {
     this.setState({
-      query: ev.target.value
+      query: ev.target.value,
     });
   };
 
   render() {
     const {
       props: { search },
-      state: { query }
+      state: { query },
     } = this;
     return (
       <div className="navbar">

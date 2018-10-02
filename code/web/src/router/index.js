@@ -13,7 +13,7 @@ const RouterApp = () => (
       <PublicRoute exact path="/" component={Login} />
       <PublicRoute path="/register" component={Register} />
       <PrivateRoute path="/profile" component={Profile} />
-      <PrivateRoute path="/feed" component={Feed}  />
+      <PrivateRoute path="/feed" component={Feed} />
     </Switch>
   </Router>
 );

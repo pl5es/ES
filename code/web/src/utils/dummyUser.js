@@ -1,7 +1,8 @@
 const user = {
   name: 'Johnny Bigode',
   orcid: '123456789',
-  photo_url: 'https://images.vexels.com//media/users/3/129616/isolated/preview/fb517f8913bd99cd48ef00facb4a67c0-businessman-avatar-silhouette-by-vexels.png',
+  photo_url:
+    'https://images.vexels.com//media/users/3/129616/isolated/preview/fb517f8913bd99cd48ef00facb4a67c0-businessman-avatar-silhouette-by-vexels.png',
   research_area: 'Biology',
   following: '17',
   followers: '12',

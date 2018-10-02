@@ -17,7 +17,7 @@ class TagField extends Component {
       state: { currentInput },
     } = this;
     return (
-      <div class="row">
+      <div className="row">
         <h3>{label}</h3>
         <input
           value={currentInput}
