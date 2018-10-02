@@ -1,6 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-@import "skeleton.css";
-@import "normalize.css";
 
 body {
   font-family: "Roboto", sans-serif;
@@ -22,23 +20,11 @@ body {
   float: right;
 }
 
-input {
-  width: 10%;
+#search {
+  width: 40%;
   height: 30px;
-}
-
-button {
-  background-color: #ecee67;
-  color: #2b3f73;
-  width: 120px;
-  height: 40px;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 28px;
-  border: none;
-  outline: none;
-  box-shadow: 2px 5px #888888;
-  font-size: 20px;
+  font-size: 30px;
+  color: white;
 }
 
 .profile {
@@ -51,8 +37,6 @@ button {
   border-collapse: separate;
   border-spacing: 15px;
   margin-top: 80px;
-  width: 400px;
-  height: 190px;
   padding-left: 10px;
   padding-bottom: 10px;
 }
@@ -115,7 +99,7 @@ button {
   width: 700px;
 }
 
-textarea{
+#new-post{
   width: 80%;
   height: 90px;
   text-align: center;
@@ -123,4 +107,18 @@ textarea{
 
 #avatar{
   max-height:200px;
+}
+
+#logout-button{
+  background-color: rgb(161, 161, 161);
+    font-size: 14px;
+    margin: 10px 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar input{
+  margin-top: 20px;
+  font-size: 14px;
 }
