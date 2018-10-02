@@ -45,7 +45,9 @@ export default class Feed extends React.Component {
     const { search_results: SearchResults, _news: NewsResults } = this.state;
     return (
       <div id="Feed">
-        <Navbar history={this.props.history} search={this.handleSearch} />
+        <img id="bg" src={require('assets/register_bg_Prancheta 1.png')} />
+        <img id="logofeed" src={require('assets/pando_logotipo.png')} />
+        <Navbar id="feednavbar" history={this.props.history} search={this.handleSearch} />
         <CreatePost post={this.handleNewPost} />
         <div id="SearchResults">
           <NewsFeed _news={SearchResults} name="Search Results" />
