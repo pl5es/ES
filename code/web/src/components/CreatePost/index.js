@@ -1,37 +1,43 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export class CreatePost extends Component {
   state = {
-    text: '',
+    text: ""
   };
 
   handleInputChange = ev => {
     this.setState({
-      text: ev.target.value,
+      text: ev.target.value
     });
   };
 
   cleanInput() {
     this.setState({
-      text: '',
+      text: ""
     });
   }
 
   render() {
     const {
       props: { post },
-      state: { text },
+      state: { text }
     } = this;
     return (
       <div>
-        <textarea value={text} onChange={ev => this.handleInputChange(ev)} />
+        <textarea
+          id="writePost"
+          placeholder="Write new post"
+          value={text}
+          onChange={ev => this.handleInputChange(ev)}
+        />
         <button
+          id="createPost"
           onClick={() => {
             post(text);
             this.cleanInput();
           }}
         >
-          Submit
+          <label> Submit </label>
         </button>
       </div>
     );

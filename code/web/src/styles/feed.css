@@ -12,3 +12,91 @@
     border: 5px solid white;
 }
 
+#newsfeedheader{
+	font-size:30px;
+	margin:0px;
+	margin-left:10%;
+}
+
+#newslist{
+	padding:0px;
+	margin:0px;
+}
+
+#newsitem{
+	padding:0px;
+	margin:0px;
+	margin-left: 10%;
+	margin-bottom: 10px;
+	padding:5px;
+	background-border:;
+	background-color: #F1F452;
+    border-radius: 10px;
+
+}
+
+#newslink{
+	margin:0px;
+	font-weight: 600;
+}
+
+#newsdesc{
+	margin:0px;
+}
+
+#feednavbar>div{
+	margin:50%;
+}
+
+#createPost{
+	color:black;
+}
+
+#writePost{
+	padding:5px;
+	margin:0;
+	margin-top:5px;
+	margin-left:6%;
+	border: #000 1px solid;
+	color:black;
+	width:20%;
+}
+
+#logofeed {
+    margin-left:6%;
+    width: 15%;
+}
+
+#bg {
+    margin:0px;
+    padding:0px;
+    width: 75%;
+    height:98%;
+    z-index: -5;
+}
+
+#navbarsearch{
+	margin:0px;
+	margin-left:6%;
+	width:20%;
+	border: #000 1px solid;
+	padding:5px;
+	color:white;
+}
+
+#navbarbutton{
+	color:black;
+}
+
+#logoutbutton{
+	color:black;
+}
+
+#navbarlinks{
+	margin:0px;
+	margin-left:6%;
+}
+
+#linkprofile,#linkfeed{
+	padding:5px;
+}
