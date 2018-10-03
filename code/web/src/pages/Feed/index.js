@@ -16,6 +16,9 @@ export default class Feed extends React.Component {
   }
 
   handleNewPost = values => {
+    if(!values) {
+      return;
+    }
     this.setState(currentState => {
       var newPost = {
         title: `My post from ${Date().toLocaleString()}`,
