@@ -55,6 +55,7 @@
 #writePost{
 	padding:5px;
 	margin:0;
+	margin-top:5px;
 	margin-left:6%;
 	border: #000 1px solid;
 	color:black;
@@ -80,6 +81,7 @@
 	width:20%;
 	border: #000 1px solid;
 	padding:5px;
+	color:white;
 }
 
 #navbarbutton{
