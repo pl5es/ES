@@ -25,17 +25,19 @@ export class CreatePost extends Component {
     return (
       <div>
         <textarea
-          id="new-post"
+          id="writePost"
+          placeholder="Write new post"
           value={text}
           onChange={ev => this.handleInputChange(ev)}
         />
         <button
+          id="createPost"
           onClick={() => {
             post(text);
             this.cleanInput();
           }}
         >
-          Submit
+          <label> Submit </label>
         </button>
       </div>
     );

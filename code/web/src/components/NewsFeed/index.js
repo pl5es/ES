@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 const _newsFeed = ({ _news, name }) => (
   <div>
-    <p>{_news.length > 0 && name}</p>
-    <ul>
+    <label id="newsfeedheader">{_news.length > 0 && name}</label>
+    <ul id="newslist">
       {_news.map(_new => (
-        <li id="_new" key={_new.title}>
-          <a href={_new.src} id="header">
+        <li id="newsitem" key={_new.title}>
+          <a href={_new.src} id="newslink">
             {_new.title}
           </a>
-          <p>{_new.desc}</p>
+          <label id="newsdesc">{_new.desc}</label>
         </li>
       ))}
     </ul>
