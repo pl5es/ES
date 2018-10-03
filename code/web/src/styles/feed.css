@@ -41,7 +41,8 @@
 }
 
 #newsdesc{
-	margin:0px;
+	margin:0px; 
+	word-wrap:break-word;
 }
 
 #feednavbar>div{
