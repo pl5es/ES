@@ -1,0 +1,46 @@
+*Para a semana:* apenas 1 powerpoint onde cada unidade apresenta a sua parte, talvez usar o MD do GitHub  *Requisitos*
+	- Atenção aos números das versões (tipo N_Sei_Que 2.0) 	- Tabela onde se lista as funcionalidades
+	- Todos os requisitos devem ter um número na segunda coluna
+	- Atenção porque o mockup tem mais informação do que a tabela; pode-se referir o mockup no requisito (necessário numerar sempre as figuras todas)
+	- Os dois requisitos mais importantes da sprint 2 é ligar ao twitter e ter uma área do ecrã com resources (lista de favoritos)
+	- Pensar sempre que, se não está no Git, não existe
+	- Reajustar os tempos de trabalho para serem mais equilibrados 
+	- Na ultima semana da sprint já estar a chatear o cliente para saber informações sobre o próximo
+	
+*Implementação*
+	- Linkezinho para um sítio externo onde está o funcionamento da equipa explicado
+	- Separar os processos de Design & Código
+	- Avaliar o processo através do número de requisitos implementados (vai depender do número de tarefas por requisito - quantas tarefas faltam para o requisito estar implementado) 
+	- Fazer apresentação mesmo que não tenham nada para apresentar
+
+*Testes*
+	- Descrever os processos utilizados pela equipa para o manual de qualidade, de forma a alguém que entre na qualidade saber os métodos
+	- Métricas para medição de trabalho: erros no código
+	- Os testes devem dar o “carimbo” de que tudo está aprovado
+
+*Qualidade*
+	- Ata durante as reuniões
+	- Cada requisito deve ser traçable - saber a origem dele (de que sprint vem). Toda a informação deve estar no documento de requisitos
+	- Analisar as métricas utilizadas por TODAS as equipa e definir se são as ideais
+	- Rever objetivos da unidade 
+		- “elaborar testes de código(…)” “avaliar a qualidade de conteúdo(…)” - perguntar a malta que perceba do conteúdo. Focar mais no processo. 
+		- “Requisitos de qualidade (…)” - expressão mais associada ao produto. 
+		- “Supervisionar o progresso do projeto” - papel de Gestão. Arranjar indicadores sobre o estado de cada equipas e informar Gestão.
+	- Costuma ser Qualidade a reunir os números para os gráficos e a fazê-los e entrega à Gestão
+	- Automatizar o processo de esquematização de gráficos
+	
+*Ambiente*
+	- Email de toda a gente
+	- Avaliar a PL - no fim da aula fazer um inquérito com os alunos presentes segundo 3 ou 4 critérios (nesta aula foi x, o stor foi x…) e expor isto num slide da apresentação semanal  	- Reavaliar o processo de reuniões de forma a torná-las mais homogéneas entre equipas 	- “Gráficos” - adicionar verbo no manual de qualidade
+	- Diagrama de Gantt - especificar a última semana nas apresentações
+	- Deixar o Jenkins - a equipa de desenvolvimento trabalho em Travis 	- Fazer Risco
+
+*Gestão de Projeto*
+	- Não mudar muito da primeira para a segunda rotação. Deixar sempre alguém do sprint anterior
+	- Melhor acompanhamento de recursos humanos
+	- Fazer uma única apresentação com slides de cada equipa
+		- O que fiz na semana passada, semana que vêm e issues
+	- Implementação vai precisar de mais pessoas
+	- Manual de qualidade: 		- “Controlar as restantes unidades” - mudar para monitorar/gerir/apoiar
+		- “(…)de modo correto” - com tempo/qualidade 		- Falta “Recursos Humanos” e “Risco” (bom trabalho para ambiente)	
+	- Cada unidade sabe o que fazer, temos que dialogar sobre os objetivos gerais e as DLs 	- Importante slide actividade slack e GitHub 
