@@ -36,7 +36,7 @@ Content in the first column | Content in the second column
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Ant%C3%B3nio%20Morais%20(L-REQ).jpg) | António Morais <br> antoniomorais.nn@gmail.com | Coordenador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/In%C3%AAs%20Gon%C3%A7alves%20(REQ).jpg) | Inês Gonçalves <br> | Colaboradora 
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/In%C3%AAs%20Gon%C3%A7alves%20(REQ).jpg) | Inês Gonçalves <br> inesmedeiros98@gmail.com | Colaboradora 
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Pedro%20Goncalves%20(REQ).jpg) | Pedro Gonçalves <br> pjgoncalves.97@hotmail.com | Colaborador
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Sara%20Mendes%20(REQ).jpg) | Sara Mendes <br> saramendes_98@hotmail.com | Colaboradora
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Maria%20Rodrigues%20(REQ).jpg) | Maria Rodrigues <br> m_carmoro@sapo.pt | Colaboradora
@@ -64,7 +64,8 @@ Foto | Nome e Contacto | Cargo
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Tiago%20Martins(L-IMP).jpg) | Tiago Martins <br> tiagomartins282@gmail.com | Coordenador
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Alexandre%20Faria%20(IMP).jpg) | Alexandre Faria <br> afaria@student.dei.uc.pt | Colaborador
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Daniel%20Santos%20(IMP).jpg) | Daniel Santos <br> danielsantos0710@gmail.com | Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Isidoro(IMP).jpg) | Diogo Isidoro <br>| Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Isidoro(IMP).jpg) | Diogo Isidoro <br> diogoisidoro8@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Loureiro%20(IMP).jpg) | Diogo Loureiro <br> diogo.azev97@gmail.com | Colaborador
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Joao%20Almeida%20(IMP).jpg) | João Luís Almeida <br> menesesdealmeida@gmail.com | Colaborador
 
 ### Atividades Realizadas
@@ -112,8 +113,8 @@ Content in the first column | Content in the second column
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Pedro%20Coelho%20(L-QUA)%20.jpg) | Pedro Coelho <br> pedromjc18@gmail.com | Coordenador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Loureiro%20(QUA).jpg) | Diogo Loureiro <br> diogo.azev97@gmail.com | Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Joao%20Lopes%20(QUA).jpg) | João Lopes <br> | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Guilherme%20Cruz%20(QUA)%20.jpg) | Guilherme Cruz <br> gjsd.cruz98@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Joao%20Lopes%20(QUA).jpg) | João Lopes <br> joaofcp98@hotmail.com| Colaborador
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Roman%20(QUA).jpg) | Roman Kernychyshyn <br> | Colaborador
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Sofia%20Almeida%20(QUA).jpg) | Sofia Almeida <br> sofiasotoalmeida@gmail.com | Colaboradora
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Tiago%20Pessoa%20(QUA).jpg) | Tiago Pessoa <br> tiagopessoa123@hotmail.com | Colaborador
