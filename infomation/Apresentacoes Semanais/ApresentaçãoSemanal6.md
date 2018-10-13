@@ -35,8 +35,11 @@ Content in the first column | Content in the second column
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | Content from cell 2 | wh4
-Content in the first column | Content in the second column | wg
+Content from cell 1 | António Morais <br> antoniomorais.nn@gmail.com | Coordenador
+Content in the first column | Inês Gonçalves <br> | Colaboradora 
+foto | Pedro Gonçalves <br> pjgoncalves.97@hotmail.com | Colaborador
+foto | Sara Mendes <br> saramendes_98@hotmail.com | Colaboradora
+foto | Maria Rodrigues <br> m_carmoro@sapo.pt | Colaboradora
 
 ### Atividades Realizadas
 
@@ -58,8 +61,11 @@ Content in the first column | Content in the second column
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | Content from cell 2 | wh4
-Content in the first column | Content in the second column | wg
+Content from cell 1 | Tiago Martins <br> tiagomartins282@gmail.com | Coordenador
+foto | Alexandre Faria <br> afaria@student.dei.uc.pt | Colaborador
+Content in the first column | Daniel Santos <br> danielsantos0710@gmail.com | Colaborador
+foto | Diogo Isidoro <br>| Colaborador
+foto | João Luís Almeida <br> menesesdealmeida@gmail.com | Colaborador
 
 ### Atividades Realizadas
 
@@ -80,8 +86,10 @@ Content in the first column | Content in the second column
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | Content from cell 2 | wh4
-Content in the first column | Content in the second column | wg
+Content from cell 1 | Renato Matos <br> renatomiguelmatos@gmail.com | Coordenador
+Content in the first column | Bernardo Correia <br> bernardonunescorreia@gmail.com | Colaborador
+foto | Pedro Rodrigues <br> pedrofil98@hotmail.com | Colaborador
+foto | Tiago Leal <br> tgcunha999@gmail.com | Colaborador
 
 ### Atividades Realizadas
 
@@ -103,8 +111,12 @@ Content in the first column | Content in the second column
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | Content from cell 2 | wh4
-Content in the first column | Content in the second column | wg
+Content from cell 1 | Pedro Coelho <br> pedromjc18@gmail.com | Coordenador
+Content in the first column | Diogo Loureiro <br> diogo.azev97@gmail.com | Colaborador
+foto | João Lopes <br> | Colaborador
+foto | Roman Kernychyshyn <br> | Colaborador
+foto | Sofia Almeida <br> sofiasotoalmeida@gmail.com | Colaboradora
+foto | Tiago Pessoa <br> tiagopessoa123@hotmail.com | Colaborador
 
 ### Atividades Realizadas
 
@@ -126,8 +138,10 @@ Content in the first column | Content in the second column
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | Content from cell 2 | wh4
-Content in the first column | Content in the second column | wg
+Content from cell 1 | Carolina Bandeira <br> carolina.bandeira.eu@gmail.com | Coordenadora
+Content in the first column | Francisco Monteiro <br> franciscomonteirov@hotmail.com | Colaborador
+foto | João Cunha <br> joao_cunha_56@hotmail.com | Colaborador
+foto | Rodrigo Oliveira <br> rodri.oli@hotmail.com | Colaborador
 
 ### Atividades Realizadas
 
