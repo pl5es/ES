@@ -10,7 +10,7 @@
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | Content from cell 2 | wh4
+Content from cell 1 | António Eloi <br> aeloi.email@gmail.com | wh4
 Content in the first column | Content in the second column | wg
 
 ### Atividades Realizadas
