@@ -10,10 +10,10 @@
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | António Eloi <br> aeloi.email@gmail.com | Gestor de Projeto
-Content in the first column | Diogo Alves <br> diogo.cordeiro.alves@hotmail.com | Colaborador
- foto | Diogo Fernandes <br> diogo.fernandes.12@hotmail.com | Colaborador
- foto | Hanna Filatava <br> filana10@gmail.com | Colaboradora
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Ant%C3%B3nio%20Eloi%20(L-PM).jpg)| António Eloi <br> aeloi.email@gmail.com | Gestor de Projeto
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Alves(PM).jpg) | Diogo Alves <br> diogo.cordeiro.alves@hotmail.com | Colaborador
+ ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Fernandes%20(PM).jpg) | Diogo Fernandes <br> diogo.fernandes.12@hotmail.com | Colaborador
+ ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Hanna%20Filatava%20(PM).jpg) | Hanna Filatava <br> filana10@gmail.com | Colaboradora
 
 ### Atividades Realizadas
 
