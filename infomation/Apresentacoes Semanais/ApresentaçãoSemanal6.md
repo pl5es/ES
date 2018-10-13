@@ -35,11 +35,11 @@ Content in the first column | Content in the second column
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | António Morais <br> antoniomorais.nn@gmail.com | Coordenador
-Content in the first column | Inês Gonçalves <br> | Colaboradora 
-foto | Pedro Gonçalves <br> pjgoncalves.97@hotmail.com | Colaborador
-foto | Sara Mendes <br> saramendes_98@hotmail.com | Colaboradora
-foto | Maria Rodrigues <br> m_carmoro@sapo.pt | Colaboradora
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Ant%C3%B3nio%20Morais%20(L-REQ).jpg) | António Morais <br> antoniomorais.nn@gmail.com | Coordenador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/In%C3%AAs%20Gon%C3%A7alves%20(REQ).jpg) | Inês Gonçalves <br> | Colaboradora 
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Pedro%20Goncalves%20(REQ).jpg) | Pedro Gonçalves <br> pjgoncalves.97@hotmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Sara%20Mendes%20(REQ).jpg) | Sara Mendes <br> saramendes_98@hotmail.com | Colaboradora
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Maria%20Rodrigues%20(REQ).jpg) | Maria Rodrigues <br> m_carmoro@sapo.pt | Colaboradora
 
 ### Atividades Realizadas
 
