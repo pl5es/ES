@@ -61,11 +61,11 @@ Content in the first column | Content in the second column
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | Tiago Martins <br> tiagomartins282@gmail.com | Coordenador
-foto | Alexandre Faria <br> afaria@student.dei.uc.pt | Colaborador
-Content in the first column | Daniel Santos <br> danielsantos0710@gmail.com | Colaborador
-foto | Diogo Isidoro <br>| Colaborador
-foto | João Luís Almeida <br> menesesdealmeida@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Tiago%20Martins(L-IMP).jpg) | Tiago Martins <br> tiagomartins282@gmail.com | Coordenador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Alexandre%20Faria%20(IMP).jpg) | Alexandre Faria <br> afaria@student.dei.uc.pt | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Daniel%20Santos%20(IMP).jpg) | Daniel Santos <br> danielsantos0710@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Isidoro(IMP).jpg) | Diogo Isidoro <br>| Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Joao%20Almeida%20(IMP).jpg) | João Luís Almeida <br> menesesdealmeida@gmail.com | Colaborador
 
 ### Atividades Realizadas
 
@@ -86,10 +86,10 @@ Content in the first column | Content in the second column
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | Renato Matos <br> renatomiguelmatos@gmail.com | Coordenador
-Content in the first column | Bernardo Correia <br> bernardonunescorreia@gmail.com | Colaborador
-foto | Pedro Rodrigues <br> pedrofil98@hotmail.com | Colaborador
-foto | Tiago Leal <br> tgcunha999@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Renato%20Matos%20(L-TEST).jpg) | Renato Matos <br> renatomiguelmatos@gmail.com | Coordenador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Bernardo%20Correia%20(TEST).jpg) | Bernardo Correia <br> bernardonunescorreia@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Pedro%20Rodrigues%20(TEST).jpg) | Pedro Rodrigues <br> pedrofil98@hotmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Tiago%20Leal%20(TEST).jpg) | Tiago Leal <br> tgcunha999@gmail.com | Colaborador
 
 ### Atividades Realizadas
 
@@ -111,12 +111,12 @@ Content in the first column | Content in the second column
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | Pedro Coelho <br> pedromjc18@gmail.com | Coordenador
-Content in the first column | Diogo Loureiro <br> diogo.azev97@gmail.com | Colaborador
-foto | João Lopes <br> | Colaborador
-foto | Roman Kernychyshyn <br> | Colaborador
-foto | Sofia Almeida <br> sofiasotoalmeida@gmail.com | Colaboradora
-foto | Tiago Pessoa <br> tiagopessoa123@hotmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Pedro%20Coelho%20(L-QUA)%20.jpg) | Pedro Coelho <br> pedromjc18@gmail.com | Coordenador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Loureiro%20(QUA).jpg) | Diogo Loureiro <br> diogo.azev97@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Joao%20Lopes%20(QUA).jpg) | João Lopes <br> | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Roman%20(QUA).jpg) | Roman Kernychyshyn <br> | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Sofia%20Almeida%20(QUA).jpg) | Sofia Almeida <br> sofiasotoalmeida@gmail.com | Colaboradora
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Tiago%20Pessoa%20(QUA).jpg) | Tiago Pessoa <br> tiagopessoa123@hotmail.com | Colaborador
 
 ### Atividades Realizadas
 
@@ -138,10 +138,10 @@ Content in the first column | Content in the second column
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | Carolina Bandeira <br> carolina.bandeira.eu@gmail.com | Coordenadora
-Content in the first column | Francisco Monteiro <br> franciscomonteirov@hotmail.com | Colaborador
-foto | João Cunha <br> joao_cunha_56@hotmail.com | Colaborador
-foto | Rodrigo Oliveira <br> rodri.oli@hotmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Carolina%20Bandeira%20(L-ENV).jpg) | Carolina Bandeira <br> carolina.bandeira.eu@gmail.com | Coordenadora
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Francisco%20Monteiro%20(ENV).jpg) | Francisco Monteiro <br> franciscomonteirov@hotmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Jo%C3%A3o%20Cunha%20(ENV).jpg) | João Cunha <br> joao_cunha_56@hotmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Rodrigo%20Oliveira%20(ENV).jpg) | Rodrigo Oliveira <br> rodri.oli@hotmail.com | Colaborador
 
 ### Atividades Realizadas
 
