@@ -10,8 +10,10 @@
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-Content from cell 1 | António Eloi <br> aeloi.email@gmail.com | wh4
-Content in the first column | Content in the second column | wg
+Content from cell 1 | António Eloi <br> aeloi.email@gmail.com | Gestor de Projeto
+Content in the first column | Diogo Alves <br> diogo.cordeiro.alves@hotmail.com | Colaborador
+ foto | Diogo Fernandes <br> diogo.fernandes.12@hotmail.com | Colaborador
+ foto | Hanna Filatava <br> filana10@gmail.com | Colaboradora
 
 ### Atividades Realizadas
 
