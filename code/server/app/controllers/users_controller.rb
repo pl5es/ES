@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(params.except(:interests))
 
     if @user.save
-      @user.create_interests(params)
+      @user.associate_interests(params)
       render json: @user.info, status: 201
     else
       render json: @user.errors, status: 400
