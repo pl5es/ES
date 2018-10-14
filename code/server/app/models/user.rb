@@ -39,6 +39,5 @@ class User < ApplicationRecord
         i.users.push(self)
       end
     end
-
   end
 end
