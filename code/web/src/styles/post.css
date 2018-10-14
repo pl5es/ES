@@ -1,0 +1,29 @@
+#post{
+    padding-top: 200px;
+    background-color: #1E212A;
+    color: white;
+    border-radius: 20px;
+    padding-left:  20px;
+    padding-right:  20px;
+    padding-bottom: 20px;
+}
+
+#post-header{
+    display: flex;
+    color: #F1F452;
+    border-bottom: double;
+    border-bottom-color: white;
+}
+
+#post-footer{
+    display: flex;
+}
+
+#post-footer-right{
+    float: left;
+}
+
+#post-page{
+    width: 80%;
+    margin: 0 auto;
+}
