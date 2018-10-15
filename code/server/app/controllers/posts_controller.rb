@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
 
@@ -18,7 +20,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params.except(:interests))
 
     if post_params["user_id"] != current_resource_owner.id
-      render json: {error: "can't create posts for other users"}, status: :unauthorized
+      render json: { error: "can't create posts for other users" }, status: :unauthorized
     elsif @post.save
       Interest.associate(@post, post_params["interests"])
       render json: @post.info, status: :created
