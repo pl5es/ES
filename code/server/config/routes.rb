@@ -7,10 +7,11 @@ Rails.application.routes.draw do
         skip_controllers :applications, :authorized_applications, :authorizations
       end
 
-      resources :users, only: [:create, :show, :index] do
+      resources :users, only: [:create] do
         resources :posts, only: [:create, :show, :index]
       end
       put "users", to: "users#update"
+      get "users", to: "users#show"
     end
   end
 end

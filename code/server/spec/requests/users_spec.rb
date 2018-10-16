@@ -17,10 +17,10 @@ RSpec.describe "Users", type: :request do
   end
   let!(:headers) { { "Authorization" => "Bearer #{token}" } }
 
-  describe "GET /api/users/1" do
+  describe "GET /api/users" do
     before do
       params = { format: :json }
-      get "/api/users/#{user_id}", params: params, headers: headers
+      get "/api/users", params: params, headers: headers
     end
 
     context "when the record exists" do
@@ -32,18 +32,6 @@ RSpec.describe "Users", type: :request do
 
       it "returns status code 200" do
         expect(response).to have_http_status(200)
-      end
-    end
-
-    context "when the record does not exist" do
-      let(:user_id) { 100 }
-
-      it "returns status code 404" do
-        expect(response).to have_http_status(404)
-      end
-
-      it "returns a not found message" do
-        expect(response.body).to match(/Couldn't find User with 'id'=#{user_id}/)
       end
     end
   end

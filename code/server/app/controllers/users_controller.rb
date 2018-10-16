@@ -27,14 +27,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    begin
-      @user = User.find(params[:id])
-      render :create, status: :ok
-    rescue ActiveRecord::RecordNotFound => e
-      render json: {
-        error: e.to_s
-      }, status: :not_found
-    end
+    @user = User.find(current_resource_owner.id)
+    render :create, status: :ok
   end
 
   private
