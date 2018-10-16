@@ -2,13 +2,14 @@
 
 class UsersController < ApplicationController
   skip_before_action :doorkeeper_authorize!, only: [:create]
+  before_action :set_user, only: [:update, :show]
 
   def create
     params = user_params
     @user = User.new(params.except(:interests))
 
     if @user.save
-      Interest.associate(@user, params[:interests])
+      Interest.associate(@user, params[:interests]) if params[:interests]
       render :create, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -17,7 +18,6 @@ class UsersController < ApplicationController
 
   def update
     params = user_params
-    @user = current_resource_owner
     if @user.update_attributes(params.except(:interests))
       Interest.associate(@user, params[:interests]) if params[:interests]
       render :create, status: :ok
@@ -27,11 +27,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(current_resource_owner.id)
     render :create, status: :ok
   end
 
   private
+
+    def set_user
+      @user = current_resource_owner
+    end
 
     def user_params
       params.permit(

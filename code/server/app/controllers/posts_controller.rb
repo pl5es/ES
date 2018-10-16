@@ -23,7 +23,7 @@ class PostsController < ApplicationController
       render json: { error: "can't create posts for other users" }, status: :unauthorized
     elsif @post.save
       Interest.associate(@post, post_params["interests"])
-      render json: @post.info, status: :created
+      render :create, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end
