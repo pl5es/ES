@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :posts
   has_and_belongs_to_many :interests
-  validates_presence_of :username, :name, :orcid, :research_area, :institution
+  validates_presence_of :username, :email, :name, :orcid, :research_area, :institution
   validates_uniqueness_of :username, :email, :orcid
   validates :avatar, file_size: { maximum: 2.megabytes }
 

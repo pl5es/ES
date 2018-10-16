@@ -20,5 +20,6 @@ class Interest < ApplicationRecord
     interests.each do |i|
       model.interests.push(i)
     end
+    model.interests.load
   end
 end

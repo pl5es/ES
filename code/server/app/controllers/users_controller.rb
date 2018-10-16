@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       Interest.associate(@user, params[:interests])
       render :create, status: :created
     else
-      render json: @user.errors, status: :bad_request
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 
@@ -19,31 +19,39 @@ class UsersController < ApplicationController
     params = user_params
     @user = current_resource_owner
     if @user.update_attributes(params.except(:interests))
-      Interest.associate(@user, params[:interests])
-      render :create
+      Interest.associate(@user, params[:interests]) if params[:interests]
+      render :create, status: :ok
     else
-      render json: @user.errors
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 
   def show
-    @user = User.find(user_params["id"])
-    render :create
+    begin
+      @user = User.find(params[:id])
+      render :create, status: :ok
+    rescue ActiveRecord::RecordNotFound => e
+      render json: {
+        error: e.to_s
+      }, status: :not_found
+    end
   end
 
-private
+  private
 
-  def user_params
-    params.permit(
-      :username,
-      :name,
-      :password,
-      :email,
-      :description,
-      :orcid,
-      :research_area,
-      :institution,
-      :avatar,
-      interests: [])
-  end
+    def user_params
+      params.permit(
+        :username,
+        :name,
+        :password,
+        :email,
+        :description,
+        :orcid,
+        :research_area,
+        :institution,
+        :avatar,
+        :user_id,
+        interests: []
+      )
+    end
 end

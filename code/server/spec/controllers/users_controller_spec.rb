@@ -2,5 +2,5 @@
 
 require "rails_helper"
 
-RSpec.describe "Posts", type: :request do
+RSpec.describe UsersController, type: :controller do
 end
