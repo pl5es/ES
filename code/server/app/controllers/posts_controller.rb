@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
+  before_action :set_post, only: [:show]
 
   # GET /posts
   def index
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    render json: @post
+    render :show
   end
 
   # POST /posts
@@ -23,19 +23,24 @@ class PostsController < ApplicationController
       render json: { error: "can't create posts for other users" }, status: :unauthorized
     elsif @post.save
       Interest.associate(@post, post_params["interests"])
-      render json: @post.info, status: :created
+      render :create, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_post
-      @post = Post.find(params[:id])
+      begin
+        @post = Post.find(params[:id])
+      rescue ActiveRecord::RecordNotFound => e
+        render json: {
+          error: e.to_s
+        }, status: :not_found
+      end
     end
 
-    # Only allow a trusted parameter "white list" through.
     def post_params
       params.permit(:content, interests: []).merge(user_id: current_resource_owner.id)
     end
