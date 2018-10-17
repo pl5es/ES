@@ -12,7 +12,7 @@ RSpec.describe "Users", type: :request do
       "password" => "password",
       "grant_type" => "password"
     }
-    post "http://localhost:3000/api/oauth/token", params: body
+    post "/api/oauth/token", params: body
     json["access_token"]
   end
   let!(:headers) { { "Authorization" => "Bearer #{token}" } }

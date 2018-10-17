@@ -1,11 +1,1 @@
-json.(
-  @post,
-  :content,
-  :created_at,
-)
-
-json.
-
-json.user do
-  json.merge! @post.user
-end
+json.array! @posts
