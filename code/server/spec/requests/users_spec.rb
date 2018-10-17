@@ -41,9 +41,9 @@ RSpec.describe "Users", type: :request do
       {
         description: Faker::Lorem.sentence(10),
         email: Faker::Internet.email,
-        institution:  Faker::Educator.university,
-        name:   Faker::Name.name,
-        orcid:  Faker::Number.number(10),
+        institution: Faker::Educator.university,
+        name: Faker::Name.name,
+        orcid: Faker::Number.number(10),
         password: "password",
         research_area: Faker::Lorem.word,
         username: Faker::Internet.username,

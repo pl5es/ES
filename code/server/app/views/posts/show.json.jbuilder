@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 json.(
   @post,
+  :id,
   :content,
   :created_at,
   :updated_at
