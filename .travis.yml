@@ -9,13 +9,11 @@ addons:
 notifications:
   slack: pl5es:84Pa1a9D0o7hXNvlby4JeYl2
 
-before_install:
-  - cd code/server
-
 jobs:
   include:
     - stage: Build
       before_script:
+        - cd code/server
         - cp config/database.yml.travis config/database.yml
         - psql -c 'create database travis_ci_test;' -U postgres
       script:
