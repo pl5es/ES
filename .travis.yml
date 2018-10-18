@@ -1,17 +1,16 @@
 dist: trusty
 language: ruby
-rvm:
-  - 2.5.1
-
-addons:
-  postgresql: 9.6
-
 notifications:
   slack: pl5es:84Pa1a9D0o7hXNvlby4JeYl2
 
 jobs:
   include:
     - stage: Build
+      language: ruby
+      rvm:
+        - 2.5.1
+      addons:
+        postgresql: 9.6
       before_script:
         - cd code/server
         - bundle install
@@ -25,6 +24,7 @@ jobs:
     - stage: Deploy Server
       before_script:
         - cd code/server
+        - bundle install
       deploy:
         provider: heroku
         api_key: $HEROKU_API_KEY
