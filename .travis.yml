@@ -24,7 +24,6 @@ jobs:
     - stage: Deploy Server
       before_script:
         - cd code/server
-        - bundle install
       deploy:
         provider: heroku
         api_key: $HEROKU_API_KEY
