@@ -2,6 +2,11 @@ dist: trusty
 notifications:
   slack: pl5es:84Pa1a9D0o7hXNvlby4JeYl2
 
+stages:
+  - Build Server
+  - Deploy Server
+  - Deploy Web
+
 jobs:
   include:
     - stage: Build Server
@@ -31,6 +36,7 @@ jobs:
         run: "rails db:migrate"
 
     - stage: Deploy Web
+      language: javascript
       before_script:
         - cd code/web
       deploy:
