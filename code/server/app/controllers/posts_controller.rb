@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
     def set_post
       begin
+        @user = current_resource_owner
         @post = Post.find(params[:id])
       rescue ActiveRecord::RecordNotFound => e
         render json: {
