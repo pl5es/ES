@@ -29,6 +29,7 @@ Revisão do Manual de Qualidade | António Eloi, Hanna Filatava | 30 min | 40 mi
 Reunião com PM e coordenação/elementos das restantes unidades | António Eloi, Hanna Filatava, Diogo Fernandes | 1h | 49 min
 Reunião da Gestão do Projeto - Processos de Unidade | Unidade | 30 min | 38 min
 Compilação das informações da apresentação de cada unidade para a apresentação final | Hanna Filatava | 30 min | 1h
+Construção do manual de qualidade da gestão do projeto | António Eloi | 1h | 1h
 
 ### Atividades Planeadas
 
@@ -230,6 +231,21 @@ Revisão do manual de qualidade (Seção dos processos de ambiente) | 1h
 1. Considero que a gestão de projeto precisava de um novo rumo, um rumo mais proactivo que inspirasse todos a trabalhar e contribuir no PANDO
 2. As rotações são ótimas, mas não deveriam ser forçadas.
 
+## Esforço diário por elemento 
 
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Pessoal_Pando_2018%20-%20Semana%206.jpg)
 
+## Esforço por Unidade
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Unidade_Pando_2018%20-%20Semana%206.jpg)
+
+## Slack Analytics 
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_WeeklyActiveUsers.PNG)
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_DailyActiveUsersWeek6.PNG)
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_MessagesReadingWeek6.PNG)
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_MessagesSentWeek6.PNG)
 
