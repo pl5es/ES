@@ -26,6 +26,7 @@ jobs:
         - bundle exec rspec
 
     - stage: Deploy Server
+      language: none
       before_script:
         - cd code/server
       deploy:
@@ -36,7 +37,7 @@ jobs:
         run: "rails db:migrate"
 
     - stage: Deploy Web
-      language: node_js
+      language: none
       before_script:
         - cd code/web
       deploy:
