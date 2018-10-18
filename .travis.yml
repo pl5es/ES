@@ -36,7 +36,7 @@ jobs:
         run: "rails db:migrate"
 
     - stage: Deploy Web
-      language: javascript
+      language: node_js
       before_script:
         - cd code/web
       deploy:
