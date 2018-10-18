@@ -5,39 +5,7 @@
 
 ![](https://github.com/pl5es/ES/blob/master/infomation/logo_tipo.png)
 
-## Gestão de Projeto
-### A unidade
 
-Foto | Nome e Contacto | Cargo
------------- | ------------- | -------------
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Ant%C3%B3nio%20Eloi%20(L-PM).jpg)| António Eloi <br> aeloi.email@gmail.com | Gestor de Projeto
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Alves(PM).jpg) | Diogo Alves <br> diogo.cordeiro.alves@hotmail.com | Colaborador
- ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Fernandes%20(PM).jpg) | Diogo Fernandes <br> diogo.fernandes.12@hotmail.com | Colaborador
- ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Hanna%20Filatava%20(PM).jpg) | Hanna Filatava <br> filana10@gmail.com | Colaboradora
-
-### Atividades Realizadas
-
-Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
------------- | ------------- | ------------- | -------------
-Preenchimento do google form da equipa | Antonio Eloi | 20 min | 20 min
-Acompanhamento da reestruturação das equipas / comunicação | António Eloi, Diogo Alves, Diogo Fernandes | 1h | 1h40
-Realização dos documentos da organização equipa da sprint#1 e da sprint #2 | Hanna Filatava | 15 min | 15 min
-Criação da sheet de esforço semanal | Diogo Fernandes | 20 min | 7 min
-Melhor Estruturação do documento de Comentários/Conselhos do Professor | Diogo Alves | 20 min | 20 min
-Criação do documento de tarefas para a unidade | António Eloi | 10 min | 10 min
-Revisão do Manual de Qualidade | António Eloi, Hanna Filatava | 30 min | 40 min
-Reunião com PM e coordenação/elementos das restantes unidades | António Eloi, Hanna Filatava, Diogo Fernandes | 1h | 49 min
-Reunião da Gestão do Projeto - Processos de Unidade | Unidade | 30 min | 38 min
-Compilação das informações da apresentação de cada unidade para a apresentação final | Hanna Filatava | 30 min | 1h
-Construção do manual de qualidade da gestão do projeto | António Eloi | 1h | 1h
-
-### Atividades Planeadas
-
-Tarefa | Esforço Estimado
------------- | -------------
-Gestão de Risco | 2h
-Mapa do Sprint #2 | 2h
-Gestão de Pessoas | 2h
 
 
 ## Requisitos
@@ -199,6 +167,40 @@ Tarefa | Esforço Estimado
 Inquérito de feedback pós aula | 15 min
 Completar a integração do Codacy no GitHub | 30 min
 Revisão do manual de qualidade (Seção dos processos de ambiente) | 1h
+
+## Gestão de Projeto
+### A unidade
+
+Foto | Nome e Contacto | Cargo
+------------ | ------------- | -------------
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Ant%C3%B3nio%20Eloi%20(L-PM).jpg)| António Eloi <br> aeloi.email@gmail.com | Gestor de Projeto
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Alves(PM).jpg) | Diogo Alves <br> diogo.cordeiro.alves@hotmail.com | Colaborador
+ ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Fernandes%20(PM).jpg) | Diogo Fernandes <br> diogo.fernandes.12@hotmail.com | Colaborador
+ ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Hanna%20Filatava%20(PM).jpg) | Hanna Filatava <br> filana10@gmail.com | Colaboradora
+
+### Atividades Realizadas
+
+Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
+------------ | ------------- | ------------- | -------------
+Preenchimento do google form da equipa | Antonio Eloi | 20 min | 20 min
+Acompanhamento da reestruturação das equipas / comunicação | António Eloi, Diogo Alves, Diogo Fernandes | 1h | 1h40
+Realização dos documentos da organização equipa da sprint#1 e da sprint #2 | Hanna Filatava | 15 min | 15 min
+Criação da sheet de esforço semanal | Diogo Fernandes | 20 min | 7 min
+Melhor Estruturação do documento de Comentários/Conselhos do Professor | Diogo Alves | 20 min | 20 min
+Criação do documento de tarefas para a unidade | António Eloi | 10 min | 10 min
+Revisão do Manual de Qualidade | António Eloi, Hanna Filatava | 30 min | 40 min
+Reunião com PM e coordenação/elementos das restantes unidades | António Eloi, Hanna Filatava, Diogo Fernandes | 1h | 49 min
+Reunião da Gestão do Projeto - Processos de Unidade | Unidade | 30 min | 38 min
+Compilação das informações da apresentação de cada unidade para a apresentação final | Hanna Filatava | 30 min | 1h
+Construção do manual de qualidade da gestão do projeto | António Eloi | 1h | 1h
+
+### Atividades Planeadas
+
+Tarefa | Esforço Estimado
+------------ | -------------
+Gestão de Risco | 2h
+Mapa do Sprint #2 | 2h
+Gestão de Pessoas | 2h
 
 
 ### Avaliação da PL da semana anterior
