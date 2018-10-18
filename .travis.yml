@@ -1,5 +1,4 @@
 dist: trusty
-language: ruby
 notifications:
   slack: pl5es:84Pa1a9D0o7hXNvlby4JeYl2
 
