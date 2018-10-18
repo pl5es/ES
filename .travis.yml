@@ -4,7 +4,7 @@ notifications:
 
 jobs:
   include:
-    - stage: Build
+    - stage: Build Server
       language: ruby
       rvm:
         - 2.5.1
