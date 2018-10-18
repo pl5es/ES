@@ -16,7 +16,7 @@ export default class Feed extends React.Component {
   }
 
   handleNewPost = values => {
-    if(!values) {
+    if (!values) {
       return;
     }
     this.setState(currentState => {
@@ -50,7 +50,11 @@ export default class Feed extends React.Component {
       <div id="Feed">
         <img id="bg" src={require('assets/register_bg_Prancheta 1.png')} />
         <img id="logofeed" src={require('assets/pando_logotipo.png')} />
-        <Navbar id="feednavbar" history={this.props.history} search={this.handleSearch} />
+        <Navbar
+          id="feednavbar"
+          history={this.props.history}
+          search={this.handleSearch}
+        />
         <CreatePost post={this.handleNewPost} />
         <div id="SearchResults">
           <NewsFeed _news={SearchResults} name="Search Results" />
