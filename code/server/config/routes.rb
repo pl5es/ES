@@ -8,7 +8,9 @@ Rails.application.routes.draw do
       end
 
       resource :users, only: [:create, :show, :update] do
-        resources :posts, only: [:create, :show, :index]
+        resources :posts, only: [:create, :show, :index] do
+          resources :upvotes, only: [:create]
+        end
       end
     end
   end

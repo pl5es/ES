@@ -38,7 +38,7 @@ RSpec.describe "Posts", type: :request do
     context "when a record exists " do
       it "returns the post" do
         expect(json).not_to be_empty
-        expect(json.size).to be(6)
+        expect(json.size).to be(8)
         expect(json["id"]).to be(post_id)
       end
     end
@@ -69,7 +69,7 @@ RSpec.describe "Posts", type: :request do
       before { post "/api/users/posts", params: valid_attributes, headers: headers }
 
       it "creates a post" do
-        expect(json.size).to be(5)
+        expect(json.size).to be(6)
         expect(json["interests"].length).to be(7)
       end
 

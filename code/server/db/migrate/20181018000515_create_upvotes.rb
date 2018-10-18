@@ -5,5 +5,9 @@ class CreateUpvotes < ActiveRecord::Migration[5.2]
       t.belongs_to :post, index: true
       t.timestamps
     end
+
+    def change
+      add_index :upvotes, [:user, :post], unique: true
+    end
   end
 end
