@@ -11,7 +11,7 @@ class BookmarkSelector extends Component{
     const{
       props:{
         bookmarks, 
-        selectedBookmark, 
+        clickedBookmark, 
         handleBookmarkToggle, 
         handleBookmarkClick, 
         handleAddBookmark, 
@@ -42,10 +42,10 @@ class BookmarkSelector extends Component{
           ))}
         </form>
 
-        {selectedBookmark!=null && 
+        {clickedBookmark!=null && 
           <label>
-            {selectedBookmark.name + "'s hashtags are"}
-            {selectedBookmark.interests.map(interest => (
+            {clickedBookmark.name + "'s hashtags are"}
+            {clickedBookmark.interests.map(interest => (
               <label key={interest.id}>
                 {interest.hashtag},
               </label>
@@ -88,7 +88,7 @@ class BookmarkSelector extends Component{
 
 BookmarkSelector.propTypes = {
   bookmarks: PropTypes.array.isRequired,
-  selectedBookmark: PropTypes.object,
+  clickedBookmark: PropTypes.object,
   handleBookmarkToggle: PropTypes.func.isRequired,
   handleBookmarkClick: PropTypes.func.isRequired,
   handleAddBookmark: PropTypes.func.isRequired,

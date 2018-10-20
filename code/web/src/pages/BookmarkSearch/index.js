@@ -2,6 +2,7 @@ import React from 'react';
 import data from 'utils/consts';
 import Navbar from 'components/Navbar';
 import BookmarkSelector from 'components/BookmarkSelector';
+import { getMyBookmarks, createBookmark } from 'utils/api';
 //import 'styles/search.css';
 
 export default class BookmarkSearch extends React.Component {
@@ -12,10 +13,18 @@ export default class BookmarkSearch extends React.Component {
     this.state = {
       bookmarks: data.BookmarkData,
       toggledBookmarks: [],
-      selectedBookmark: null,
-      currInputBookmark: '',
-      currInputHashtags: '',
+      clickedBookmark: null,
     };
+  }
+
+  componentDidMount() {
+    getMyBookmarks().then(res => {
+      //add toggled property to bookmarks
+      res.data.forEach(function(bookmark) { bookmark.toggled = false; });
+      this.setState({
+        bookmarks: res.data,
+      });
+    });
   }
 
   handleBookmarkToggle = event => {
@@ -34,11 +43,12 @@ export default class BookmarkSearch extends React.Component {
     });
   };
 
+
   handleBookmarkClick = (event,bookmark) => {
     event.preventDefault();
     this.setState(currentState => {
       return {
-        selectedBookmark: bookmark,
+        clickedBookmark: bookmark,
       };
     });
   };
@@ -46,8 +56,31 @@ export default class BookmarkSearch extends React.Component {
   handleAddBookmark = (event,newBookmark,newHashtags) => {
     event.preventDefault();
     var hashtags = newHashtags.split(" ");
-    console.log(newBookmark);
-    console.log(hashtags);
+    var postBookmark={
+      name: newBookmark,
+      interests:newHashtags,
+    }
+    //>>>>post da postBookmark<<<<
+    //bastaria adicionar resultado do post às bookmarks com concat como em baixo
+    //,nao esquecendo de adicionar propriedade toggled à bookmark,
+    //mas nao estou a conseguir correr o servidor terá de ser assim por enquanto
+
+    //enqt n corro servidor
+    postBookmark={
+      name: newBookmark,
+      interests: [],
+    }
+    for(let i=0; i<hashtags.length; i++){
+        postBookmark.interests.push({hashtag: hashtags[i]});
+    }
+    //END enqt n corro servidor
+
+    postBookmark.toggled=false;
+    this.setState(currentState => {
+      return {
+        bookmarks: currentState.bookmarks.concat([postBookmark]),
+      };
+    });
   };
 
   //
@@ -55,7 +88,7 @@ export default class BookmarkSearch extends React.Component {
     const { 
       bookmarks: Bookmarks, 
       toggledBookmarks: ToggledBookmarks, 
-      selectedBookmark: SelectedBookmark,
+      clickedBookmark: ClickedBookmark,
       currInputBookmark: CurrInputBookmark,
       currInputHashtags: CurrInputHashtags,
     } = this.state;
@@ -65,7 +98,7 @@ export default class BookmarkSearch extends React.Component {
 
         <BookmarkSelector 
           bookmarks={Bookmarks}
-          selectedBookmark={SelectedBookmark} 
+          clickedBookmark={ClickedBookmark} 
           handleBookmarkToggle={this.handleBookmarkToggle} 
           handleBookmarkClick={this.handleBookmarkClick}
           handleAddBookmark={this.handleAddBookmark}
@@ -79,6 +112,7 @@ export default class BookmarkSearch extends React.Component {
               </label>
             ))}
         </label>
+
       </div>
     )
   }

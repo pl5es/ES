@@ -28,3 +28,6 @@ const get = endpoint => {
 export const signUp = data => post('api/users.json', data);
 export const signIn = data => post('api/oauth/token.json', data);
 export const getMyInfo = () => get('api/users/1.json');
+
+export const getMyBookmarks = () => get('api/users/bookmarks.json');
+export const createBookmark = data => post('api/users.bookmarks.json',data);
