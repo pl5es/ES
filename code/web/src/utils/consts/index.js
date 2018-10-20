@@ -1,5 +1,9 @@
 import newsdata from './news_data.js';
+import bookmarkdata from './bookmark_data.js'
 
-const NewsData = newsdata;
+const data = {
+	NewsData: newsdata,
+	BookmarkData: bookmarkdata,
+};
 
-export default NewsData;
+export default data;
