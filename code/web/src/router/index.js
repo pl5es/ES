@@ -5,6 +5,7 @@ import Login from 'pages/Login';
 import Register from 'pages/Register';
 import Profile from 'pages/Profile';
 import Feed from 'pages/Feed';
+import EditProfile from 'pages/EditProfile';
 import { PublicRoute, PrivateRoute } from 'router/routes';
 
 const RouterApp = () => (
@@ -14,6 +15,7 @@ const RouterApp = () => (
       <PublicRoute path="/register" component={Register} />
       <PrivateRoute path="/profile" component={Profile} />
       <PrivateRoute path="/feed" component={Feed} />
+      <PrivateRoute path="/edit" component={EditProfile} />
     </Switch>
   </Router>
 );
