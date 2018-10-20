@@ -5,7 +5,7 @@ import Navbar from 'components/Navbar';
 import { connect } from 'react-redux';
 import { edit } from 'actions/user';
 import Dropzone from 'react-dropzone';
-import TagField from 'components/TagField';
+import { API_URL } from "utils/config";
 
 import validationSchema from 'utils/validations';
 
@@ -38,18 +38,18 @@ class EditProfile extends Component {
 
   render() {
     const {
-      props: { user },
+      props: { user, edit },
     } = this;
-    console.log(user);
+    console.log(user)
     return (
       <div>
-      <Navbar />
-        {(
+        <Navbar />
+        {user && (
           <div>
             <div className="row">
               <div className="register">
                 <Formik
-                  onSubmit={values => console.log(values)}
+                  onSubmit={values => edit(values)}
                   validationSchema={validationSchema}
                   initialValues={user}
                   render={({ setFieldValue }) => (
@@ -108,10 +108,65 @@ class EditProfile extends Component {
                               placeholder="Enter the name of your institution"
                             />
                           </div>
-                          
+                          <div className="one-half column">
+                            <div className="register_image" />
+                            <div className="row">
+                              <Dropzone
+                                accept="image/jpeg, image/png"
+                                onDrop={ev => this.onDrop(setFieldValue, ev)}
+                                multiple={false}
+                              >
+                                <div className="one-third offset-by-four column">
+                                  {this.state.imageFiles.length > 0 ? (
+                                    <div>
+                                      {this.state.imageFiles.map(file => (
+                                        <img
+                                          id="avatar"
+                                          src={file.preview}
+                                          style={{
+                                            position: 'absolute',
+                                            top: '50%',
+                                            left: '50%',
+                                            width: '100%',
+                                            height: '100%',
+                                            marginTop: '-50%',
+                                            marginLeft: '-50%',
+                                          }}
+                                        />
+                                      ))}
+                                    </div>
+                                  ) : <img
+                                          id="avatar"
+                                          src={`${API_URL}/${user.avatar.url}`}
+                                          style={{
+                                            position: 'absolute',
+                                            top: '50%',
+                                            left: '50%',
+                                            width: '100%',
+                                            height: '100%',
+                                            marginTop: '-50%',
+                                            marginLeft: '-50%',
+                                          }}
+                                        /> }
+                                </div>
+                              </Dropzone>
+                            </div>
+                            <div id="description_container">
+                              <Field
+                                name="description"
+                                type="textarea"
+                                component={InputField}
+                                label="Description"
+                                style={{
+                                  height: '10em',
+                                  width: '30em',
+                                }}
+                              />
+                            </div>
+                          </div>
+                        </div>
                         <div className="four column offset-by-four u-center-block">
                           <button type="submit">Confirm Registration</button>
-                        </div>
                         </div>
                       </Form>
                     </div>
@@ -119,7 +174,6 @@ class EditProfile extends Component {
                 />
               </div>
             </div>
-            )} />
             <button>Cancel</button>
           </div>
         )}

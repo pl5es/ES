@@ -25,7 +25,16 @@ const get = endpoint => {
   });
 };
 
+const put = (endpoint, data) => {
+  const accessToken = localStorage.getItem('access_token');
+  return axios.put(`${API_URL}/${endpoint}`, data, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};
+
 export const signUp = data => post('api/users.json', data);
 export const signIn = data => post('api/oauth/token.json', data);
 export const getMyInfo = () => get('api/users.json');
-export const updateMyInfo = data => post('api/users.json', data);
+export const updateMyInfo = data => put('api/users.json', data);
