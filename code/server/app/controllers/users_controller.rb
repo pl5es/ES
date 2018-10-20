@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(params.except(:interests))
 
     if @user.save
-      Interest.associate(@user, params[:interests]) if params[:interests]
+      Interest.associate(@user, user_params[:interests]) if params[:interests]
       render :create, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
