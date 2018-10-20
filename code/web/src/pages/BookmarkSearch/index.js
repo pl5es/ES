@@ -43,13 +43,11 @@ export default class BookmarkSearch extends React.Component {
     });
   };
 
-  handleAddBookmark = (event,newBookmark) => {
+  handleAddBookmark = (event,newBookmark,newHashtags) => {
     event.preventDefault();
-    this.setState(currentState => {
-      return {
-        bookmark: currentState.bookmark.concat([newBookmark]),
-      };
-    });
+    var hashtags = newHashtags.split(" ");
+    console.log(newBookmark);
+    console.log(hashtags);
   };
 
   //

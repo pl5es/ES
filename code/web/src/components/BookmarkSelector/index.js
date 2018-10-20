@@ -1,42 +1,90 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const BookmarkSelector = ({ bookmarks, selectedBookmark, handleBookmarkToggle, handleBookmarkClick, handleAddBookmark }) => (
-    <div>
-      <p> YOUR BOOKMARKS </p>
-      <p> Choose one or more of your bookmarks to make a selection from the feeds posts </p>
+class BookmarkSelector extends Component{
+  state = {
+    newBookmark: '',
+    newHashtags: '',
+  }
 
-      <form>
-        {bookmarks.map(bookmark => (
-          <label key={bookmark.id}>
-            <input
-              name={bookmark.name}
-              type="checkbox"
-              checked={bookmark.toggled}
-              onChange={(event) => handleBookmarkToggle(event)} />
-            <button
-              onClick={(event) => handleBookmarkClick(event,bookmark)}>
-              {bookmark.name}
-            </button>
-          </label>
-        ))}
-      </form>
+  render(){
+    const{
+      props:{
+        bookmarks, 
+        selectedBookmark, 
+        handleBookmarkToggle, 
+        handleBookmarkClick, 
+        handleAddBookmark, 
+      },
+      state:{
+        newBookmark,
+        newHashtags,
+      }
+    }=this;
+    return(
+      <div>
+        <p> YOUR BOOKMARKS </p>
+        <p> Choose one or more of your bookmarks to make a selection from the feeds posts </p>
 
-      {selectedBookmark!=null && 
-        <label>
-          {selectedBookmark.name + "'s hashtags are"}
-          {selectedBookmark.interests.map(interest => (
-            <label key={interest.id}>
-              {interest.hashtag},
+        <form>
+          {bookmarks.map(bookmark => (
+            <label key={bookmark.id}>
+              <input
+                name={bookmark.name}
+                type="checkbox"
+                checked={bookmark.toggled}
+                onChange={(event) => handleBookmarkToggle(event)} />
+              <button
+                onClick={(event) => handleBookmarkClick(event,bookmark)}>
+                {bookmark.name}
+              </button>
             </label>
           ))}
-        </label>
-      }
+        </form>
 
-      
+        {selectedBookmark!=null && 
+          <label>
+            {selectedBookmark.name + "'s hashtags are"}
+            {selectedBookmark.interests.map(interest => (
+              <label key={interest.id}>
+                {interest.hashtag},
+              </label>
+            ))}
+          </label>
+        }
 
-    </div>
-);
+        <form onSubmit={(event) => handleAddBookmark(event,newBookmark,newHashtags)}>
+          <h3>New Bookmark</h3>
+          <label>
+            Bookmark:
+            <input 
+              type="text" 
+              value={newBookmark} 
+              placeholder={"Example: Animals"} 
+              onChange={ev => {
+                this.setState({ newBookmark: ev.target.value });
+              }} 
+            />
+          </label>
+          <label>
+            Hashtags:
+            <input 
+              type="text" 
+              value={newHashtags}
+              placeholder={"Example: #dogs #cats #parrots #turtles"} 
+              onChange={ev => {
+                this.setState({ newHashtags: ev.target.value });
+              }} 
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+
+      </div>
+    );
+  }
+
+}
 
 BookmarkSelector.propTypes = {
   bookmarks: PropTypes.array.isRequired,
