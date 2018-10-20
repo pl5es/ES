@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  scope "api" do
-    use_doorkeeper do
-      skip_controllers :applications, :authorized_applications, :authorizations
-    end
+  resources :bookmarks
+  constraints format: :json do
+    scope "api" do
+      use_doorkeeper do
+        skip_controllers :applications, :authorized_applications, :authorizations
+      end
 
-    resources :users, only: [:create, :show, :index]
-    put "users", to: "users#update"
+      resource :users, only: [:create, :show, :update] do
+        resources :posts, only: [:create, :show, :index]
+        resources :bookmarks, only: [:create, :show, :index, :update]
+      end
+    end
   end
 end

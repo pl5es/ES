@@ -51,7 +51,7 @@ const EditProfile = props => (
         </Form>
       )}
     />
-    <button onClick={props.setShowProfile}>Cancel</button>
+    <button>Cancel</button>
   </div>
 );
 export default EditProfile;
