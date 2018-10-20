@@ -23,8 +23,8 @@ class BookmarkSelector extends Component{
     }=this;
     return(
       <div>
-        <p> YOUR BOOKMARKS </p>
-        <p> Choose one or more of your bookmarks to make a selection from the feeds posts </p>
+        <h3> YOUR BOOKMARKS </h3>
+        <label> Choose one or more of your bookmarks to make a selection from the feeds posts </label>
 
         <form>
           {bookmarks.map(bookmark => (
@@ -35,7 +35,8 @@ class BookmarkSelector extends Component{
                 checked={bookmark.toggled}
                 onChange={(event) => handleBookmarkToggle(event)} />
               <button
-                onClick={(event) => handleBookmarkClick(event,bookmark)}>
+                onClick={(event) => handleBookmarkClick(event,bookmark)}
+                style={{color: 'black'}}>
                 {bookmark.name}
               </button>
             </label>
@@ -77,7 +78,11 @@ class BookmarkSelector extends Component{
               }} 
             />
           </label>
-          <input type="submit" value="Submit" />
+          <input 
+            type="submit" 
+            value="Submit"
+            style={{color: 'black'}} 
+          />
         </form>
 
       </div>
