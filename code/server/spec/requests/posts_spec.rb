@@ -32,7 +32,7 @@ RSpec.describe "Posts", type: :request do
     end
   end
 
-  describe "GET/api/users/posts/:id" do
+  describe "GET /api/users/posts/:id" do
     before { get "/api/users/posts/#{post_id}", params: { format: :json }, headers: headers }
 
     context "when a record exists " do
@@ -69,6 +69,9 @@ RSpec.describe "Posts", type: :request do
       before { post "/api/users/posts", params: valid_attributes, headers: headers }
 
       it "creates a post" do
+        valid_attributes.except(:format).stringify_keys.keys.each do |k|
+          expect(json).to have_key(k)
+        end
         expect(json.size).to be(5)
         expect(json["interests"].length).to be(7)
       end
