@@ -3,7 +3,7 @@ class CreateBookmarks < ActiveRecord::Migration[5.2]
     create_table :bookmarks do |t|
       t.string :title
       t.text :url
-      t.belongs_to :folder
+      t.belongs_to :folder, index: true
       t.timestamps
 
       create_table :bookmarks_interests, id: false do |t|
