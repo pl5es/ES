@@ -21,6 +21,12 @@ Bundler.require(*Rails.groups)
 
 module Server
   class Application < Rails::Application
+    config.twitter_client = Twitter::REST::Client.new do |config|
+      config.consumer_key = ENV["TWITTER_CONSUMER_KEY"]
+      config.consumer_secret = ENV["TWITTER_CONSUMER_SECRET"]
+      config.access_token = ENV["TWITTER_ACCESS_TOKEN"]
+      config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
@@ -31,7 +37,7 @@ module Server
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins "*"
-        resource "*", headers: :any, methods: [:get, :post, :options]
+        resource "*", headers: :any, methods: [:get, :post, :options, :delete]
       end
     end
 
