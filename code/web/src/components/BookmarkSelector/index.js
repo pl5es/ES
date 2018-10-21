@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 class BookmarkSelector extends Component{
   state = {
-    newBookmark: '',
-    newHashtags: '',
-    newURL:'',
     searchInput: '',
+    newFolder:'',
+    newBookmarkInput: '',
+    newURLInput:'',
+    newHashtagsInput: '',
+    newFolderInput:'',
   }
 
   render(){
@@ -17,12 +19,15 @@ class BookmarkSelector extends Component{
         clickedBookmark, 
         handleBookmarkClick,
         handleSearchBookmark, 
-        handleAddBookmark, 
+        handleAddFolder, 
+        handleAddBookmark,
       },
       state:{
-        newBookmark,
-        newHashtags,
-        newURL,
+        newFolder,
+        newBookmarkInput,
+        newURLInput,
+        newHashtagsInput,
+        newFolderInput,
         searchInput,
       }
     }=this;
@@ -85,46 +90,63 @@ class BookmarkSelector extends Component{
           </label>
         }
 
-        <form onSubmit={(event) => {handleAddBookmark(event,newBookmark,newHashtags,newURL);
-                                    this.setState({ newBookmark: '', newHashtags:'', newURL:'' }); } }>
-          <h3>Edit Bookmarks</h3>
-          <h6>Add new bookmark or edit existing one's hashtags </h6>
+
+        <form onSubmit={(event) => {handleAddFolder(event,newFolder);
+                                    this.setState({ newFolder: '' }); } }>
+          <h3>Add Folder</h3>
           <label>
-            Bookmark:
+            Name:
             <input 
               type="text" 
-              value={newBookmark} 
-              placeholder={"Example: Animals"} 
-              onChange={ev => {
-                this.setState({ newBookmark: ev.target.value });
-              }} 
+              value={newFolder} 
+              onChange={ev => { this.setState({ newFolder: ev.target.value });}} 
+            />
+          </label>
+          <input 
+            type="submit" 
+            value="Add"
+            style={{color: 'black'}} 
+          />
+        </form>
+
+        <form onSubmit={(event) => {handleAddBookmark(event,newBookmarkInput,newURLInput,newHashtagsInput, newFolderInput);
+                                    this.setState({ newBookmarkInput: '', newURLInput:'', newHashtagsInput:'',newFolderInput:''  }); } }>
+          <h3>Add Bookmark</h3>
+          <label>
+            Name:
+            <input 
+              type="text" 
+              value={newBookmarkInput} 
+              onChange={ev => { this.setState({ newBookmarkInput: ev.target.value });}} 
             />
           </label>
           <label>
             URL:
             <input 
               type="text" 
-              value={newHashtags}
-              placeholder={"Example: animals.com"} 
-              onChange={ev => {
-                this.setState({ newHashtags: ev.target.value });
-              }} 
+              value={newURLInput}
+              onChange={ev => { this.setState({ newURLInput: ev.target.value }); }} 
             />
           </label>
           <label>
             Hashtags:
             <input 
               type="text" 
-              value={newHashtags}
-              placeholder={"Example: #dogs #cats #parrots #turtles"} 
-              onChange={ev => {
-                this.setState({ newHashtags: ev.target.value });
-              }} 
+              value={newHashtagsInput}
+              onChange={ev => { this.setState({ newHashtagsInput: ev.target.value });}} 
+            />
+          </label>
+          <label>
+            Folder:
+            <input 
+              type="text" 
+              value={newFolderInput}
+              onChange={ev => { this.setState({ newFolderInput: ev.target.value });}} 
             />
           </label>
           <input 
             type="submit" 
-            value="Edit"
+            value="Add"
             style={{color: 'black'}} 
           />
         </form>
@@ -135,13 +157,12 @@ class BookmarkSelector extends Component{
 
 }
 
+/*
 BookmarkSelector.propTypes = {
-  bookmarks: PropTypes.array.isRequired,
+  folders: PropTypes.array.isRequired,
   clickedFolder: PropTypes.object,
-  clickedBookmark: PropTypes.object,
-  handleBookmarkClick: PropTypes.func.isRequired,
-  handleAddBookmark: PropTypes.func.isRequired,
-  handleSearchBookmark: PropTypes.func,
+  handle: PropTypes.func.isRequired,
 };
+*/
 
 export default BookmarkSelector;

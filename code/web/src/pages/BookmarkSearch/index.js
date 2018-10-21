@@ -2,28 +2,44 @@ import React from 'react';
 import data from 'utils/consts';
 import Navbar from 'components/Navbar';
 import BookmarkSelector from 'components/BookmarkSelector';
-import { getBookmarks, createBookmark, updateBookmark, deleteBookmark } from 'utils/api';
+import { getFolders, createFolder, deleteFolder, updateFolder, getBookmarks, createBookmark, updateBookmark, deleteBookmark } from 'utils/api';
 
 export default class BookmarkSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       folders: [],
-      bookmarks: data.BookmarkData,
-      searchedBookmarks:[],
       clickedFolder:null,
       clickedBookmark: null,
+      bookmarks: data.BookmarkData,
+      searchedBookmarks:[],
     };
   }
 
   componentDidMount() {
-    getBookmarks().then(res => {
+    getFolders().then(res => {
       this.setState({
-        bookmarks: res.data,
+        folders: res.data,
       });
       console.log(res.data);
     });
-  }
+  };
+
+  handleAddFolder = (event, newFolder) => {
+    event.preventDefault();
+    console.log(newFolder);
+    var postFolder={
+        title: newFolder,
+    };
+    createFolder(postFolder).then(res => {
+      var novoFolder=res.data;
+      this.setState(currentState => {
+        return {
+          bookmarks: currentState.folders.concat([novoFolder]),
+        };
+      });
+    });
+  };
 
   handleBookmarkClick = (event,bookmark) => {
     event.preventDefault();
@@ -50,6 +66,7 @@ export default class BookmarkSearch extends React.Component {
       };
     });
   };
+
 
   handleAddBookmark = (event,newBookmark,newHashtags, newURL) => {
     event.preventDefault();
@@ -105,6 +122,7 @@ export default class BookmarkSearch extends React.Component {
           bookmarks={Bookmarks}
           clickedBookmark={ClickedBookmark} 
           handleBookmarkClick={this.handleBookmarkClick}
+          handleAddFolder={this.handleAddFolder}
           handleAddBookmark={this.handleAddBookmark}
           handleSearchBookmark={this.handleSearchBookmark}
         />

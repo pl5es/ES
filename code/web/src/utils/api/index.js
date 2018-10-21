@@ -25,7 +25,7 @@ const get = endpoint => {
   });
 };
 
-const createBkmrk = (endpoint, data) => {
+const postItem = (endpoint, data) => {
   const accessToken = localStorage.getItem('access_token');
   return axios.post(`${API_URL}/${endpoint}`, data, {
     headers: {
@@ -34,7 +34,7 @@ const createBkmrk = (endpoint, data) => {
   });
 }
 
-const deleteBkmrk = endpoint => {
+const deleteItem = endpoint => {
   const accessToken = localStorage.getItem('access_token');
   return axios.delete(`${API_URL}/${endpoint}`, {
     headers: {
@@ -43,7 +43,7 @@ const deleteBkmrk = endpoint => {
   });
 }
 
-const updateBkmrk = (endpoint, data) => {
+const updateItem = (endpoint, data) => {
   const accessToken = localStorage.getItem('access_token');
   return axios.put(`${API_URL}/${endpoint}`, data, {
     headers: {
@@ -60,7 +60,12 @@ export const signUp = data => post('api/users.json', data);
 export const signIn = data => post('api/oauth/token.json', data);
 export const getMyInfo = () => get('api/users/1.json');
 
+export const getFolders = () => get('api/users/folders.json');
+export const createFolder = data => postItem('api/users/folders.json',data);
+export const deleteFolder = (id) => deleteItem('api/users/folders/'+id+'.json');
+export const updateFolder = (data,id) => updateItem('api/users/folders/'+id+'.json',data);
+
 export const getBookmarks = () => get('api/users/bookmarks.json');
-export const createBookmark = data => createBkmrk('api/users/bookmarks.json',data);
-export const deleteBookmark = (id) => deleteBkmrk('api/users/bookmarks/'+id+'.json');
-export const updateBookmark = (data,id) => updateBkmrk('api/users/bookmarks/'+id+'.json',data);
+export const createBookmark = data => postItem('api/users/bookmarks.json',data);
+export const deleteBookmark = (id) => deleteItem('api/users/bookmarks/'+id+'.json');
+export const updateBookmark = (data,id) => updateItem('api/users/bookmarks/'+id+'.json',data);
