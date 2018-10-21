@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :folders
   resources :bookmarks
   constraints format: :json do
     scope "api" do
@@ -10,7 +11,9 @@ Rails.application.routes.draw do
 
       resource :users, only: [:create, :show, :update] do
         resources :posts, only: [:create, :show, :index]
-        resources :bookmarks, only: [:create, :show, :update, :destroy]
+        resources :folders, only: [:create, :show, :index, :update, :destroy] do
+          resources :bookmarks, only: [:create, :show, :update, :destroy]
+        end
       end
     end
   end
