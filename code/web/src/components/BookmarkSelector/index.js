@@ -5,6 +5,8 @@ class BookmarkSelector extends Component{
   state = {
     newBookmark: '',
     newHashtags: '',
+    newURL:'',
+    searchInput: '',
   }
 
   render(){
@@ -12,35 +14,45 @@ class BookmarkSelector extends Component{
       props:{
         bookmarks, 
         clickedBookmark, 
-        handleBookmarkToggle, 
-        handleBookmarkClick, 
+        handleBookmarkClick,
+        handleSearchBookmark, 
         handleAddBookmark, 
       },
       state:{
         newBookmark,
         newHashtags,
+        newURL,
+        searchInput,
       }
     }=this;
     return(
       <div>
-        <h3> YOUR BOOKMARKS </h3>
-        <label> Choose one or more of your bookmarks to make a selection from the feeds posts </label>
-
-        <form>
-          {bookmarks.map(bookmark => (
-            <label key={bookmark.id}>
-              <input
-                name={bookmark.name}
-                type="checkbox"
-                onChange={(event) => handleBookmarkToggle(event)} />
-              <button
-                onClick={(event) => handleBookmarkClick(event,bookmark)}
-                style={{color: 'black'}}>
-                {bookmark.name}
-              </button>
-            </label>
-          ))}
+        <h3>SEARCH BOOKMARKS</h3>
+        <form onSubmit={(event) => {handleSearchBookmark(event,searchInput);
+                                    this.setState({ searchInput: '' }); } }>
+          <label>
+            <input 
+              type="text" 
+              value={searchInput}
+              placeholder={"Example: #dogs"} 
+              onChange={ev => {
+                this.setState({ searchInput: ev.target.value });
+              }} 
+            />
+          </label>
         </form>
+
+        <h3> YOUR BOOKMARKS </h3>
+        {bookmarks.map(bookmark => (
+          <label key={bookmark.id}>
+            <a href="" target="_blank">{bookmark.name}</a>
+            <button
+              onClick={(event) => handleBookmarkClick(event,bookmark)}
+              style={{color: 'black'}}>
+              Details
+            </button>
+          </label>
+        ))}
 
         {clickedBookmark!=null && 
           <label>
@@ -53,8 +65,8 @@ class BookmarkSelector extends Component{
           </label>
         }
 
-        <form onSubmit={(event) => {handleAddBookmark(event,newBookmark,newHashtags);
-                                    this.setState({ newBookmark: '', newHashtags:'' }); } }>
+        <form onSubmit={(event) => {handleAddBookmark(event,newBookmark,newHashtags,newURL);
+                                    this.setState({ newBookmark: '', newHashtags:'', newURL:'' }); } }>
           <h3>Edit Bookmarks</h3>
           <h6>Add new bookmark or edit existing one's hashtags </h6>
           <label>
@@ -65,6 +77,17 @@ class BookmarkSelector extends Component{
               placeholder={"Example: Animals"} 
               onChange={ev => {
                 this.setState({ newBookmark: ev.target.value });
+              }} 
+            />
+          </label>
+          <label>
+            URL:
+            <input 
+              type="text" 
+              value={newHashtags}
+              placeholder={"Example: animals.com"} 
+              onChange={ev => {
+                this.setState({ newHashtags: ev.target.value });
               }} 
             />
           </label>
@@ -95,9 +118,9 @@ class BookmarkSelector extends Component{
 BookmarkSelector.propTypes = {
   bookmarks: PropTypes.array.isRequired,
   clickedBookmark: PropTypes.object,
-  handleBookmarkToggle: PropTypes.func.isRequired,
   handleBookmarkClick: PropTypes.func.isRequired,
   handleAddBookmark: PropTypes.func.isRequired,
+  handleSearchBookmark: PropTypes.func,
 };
 
 export default BookmarkSelector;
