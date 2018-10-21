@@ -11,6 +11,8 @@ export default class BookmarkSearch extends React.Component {
       folders: [],
       clickedFolder:null,
       clickedBookmark: null,
+      showAddFolder: false,
+      showAddBookmark: false,
       bookmarks: data.BookmarkData,
       searchedBookmarks:[],
     };
@@ -55,6 +57,22 @@ export default class BookmarkSearch extends React.Component {
           clickedBookmark: bookmark,
         };
       });
+  };
+
+  handleShowAddFolder = () => {
+      this.setState(currentState => {
+        return {
+          showAddFolder: !currentState.showAddFolder,
+        };
+      });
+  };
+
+  handleShowAddBookmark = () => {
+    this.setState(currentState => {
+      return {
+        showAddBookmark: !currentState.showAddBookmark,
+      };
+    });
   };
 
   handleBookmarkSearch = (event,hashtag) => {
@@ -113,6 +131,8 @@ export default class BookmarkSearch extends React.Component {
     const { 
       bookmarks: Bookmarks, 
       clickedBookmark: ClickedBookmark,
+      showAddBookmark: ShowAddBookmark,
+      showAddFolder: ShowAddFolder,
     } = this.state;
     return(
       <div>
@@ -125,6 +145,10 @@ export default class BookmarkSearch extends React.Component {
           handleAddFolder={this.handleAddFolder}
           handleAddBookmark={this.handleAddBookmark}
           handleSearchBookmark={this.handleSearchBookmark}
+          showAddBookmark={ShowAddBookmark}
+          showAddFolder={ShowAddFolder}
+          handleShowAddBookmark={this.handleShowAddBookmark}
+          handleShowAddFolder={this.handleShowAddFolder}
         />
 
       </div>

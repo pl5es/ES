@@ -21,6 +21,11 @@ class BookmarkSelector extends Component{
         handleSearchBookmark, 
         handleAddFolder, 
         handleAddBookmark,
+
+        showAddFolder,
+        showAddBookmark,
+        handleShowAddBookmark,
+        handleShowAddFolder,
       },
       state:{
         newFolder,
@@ -49,8 +54,18 @@ class BookmarkSelector extends Component{
         </form>
 
         <label> YOUR FOLDERS - Click on one to view its bookmarks </label>
+        <button
+          onClick={() => handleShowAddFolder()}
+          style={{color: 'black'}}>
+          Add Folder
+        </button>
 
         <label> YOUR BOOKMARKS - Click on one to view its hashtags </label>
+        <button
+          onClick={() => handleShowAddBookmark()}
+          style={{color: 'black'}}>
+          Add Bookmark
+        </button>
 
         {bookmarks.map(bookmark => (
           <label key={bookmark.id}>
@@ -90,66 +105,69 @@ class BookmarkSelector extends Component{
           </label>
         }
 
+        {showAddFolder &&
+          <form onSubmit={(event) => {handleAddFolder(event,newFolder);
+                                      this.setState({ newFolder: '' }); } }>
+            <h3>Add Folder</h3>
+            <label>
+              Name:
+              <input 
+                type="text" 
+                value={newFolder} 
+                onChange={ev => { this.setState({ newFolder: ev.target.value });}} 
+              />
+            </label>
+            <input 
+              type="submit" 
+              value="Add"
+              style={{color: 'black'}} 
+            />
+          </form>
+        }
 
-        <form onSubmit={(event) => {handleAddFolder(event,newFolder);
-                                    this.setState({ newFolder: '' }); } }>
-          <h3>Add Folder</h3>
-          <label>
-            Name:
+        {showAddBookmark &&
+          <form onSubmit={(event) => {handleAddBookmark(event,newBookmarkInput,newURLInput,newHashtagsInput, newFolderInput);
+                                      this.setState({ newBookmarkInput: '', newURLInput:'', newHashtagsInput:'',newFolderInput:''  }); } }>
+            <h3>Add Bookmark</h3>
+            <label>
+              Name:
+              <input 
+                type="text" 
+                value={newBookmarkInput} 
+                onChange={ev => { this.setState({ newBookmarkInput: ev.target.value });}} 
+              />
+            </label>
+            <label>
+              URL:
+              <input 
+                type="text" 
+                value={newURLInput}
+                onChange={ev => { this.setState({ newURLInput: ev.target.value }); }} 
+              />
+            </label>
+            <label>
+              Hashtags:
+              <input 
+                type="text" 
+                value={newHashtagsInput}
+                onChange={ev => { this.setState({ newHashtagsInput: ev.target.value });}} 
+              />
+            </label>
+            <label>
+              Folder:
+              <input 
+                type="text" 
+                value={newFolderInput}
+                onChange={ev => { this.setState({ newFolderInput: ev.target.value });}} 
+              />
+            </label>
             <input 
-              type="text" 
-              value={newFolder} 
-              onChange={ev => { this.setState({ newFolder: ev.target.value });}} 
+              type="submit" 
+              value="Add"
+              style={{color: 'black'}} 
             />
-          </label>
-          <input 
-            type="submit" 
-            value="Add"
-            style={{color: 'black'}} 
-          />
-        </form>
-
-        <form onSubmit={(event) => {handleAddBookmark(event,newBookmarkInput,newURLInput,newHashtagsInput, newFolderInput);
-                                    this.setState({ newBookmarkInput: '', newURLInput:'', newHashtagsInput:'',newFolderInput:''  }); } }>
-          <h3>Add Bookmark</h3>
-          <label>
-            Name:
-            <input 
-              type="text" 
-              value={newBookmarkInput} 
-              onChange={ev => { this.setState({ newBookmarkInput: ev.target.value });}} 
-            />
-          </label>
-          <label>
-            URL:
-            <input 
-              type="text" 
-              value={newURLInput}
-              onChange={ev => { this.setState({ newURLInput: ev.target.value }); }} 
-            />
-          </label>
-          <label>
-            Hashtags:
-            <input 
-              type="text" 
-              value={newHashtagsInput}
-              onChange={ev => { this.setState({ newHashtagsInput: ev.target.value });}} 
-            />
-          </label>
-          <label>
-            Folder:
-            <input 
-              type="text" 
-              value={newFolderInput}
-              onChange={ev => { this.setState({ newFolderInput: ev.target.value });}} 
-            />
-          </label>
-          <input 
-            type="submit" 
-            value="Add"
-            style={{color: 'black'}} 
-          />
-        </form>
+          </form>
+        }
 
       </div>
     );
