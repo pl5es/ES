@@ -53,7 +53,7 @@ export default class BookmarkSearch extends React.Component {
       return;
     //add # to hashtags if missing
     var hashtags = newHashtags.split(" ");
-    if(hashtags.length==0 || newBookmark.length===0 || newURL.length===0) //non empty pls
+    if(hashtags.length===0 || newBookmark.length===0 || newURL.length===0) //non empty pls
       return;
     hashtags.forEach(function(element, index, array) {
       if(element.charAt(0)!=='#')
@@ -117,6 +117,8 @@ export default class BookmarkSearch extends React.Component {
   };
 
   handleFolderClick = (event,folder) => {
+    if(this.state.clickedBookmark!==null)
+      this.handleBookmarkClick(event,this.state.clickedBookmark);
     event.preventDefault();
     if(this.state.clickedFolder===folder)
       this.setState(currentState => {
@@ -130,7 +132,7 @@ export default class BookmarkSearch extends React.Component {
           clickedFolder: folder,
         };
       });
-  }
+  };
 
   handleBookmarkClick = (event,bookmark) => {
     event.preventDefault();
@@ -172,9 +174,9 @@ export default class BookmarkSearch extends React.Component {
   handleSearchBookmark = (event,keywords) => {
     event.preventDefault();
     //add # to hashtags if missing
-    var hashtags = keywords.split(" ");
-    if(hashtags.length==0) //non empty pls
+    if(keywords==="")
       return;
+    var hashtags = keywords.split(" ");
     hashtags.forEach(function(element, index, array) {
       if(element.charAt(0)!=='#')
         array[index]='#'+element;

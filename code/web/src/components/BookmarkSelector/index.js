@@ -49,7 +49,7 @@ class BookmarkSelector extends Component{
       <div>
         <label>SEARCH BOOKMARKS - Search bookmarks in folders by hashtag</label>
         <form onSubmit={(event) => {handleSearchBookmark(event,searchInput);
-                                     } }>
+                                    this.setState({ searchInput: '' }); } }>
           <label>
             <input 
               type="text" 
