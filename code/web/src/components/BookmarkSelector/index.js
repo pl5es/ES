@@ -15,11 +15,17 @@ class BookmarkSelector extends Component{
     const{
       props:{
         folders, 
+
         clickedFolder,
         clickedBookmark, 
         handleFolderClick,
         handleBookmarkClick,
-        handleSearchBookmark, 
+
+        searchResults,
+        showSearchResults,
+        handleSearchBookmark,
+        handleCloseSearchResults, 
+
         handleAddFolder, 
         handleAddBookmark,
         handleDeleteFolder,
@@ -41,50 +47,76 @@ class BookmarkSelector extends Component{
     }=this;
     return(
       <div>
-        <label>SEARCH BOOKMARKS - Search bookmarks in folder by hashtag</label>
+        <label>SEARCH BOOKMARKS - Search bookmarks in folders by hashtag</label>
         <form onSubmit={(event) => {handleSearchBookmark(event,searchInput);
-                                    this.setState({ searchInput: '' }); } }>
+                                     } }>
           <label>
             <input 
               type="text" 
               value={searchInput}
               onChange={ev => { this.setState({ searchInput: ev.target.value });}} 
             />
+            <input 
+              type="submit" 
+              value="Search"
+              style={{color: 'black'}} 
+            />
           </label>
         </form>
+
+        {showSearchResults && 
+          <label>
+            {"Search Results:"}
+            <button
+              onClick={() => handleCloseSearchResults()}
+              style={{color: 'black'}}>
+              (Close Search)
+            </button>
+
+            {searchResults.map(bookmark => (
+              <label key={bookmark.id}>
+                {bookmark.title}
+                <a href={bookmark.url} target="_blank">OPEN LINK</a>
+              </label>
+            ))}
+          </label>
+        }
+
 
         <button
           onClick={() => handleShowAddFolder()}
           style={{color: 'black'}}>
-          Add Folder
+          (Add Folder)
         </button>
         
         <button
           onClick={() => handleShowAddBookmark()}
           style={{color: 'black'}}>
-          Add Bookmark
+          (Add Bookmark)
         </button>
 
 
         <label> YOUR FOLDERS - Click on one to view its bookmarks </label>
 
-        {folders.map(folder => (
-          <label key={folder.id}>
-            <button
-              onClick={(event) => handleFolderClick(event,folder)}
-              style={{color: 'black'}}>
-              {folder.title}
-            </button>
-            <button
-              onClick={(event) => handleDeleteFolder(event,folder)}
-              style={{color: 'black'}}>
-              Delete
-            </button>
-          </label>
-        ))}
+        <label id="folders">
+          {folders.map(folder => (
+            <label key={folder.id}>
+              <button
+                onClick={(event) => handleFolderClick(event,folder)}
+                style={{color: 'black'}}>
+                {folder.title}
+              </button>
+              <button
+                onClick={(event) => handleDeleteFolder(event,folder)}
+                style={{color: 'black'}}>
+                Delete
+              </button>
+            </label>
+          ))}
+        </label>
 
         {clickedFolder!=null &&
-          <label>
+          <label id="bookmarks">
             {clickedFolder.title + "'s bookmarks are: (Click on one to view its interests)"}
             {clickedFolder.bookmarks.map(bookmark => (
               <label key={bookmark.id}>
@@ -105,7 +137,7 @@ class BookmarkSelector extends Component{
         }
 
         {clickedBookmark!=null && 
-          <label>
+          <label id="interests">
             {clickedBookmark.title + "'s hashtags are:"}
             {clickedBookmark.interests.map(interest => (
               <label key={interest.id}>
