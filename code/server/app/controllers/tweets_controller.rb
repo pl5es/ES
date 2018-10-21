@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    number_tweets = if params["count"] then params["count"].to_i || 20 end
+    number_tweets = if params["count"] then params["count"].to_i || 10 end
     tweet_ids = []
     if @user.interests
       for i in 1..number_tweets
