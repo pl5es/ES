@@ -45,10 +45,7 @@ class BookmarkSelector extends Component{
             <input 
               type="text" 
               value={searchInput}
-              placeholder={"Example: #dogs"} 
-              onChange={ev => {
-                this.setState({ searchInput: ev.target.value });
-              }} 
+              onChange={ev => { this.setState({ searchInput: ev.target.value });}} 
             />
           </label>
         </form>

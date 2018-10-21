@@ -35,6 +35,7 @@ export default class BookmarkSearch extends React.Component {
     };
     createFolder(postFolder).then(res => {
       var novoFolder=res.data;
+      console.log(res.data);
       this.setState(currentState => {
         return {
           bookmarks: currentState.folders.concat([novoFolder]),
