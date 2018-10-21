@@ -30,6 +30,7 @@ export default class Navbar extends Component {
         <div className="navbar-right" id="navbarlinks">
           <Link id="linkprofile" to="/profile">Profile</Link>
           <Link id="linkfeed" to="/feed">News Feed</Link>
+          <Link id="linkbookmarks" to="/bookmarks">Bookmarks</Link>
           <button id="logoutbutton" onClick={() => this.logout()}> <label>Logout</label> </button>
         </div>
         <input id="navbarsearch"

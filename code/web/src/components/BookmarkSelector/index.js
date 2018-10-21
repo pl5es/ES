@@ -32,7 +32,6 @@ class BookmarkSelector extends Component{
               <input
                 name={bookmark.name}
                 type="checkbox"
-                checked={bookmark.toggled}
                 onChange={(event) => handleBookmarkToggle(event)} />
               <button
                 onClick={(event) => handleBookmarkClick(event,bookmark)}
@@ -54,8 +53,10 @@ class BookmarkSelector extends Component{
           </label>
         }
 
-        <form onSubmit={(event) => handleAddBookmark(event,newBookmark,newHashtags)}>
-          <h3>New Bookmark</h3>
+        <form onSubmit={(event) => {handleAddBookmark(event,newBookmark,newHashtags);
+                                    this.setState({ newBookmark: '', newHashtags:'' }); } }>
+          <h3>Edit Bookmarks</h3>
+          <h6>Add new bookmark or edit existing one's hashtags </h6>
           <label>
             Bookmark:
             <input 
@@ -80,7 +81,7 @@ class BookmarkSelector extends Component{
           </label>
           <input 
             type="submit" 
-            value="Submit"
+            value="Edit"
             style={{color: 'black'}} 
           />
         </form>

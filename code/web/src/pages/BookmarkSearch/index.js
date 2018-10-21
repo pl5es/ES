@@ -2,14 +2,14 @@ import React from 'react';
 import data from 'utils/consts';
 import Navbar from 'components/Navbar';
 import BookmarkSelector from 'components/BookmarkSelector';
-import { getMyBookmarks, createBookmark } from 'utils/api';
+import { getMyBookmarks, createBookmark, updateBookmark } from 'utils/api';
 //import 'styles/search.css';
 
 export default class BookmarkSearch extends React.Component {
   constructor(props) {
     super(props);
     //add toggled property to bookmarks
-    data.BookmarkData.forEach(function(bookmark) { bookmark.toggled = false; });
+    //data.BookmarkData.forEach(function(bookmark) { bookmark.toggled = false; });
     this.state = {
       bookmarks: data.BookmarkData,
       toggledBookmarks: [],
@@ -24,6 +24,7 @@ export default class BookmarkSearch extends React.Component {
       this.setState({
         bookmarks: res.data,
       });
+      console.log(res.data);
     });
   }
 
@@ -38,7 +39,7 @@ export default class BookmarkSearch extends React.Component {
     this.setState(currentState => {
       return {
         bookmark: newBookmarks,
-        toggledBookmarks: currentState.bookmarks.filter(bookmark => bookmark.toggled===true),
+        toggledBookmarks: newBookmarks.filter(bookmark => bookmark.toggled===true),
       };
     });
   };
@@ -46,41 +47,54 @@ export default class BookmarkSearch extends React.Component {
 
   handleBookmarkClick = (event,bookmark) => {
     event.preventDefault();
-    this.setState(currentState => {
-      return {
-        clickedBookmark: bookmark,
-      };
-    });
+    if(this.state.clickedBookmark===bookmark)
+      this.setState(currentState => {
+        return {
+          clickedBookmark: null,
+        };
+      });
+    else
+      this.setState(currentState => {
+        return {
+          clickedBookmark: bookmark,
+        };
+      });
   };
 
   handleAddBookmark = (event,newBookmark,newHashtags) => {
     event.preventDefault();
     var hashtags = newHashtags.split(" ");
     var postBookmark={
-      name: newBookmark,
-      interests:newHashtags,
+        name: newBookmark,
+        interests:hashtags,
     }
-    //>>>>post da postBookmark<<<<
-    //bastaria adicionar resultado do post às bookmarks com concat como em baixo
-    //,nao esquecendo de adicionar propriedade toggled à bookmark,
-    //mas nao estou a conseguir correr o servidor terá de ser assim por enquanto
-
-    //enqt n corro servidor
-    postBookmark={
-      name: newBookmark,
-      interests: [],
+    //check if bookmark exists if yes update it
+    var exists = this.state.bookmarks.filter(bookmark => bookmark.name===newBookmark);
+    if(exists.length==1){
+      updateBookmark(postBookmark, exists[0].id).then(res => {
+        var novaBookmark=res.data;
+        novaBookmark.toggled=false;
+        var indexOfUpdated = this.state.bookmarks.findIndex(bookmark => bookmark.name === newBookmark);
+        var newBookmarks = this.state.bookmarks.slice();
+        newBookmarks[indexOfUpdated] = novaBookmark;
+        this.setState(currentState => {
+          return {
+            bookmarks: newBookmarks,
+          };
+        });
+      });
     }
-    for(let i=0; i<hashtags.length; i++){
-        postBookmark.interests.push({hashtag: hashtags[i]});
+    else{ //add new bookmark
+      createBookmark(postBookmark).then(res => {
+        var novaBookmark=res.data;
+        novaBookmark.toggled=false;
+        this.setState(currentState => {
+          return {
+            bookmarks: currentState.bookmarks.concat([novaBookmark]),
+          };
+        });
+      });
     }
-    //END enqt n corro servidor
-
-    postBookmark.toggled=false;
-    this.setState(currentState => {
-      return {
-        bookmarks: currentState.bookmarks.concat([postBookmark]),
-      };
-    });
   };
 
   //
@@ -89,8 +103,6 @@ export default class BookmarkSearch extends React.Component {
       bookmarks: Bookmarks, 
       toggledBookmarks: ToggledBookmarks, 
       clickedBookmark: ClickedBookmark,
-      currInputBookmark: CurrInputBookmark,
-      currInputHashtags: CurrInputHashtags,
     } = this.state;
     return(
       <div>
@@ -109,6 +121,11 @@ export default class BookmarkSearch extends React.Component {
             {ToggledBookmarks.map(toggled => (
               <label key={toggled.id}>
                 {toggled.name},
+                {toggled.interests.map(hashtag => (
+                  <label key={hashtag.id}>
+                    #{hashtag.hashtag},
+                  </label>
+                ))}
               </label>
             ))}
         </label>

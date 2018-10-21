@@ -15,7 +15,7 @@ const RouterApp = () => (
       <PublicRoute path="/register" component={Register} />
       <PrivateRoute path="/profile" component={Profile} />
       <PrivateRoute path="/feed" component={Feed} />
-      <PublicRoute path="/search" component={BookmarkSearch} />
+      <PrivateRoute path="/bookmarks" component={BookmarkSearch} />
     </Switch>
   </Router>
 );
