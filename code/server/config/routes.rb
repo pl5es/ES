@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
       resource :users, only: [:create, :show, :update] do
         resources :posts, only: [:create, :show, :index]
-        resources :bookmarks, only: [:create, :show, :update, :delete]
+        resources :bookmarks, only: [:create, :show, :update, :destroy]
       end
     end
   end
