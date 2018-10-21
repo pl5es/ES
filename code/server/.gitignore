@@ -269,3 +269,6 @@ $RECYCLE.BIN/
 
 ### Docker ###
 /tmp
+
+# Database config
+/config/database.yml

@@ -48,6 +48,6 @@ class BookmarksController < ApplicationController
     end
 
     def bookmark_params
-      params.permit(:title, :url, interests: []).merge(user_id: current_resource_owner.id)
+      params.permit(:title, :folder_id, :url, interests: [])
     end
 end
