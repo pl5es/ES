@@ -13,6 +13,7 @@ class BookmarkSelector extends Component{
     const{
       props:{
         bookmarks, 
+        clickedFolder,
         clickedBookmark, 
         handleBookmarkClick,
         handleSearchBookmark, 
@@ -27,7 +28,7 @@ class BookmarkSelector extends Component{
     }=this;
     return(
       <div>
-        <h3>SEARCH BOOKMARKS</h3>
+        <label>SEARCH BOOKMARKS - Search bookmarks in folder by hashtag</label>
         <form onSubmit={(event) => {handleSearchBookmark(event,searchInput);
                                     this.setState({ searchInput: '' }); } }>
           <label>
@@ -42,24 +43,43 @@ class BookmarkSelector extends Component{
           </label>
         </form>
 
-        <h3> YOUR BOOKMARKS </h3>
+        <label> YOUR FOLDERS - Click on one to view its bookmarks </label>
+
+        <label> YOUR BOOKMARKS - Click on one to view its hashtags </label>
+
         {bookmarks.map(bookmark => (
           <label key={bookmark.id}>
-            <a href="" target="_blank">{bookmark.name}</a>
             <button
               onClick={(event) => handleBookmarkClick(event,bookmark)}
               style={{color: 'black'}}>
-              Details
+              {bookmark.name}
             </button>
+            <a href="" target="_blank">OPEN LINK</a>
           </label>
         ))}
 
+        {clickedFolder!=null &&
+          <label>
+            {clickedFolder.name + "'s bookmarks are:"}
+            {clickedFolder.bookmarks.map(bookmark => (
+              <label key={bookmark.id}>
+                <button
+                  onClick={(event) => handleBookmarkClick(event,bookmark)}
+                  style={{color: 'black'}}>
+                  {bookmark.name}
+                </button>
+                <a href="" target="_blank">OPEN LINK</a>
+              </label>
+            ))}
+          </label>
+        }
+
         {clickedBookmark!=null && 
           <label>
-            {clickedBookmark.name + "'s hashtags are"}
+            {clickedBookmark.name + "'s hashtags are:"}
             {clickedBookmark.interests.map(interest => (
               <label key={interest.id}>
-                {interest.hashtag},
+                {interest.hashtag}
               </label>
             ))}
           </label>
@@ -117,6 +137,7 @@ class BookmarkSelector extends Component{
 
 BookmarkSelector.propTypes = {
   bookmarks: PropTypes.array.isRequired,
+  clickedFolder: PropTypes.object,
   clickedBookmark: PropTypes.object,
   handleBookmarkClick: PropTypes.func.isRequired,
   handleAddBookmark: PropTypes.func.isRequired,

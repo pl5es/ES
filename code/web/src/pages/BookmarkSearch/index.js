@@ -8,8 +8,10 @@ export default class BookmarkSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      folders: [],
       bookmarks: data.BookmarkData,
       searchedBookmarks:[],
+      clickedFolder:null,
       clickedBookmark: null,
     };
   }
@@ -19,6 +21,7 @@ export default class BookmarkSearch extends React.Component {
       this.setState({
         bookmarks: res.data,
       });
+      console.log(res.data);
     });
   }
 
@@ -36,6 +39,16 @@ export default class BookmarkSearch extends React.Component {
           clickedBookmark: bookmark,
         };
       });
+  };
+
+  handleBookmarkSearch = (event,hashtag) => {
+    event.preventDefault();
+
+    this.setState(currentState => {
+      return {
+        //searchedBookmarks: bookmarks.filter(bookmark => bookmark.interests===newBookmark),
+      };
+    });
   };
 
   handleAddBookmark = (event,newBookmark,newHashtags, newURL) => {
@@ -93,6 +106,7 @@ export default class BookmarkSearch extends React.Component {
           clickedBookmark={ClickedBookmark} 
           handleBookmarkClick={this.handleBookmarkClick}
           handleAddBookmark={this.handleAddBookmark}
+          handleSearchBookmark={this.handleSearchBookmark}
         />
 
       </div>

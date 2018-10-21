@@ -45,7 +45,7 @@ const deleteBkmrk = endpoint => {
 
 const updateBkmrk = (endpoint, data) => {
   const accessToken = localStorage.getItem('access_token');
-  return axios.post(`${API_URL}/${endpoint}`, data, {
+  return axios.put(`${API_URL}/${endpoint}`, data, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
