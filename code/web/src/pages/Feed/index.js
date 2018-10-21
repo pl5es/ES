@@ -1,6 +1,6 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import NewsData from 'utils/consts';
+// import { Formik, Form, Field } from 'formik';
+import { tweets } from 'utils/consts';
 import NewsFeed from 'components/NewsFeed';
 import 'styles/feed.css';
 import Navbar from 'components/Navbar';
@@ -10,7 +10,7 @@ export default class Feed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      _news: NewsData,
+      _news: tweets,
       search_results: [],
     };
   }

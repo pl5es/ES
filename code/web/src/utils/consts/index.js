@@ -1,5 +1,4 @@
-import newsdata from './news_data.js';
+import NewsData from './news_data.js';
+import tweets from './tweets.js';
 
-const NewsData = newsdata;
-
-export default NewsData;
+export { NewsData, tweets };
