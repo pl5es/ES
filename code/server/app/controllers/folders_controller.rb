@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FoldersController < ApplicationController
   before_action :set_folder, only: [:show, :update, :destroy]
 
