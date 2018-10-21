@@ -16,9 +16,12 @@ ActiveRecord::Schema.define(version: 2018_10_21_142037) do
   enable_extension "plpgsql"
 
   create_table "bookmarks", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
+    t.text "url"
+    t.bigint "folder_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["folder_id"], name: "index_bookmarks_on_folder_id"
   end
 
   create_table "bookmarks_interests", id: false, force: :cascade do |t|

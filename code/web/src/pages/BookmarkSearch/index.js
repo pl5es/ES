@@ -2,7 +2,7 @@ import React from 'react';
 import data from 'utils/consts';
 import Navbar from 'components/Navbar';
 import BookmarkSelector from 'components/BookmarkSelector';
-import { getFolders, createFolder, deleteFolder, updateFolder, getBookmarks, createBookmark, updateBookmark, deleteBookmark } from 'utils/api';
+import { getFolder, getFolders, createFolder, deleteFolder, updateFolder, getBookmark, createBookmark, updateBookmark, deleteBookmark } from 'utils/api';
 
 export default class BookmarkSearch extends React.Component {
   constructor(props) {
@@ -38,26 +38,116 @@ export default class BookmarkSearch extends React.Component {
       console.log(res.data);
       this.setState(currentState => {
         return {
-          bookmarks: currentState.folders.concat([novoFolder]),
+          folders: currentState.folders.concat([novoFolder]),
         };
       });
     });
   };
 
-  handleBookmarkClick = (event,bookmark) => {
+  handleAddBookmark = (event,newBookmark,newHashtags, newURL, newFolder) => {
     event.preventDefault();
-    if(this.state.clickedBookmark===bookmark)
+    //check if folder exists
+    var exists = this.state.folders.filter(folder => folder.title===newFolder);
+    if(exists.length===0) //folder doesnt exist
+      return;
+    //add # to hashtags if missing
+    var hashtags = newHashtags.split(" ");
+    if(hashtags.length==0 || newBookmark.length===0 || newURL.length===0) //non empty pls
+      return;
+    hashtags.forEach(function(element, index, array) {
+      if(element.charAt(0)!=='#')
+        array[index]='#'+element;
+    });
+    //add http://www. if missing
+    newURL = newURL.toLowerCase(); 
+    var prefix = 'www.';
+    if (newURL.substr(0, prefix.length) !== prefix){
+        newURL = prefix + newURL;
+    }
+    prefix='http://';
+    if (newURL.substr(0, prefix.length) !== prefix){
+        newURL = prefix + newURL;
+    }
+
+    //-------------------
+    var postBookmark={
+        title: newBookmark,
+        interests:hashtags,
+        url:newURL,
+    };
+    createBookmark(postBookmark,exists[0].id).then(res => {
+      getFolder(exists[0].id).then(res => {
+        this.setState(currentState => {
+          return {
+            folders: [res.data].concat(currentState.folders.filter(folder => folder.title!==newFolder)),
+          };
+        });
+      });
+    });
+  };
+
+  handleDeleteFolder = (event,deletedFolder) => {
+    var folderId=deletedFolder.id;
+    event.preventDefault();
+    deleteFolder(folderId).then(res => {
       this.setState(currentState => {
         return {
-          clickedBookmark: null,
+          folders: currentState.folders.filter(folder => folder.id!==folderId),
+        };
+      });
+    });
+  };
+
+  handleDeleteBookmark = (event,bookmark) => {
+    var bookmarkId=bookmark.id;
+    var folderId=this.state.clickedFolder.id;
+    event.preventDefault();
+    deleteFolder(folderId,bookmarkId).then(res => {
+      getFolder(folderId).then(res => {
+        this.setState(currentState => {
+          return {
+            folders: [res.data].concat(currentState.folders.filter(folder => folder.id!==folderId)),
+          };
+        });
+      });
+    });
+  };
+
+  handleFolderClick = (event,folder) => {
+    event.preventDefault();
+    if(this.state.clickedFolder===folder)
+      this.setState(currentState => {
+        return {
+          clickedFolder: null,
         };
       });
     else
       this.setState(currentState => {
         return {
-          clickedBookmark: bookmark,
+          clickedFolder: folder,
         };
       });
+  }
+
+  handleBookmarkClick = (event,bookmark) => {
+    event.preventDefault();
+    var bookmarkId=bookmark.id;
+    var folderId=this.state.clickedFolder.id;
+    if(this.state.clickedBookmark!==null && this.state.clickedBookmark.id===bookmark.id){
+      this.setState(currentState => {
+        return {
+          clickedBookmark: null,
+        };
+      });
+    }
+    else{
+      getBookmark(folderId,bookmarkId).then(res => {
+        console.log(res.data);
+        this.setState({
+          clickedBookmark: res.data,
+        });
+      });
+    }
   };
 
   handleShowAddFolder = () => {
@@ -86,51 +176,11 @@ export default class BookmarkSearch extends React.Component {
     });
   };
 
-
-  handleAddBookmark = (event,newBookmark,newHashtags, newURL) => {
-    event.preventDefault();
-    var hashtags = newHashtags.split(" ");
-    //add # to hashtags if missing
-    hashtags.forEach(function(element, index, array) {
-      if(element.charAt(0)!=='#')
-        array[index]='#'+element;
-    });
-    var postBookmark={
-        name: newBookmark,
-        interests:hashtags,
-        //url:newURL,
-    }
-    //check if bookmark exists if yes update it
-    var exists = this.state.bookmarks.filter(bookmark => bookmark.name===newBookmark);
-    if(exists.length===1){
-      updateBookmark(postBookmark, exists[0].id).then(res => {
-        var novaBookmark=res.data;
-        var indexOfUpdated = this.state.bookmarks.findIndex(bookmark => bookmark.name === newBookmark);
-        var newBookmarks = this.state.bookmarks.slice();
-        newBookmarks[indexOfUpdated] = novaBookmark;
-        this.setState(currentState => {
-          return {
-            bookmarks: newBookmarks,
-          };
-        });
-      });
-    }
-    else{ //add new bookmark
-      createBookmark(postBookmark).then(res => {
-        var novaBookmark=res.data;
-        this.setState(currentState => {
-          return {
-            bookmarks: currentState.bookmarks.concat([novaBookmark]),
-          };
-        });
-      });
-    }
-  };
-
   //
   render() {
     const { 
-      bookmarks: Bookmarks, 
+      folders: Folders, 
+      clickedFolder : ClickedFolder,
       clickedBookmark: ClickedBookmark,
       showAddBookmark: ShowAddBookmark,
       showAddFolder: ShowAddFolder,
@@ -140,12 +190,20 @@ export default class BookmarkSearch extends React.Component {
         <Navbar history={this.props.history} />
 
         <BookmarkSelector 
-          bookmarks={Bookmarks}
+          folders={Folders}
+
+          clickedFolder={ClickedFolder}
           clickedBookmark={ClickedBookmark} 
+          handleFolderClick={this.handleFolderClick}
           handleBookmarkClick={this.handleBookmarkClick}
+
           handleAddFolder={this.handleAddFolder}
           handleAddBookmark={this.handleAddBookmark}
+          handleDeleteFolder={this.handleDeleteFolder}
+          handleDeleteBookmark={this.handleDeleteBookmark}
+
           handleSearchBookmark={this.handleSearchBookmark}
+
           showAddBookmark={ShowAddBookmark}
           showAddFolder={ShowAddFolder}
           handleShowAddBookmark={this.handleShowAddBookmark}
