@@ -46,9 +46,4 @@
     "eslint-plugin-standard": "^4.0.0",
     "prettier": "^1.14.3"
   },
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:3000"
-    }
-  }
 }

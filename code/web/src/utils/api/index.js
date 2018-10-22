@@ -1,9 +1,8 @@
 import axios from 'axios';
-// import { API_URL } from 'utils/config';
+import { API_URL } from 'utils/config';
 
 export const axiosInstance = axios.create({
   baseURL: 'http://localhost:3000/api',
-  // timeout: 10000,
   contentType: 'application/json',
 });
 
@@ -13,7 +12,7 @@ const getRefreshToken = () => {
 };
 
 const post = (endpoint, data) => {
-  return axiosInstance.post(endpoint, data);
+  return axios.post(`${API_URL}/${endpoint}`, data);
 };
 
 const get = endpoint => {
@@ -25,14 +24,23 @@ const get = endpoint => {
   });
 };
 
-const postItem = (endpoint, data) => {
+const put = (endpoint, data) => {
   const accessToken = localStorage.getItem('access_token');
-  return axiosInstance.post(endpoint, data,{
+  return axios.put(`${API_URL}/${endpoint}`, data, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
   });
-}
+};
+
+const postItem = (endpoint, data) => {
+  const accessToken = localStorage.getItem('access_token');
+  return axiosInstance.put(endpoint, data, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};
 
 const deleteItem = endpoint => {
   const accessToken = localStorage.getItem('access_token');
@@ -41,7 +49,7 @@ const deleteItem = endpoint => {
       Authorization: `Bearer ${accessToken}`,
     },
   });
-}
+};
 
 const updateItem = (endpoint, data) => {
   const accessToken = localStorage.getItem('access_token');
@@ -50,12 +58,13 @@ const updateItem = (endpoint, data) => {
       Authorization: `Bearer ${accessToken}`,
     },
   });
-}
+};
 
-export const signUp = data => post('/users.json', data);
-export const signIn = data => post('/oauth/token.json', data);
-export const getMyInfo = () => get('/users.json');
-export const getTweets = (count = 10) => get('/users/tweets.json?count=' + count);
+export const signUp = data => post('api/users.json', data);
+export const signIn = data => post('api/oauth/token.json', data);
+export const getMyInfo = () => get('api/users.json');
+export const updateMyInfo = data => put('api/users.json', data);
+export const getTweets = (count = 10) => get('api/users/tweets.json?count=' + count);
 
 export const getFolder = (id) => get('/users/folders/'+id+'.json');
 export const getFolders = () => get('/users/folders.json');
