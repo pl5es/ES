@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const axiosInstance = axios.create({
   baseURL: 'http://localhost:3000/api',
-  timeout: 5000,
+  timeout: 10000,
   contentType: 'application/json',
 });
 
@@ -28,4 +28,4 @@ const get = endpoint => {
 export const signUp = data => post('/users.json', data);
 export const signIn = data => post('/oauth/token.json', data);
 export const getMyInfo = () => get('/users.json');
-export const getTweets = data => get('/users/tweets.json', data);
+export const getTweets = (data, count = 10) => get('/users/tweets.json?count=' + count, data);
