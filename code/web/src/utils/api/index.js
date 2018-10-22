@@ -35,7 +35,7 @@ const put = (endpoint, data) => {
 
 const postItem = (endpoint, data) => {
   const accessToken = localStorage.getItem('access_token');
-  return axiosInstance.put(endpoint, data, {
+  return axiosInstance.post(endpoint, data, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
