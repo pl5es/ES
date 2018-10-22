@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Union";
-    src: url("./Union Font/Union-Regular.otf");
+    src: url("../assets/fonts/Union Font/Union-Regular.otf");
 }
 
 html body {
@@ -26,7 +26,7 @@ html body {
     position: relative;
     height: 150px;
     width: 100%;
-    background-image: url(./logo_tipo.png);
+    background-image: url(../assets/img/logo_tipo.png);
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
@@ -37,7 +37,7 @@ html body {
     position: relative;
     height: 40px;
     width: 100%;
-    background-image: url(./logo_tipo.png);
+    background-image: url(../assets/img/logo_tipo.png);
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
@@ -193,7 +193,7 @@ html body {
 }
 
 .about-area .picture-area .photo-area .photo {
-    background-image: url(./profile-pic.jpg);
+    background-image: url(../assets/img/profile-pic.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -319,7 +319,7 @@ html body {
 }
 
 .search-icon {
-    background-image: url(./logo.png);
+    background-image: url(../assets/img/logo.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -337,7 +337,7 @@ html body {
     padding-top: 10px;
     direction: rtl;
     margin-right: 10px;
-    background-image: url(./profile-pic.jpg);
+    background-image: url(../assets/img/profile-pic.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -369,7 +369,7 @@ html body {
 }
 
 .container-personal-info .photo-area {
-    background-image: url(./profile-pic.jpg);
+    background-image: url(../assets/img/profile-pic.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -478,7 +478,7 @@ button:hover{
 }
 
 .container-post .col-md-8 .post .author .id .photo {
-    background-image: url(./profile-pic.jpg);
+    background-image: url(../assets/img/profile-pic.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -569,7 +569,7 @@ button:hover{
     width: 35px;
     height: 35px;
     display: inline-block;
-    background-image: url(./profile-pic.jpg);
+    background-image: url(../assets/img/profile-pic.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

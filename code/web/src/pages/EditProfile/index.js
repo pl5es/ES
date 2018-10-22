@@ -43,7 +43,7 @@ class EditProfile extends Component {
         {updated === true ? (
           <Redirect to="/profile" />
         ) : (
-          <div>
+          <div class="container">
             <Navbar />
             {user ? (
               <div>

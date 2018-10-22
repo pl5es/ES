@@ -18,33 +18,31 @@ class Profile extends Component {
     return (
       <div>
         {user && (
-          <div>
+          <div className="container">
             <Navbar history={this.props.history} />
-            <div className="profile">
-              <div className="text-info">
-                {user.avatar && (
-                  <img src={`${API_URL}/${user.avatar.url}`} alt="" />
-                )}
-                <h1 className="info-nome">{user.name}</h1>
-                <h3 className="info-orcid">
-                  {user.orcid}
-                  <span className="span-orcid"> ORCID ID</span>
-                </h3>
-                <h3 className="info-institute">{user.institution}</h3>
-                <h3 className="info-area">{user.research_area}</h3>
+            <div className="row container-profile">
+              <div className="col-md-2" />
+              <div className="col-md-8 profile">
+                <div className="container-personal-info">
+                  {user.avatar && (
+                    <img src={`${API_URL}/${user.avatar.url}`} alt="" />
+                  )}
+                  <div className="personal-info">
+                    <h1 className="name">{user.name}</h1>
+                    <h3 className="ORCID-number">
+                      {user.orcid}
+                      <div className="ORCID-id"> ORCID ID</div>
+                    </h3>
+                    <h3 className="text">{user.institution}</h3>
+                    <h3 className="text">{user.research_area}</h3>
+                  </div>
+                </div>
+                <div className="description">{user.description}</div>
               </div>
-
-              <div className="follow">
-                <h3>Following</h3>
-                <h4>15</h4>
-                <h3>Followers</h3>
-                <h4>12</h4>
-                <h3>Articles</h3>
-                <h4>1</h4>
-                <Link to="/edit">Edit</Link>
+              <div class="col-md-2 container-edit-profile">
+              <Link to="/edit">Edit Profile</Link>
               </div>
             </div>
-            <h4 className="bio-text">{user.description}</h4>
           </div>
         )}
       </div>

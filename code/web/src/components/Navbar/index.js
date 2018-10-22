@@ -26,19 +26,36 @@ export default class Navbar extends Component {
       state: { query }
     } = this;
     return (
-      <div className="navbar">
-        <div className="navbar-right" id="navbarlinks">
-          <Link id="linkprofile" to="/profile">Profile</Link>
-          <Link id="linkfeed" to="/feed">News Feed</Link>
-          <button id="logoutbutton" onClick={() => this.logout()}> <label>Logout</label> </button>
+      <div class="row container-header">
+        <div class="col-md-2 margin-left">
+          <div class="logo" />
         </div>
-        <input id="navbarsearch"
-          placeholder="Search Pando"
-          type="text"
-          onChange={this.handleInputChange}
-          value={this.state.query}
-        />
-        <button id="navbarbutton" onClick={() => search(query)}> <label>Search</label> </button>
+        <div class="col-md-10 header">
+          <div class="row">
+            <div class="col-md-6 container-search-bar">
+              <input
+                id="navbarsearch"
+                placeholder="Search Pando"
+                type="text"
+                onChange={this.handleInputChange}
+                value={this.state.query}
+              />
+            </div>
+            {/* <button id="navbarbutton" onClick={() => search(query)}> <label>Search</label> </button> */}
+            <div class="col-md-1 search-icon" />
+            <div class="col-md-5 container-icons end">
+              <Link id="linkprofile" to="/profile">
+                Profile
+              </Link>
+              <Link id="linkfeed" to="/feed">
+                News Feed
+              </Link>
+              <button id="logoutbutton" onClick={() => this.logout()}>
+                <label>Logout</label>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
