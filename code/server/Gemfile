@@ -15,6 +15,7 @@ gem "rack-cors", require: "rack/cors"
 gem "carrierwave", "~> 1.0"
 gem "mini_magick"
 gem "jbuilder", "~> 2.7.0"
+gem "twitter"
 
 group :development, :test do
   gem "faker"
@@ -23,6 +24,7 @@ group :development, :test do
   gem "rspec-rails", "~> 3.8"
   gem "rubocop-rails_config"
   gem "awesome_print"
+  gem "dotenv-rails"
 end
 
 group :development do
