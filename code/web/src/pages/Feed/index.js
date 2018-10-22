@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from 'components/Navbar';
 import NewsFeed from 'components/NewsFeed';
 import CreatePost from 'components/CreatePost';
-import 'styles/feed.css';
+// import 'styles/feed.css';
 import { tweets } from 'utils/consts';
 import { getTweets } from 'utils/api';
 
@@ -57,17 +57,7 @@ export default class Feed extends React.Component {
   render() {
     const { search_results: SearchResults, news: NewsResults } = this.state;
     return (
-      <div id="Feed">
-        <img
-          id="bg"
-          alt="background"
-          src={require('assets/register_bg_Prancheta 1.png')}
-        />
-        <img
-          id="logofeed"
-          alt="logo"
-          src={require('assets/pando_logotipo.png')}
-        />
+      <div class="container">
         <Navbar
           id="feednavbar"
           history={this.props.history}

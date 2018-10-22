@@ -239,7 +239,7 @@ export default class BookmarkSearch extends React.Component {
       showSearchResults : ShowSearchResults
     } = this.state;
     return(
-      <div>
+      <div className='container'>
         <Navbar history={this.props.history} />
 
         <BookmarkSelector 
