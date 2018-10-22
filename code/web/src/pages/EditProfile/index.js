@@ -5,7 +5,7 @@ import Navbar from "components/Navbar";
 import { connect } from "react-redux";
 import { edit } from "actions/user";
 import Dropzone from "react-dropzone";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { API_URL } from "utils/config";
 
 import editProfileSchema from "utils/validations/editProfileSchema";
@@ -45,7 +45,7 @@ class EditProfile extends Component {
         ) : (
           <div>
             <Navbar />
-            {user && (
+            {user ? (
               <div>
                 <div className="row">
                   <div className="register">
@@ -176,9 +176,9 @@ class EditProfile extends Component {
                     />
                   </div>
                 </div>
-                <button>Cancel</button>
+                <Link to="/profile">Cancel</Link>
               </div>
-            )}
+            ) : <Redirect to="/profile" />}
           </div>
         )}
       </div>
