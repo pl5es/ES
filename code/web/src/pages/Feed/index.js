@@ -10,14 +10,16 @@ export default class Feed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      news: tweets,
+      news: [],
       search_results: [],
     };
 
-    getTweets()
+    getTweets(20)
       .then(data => {
+        // remover duplicados
+        const ids = Array.from(new Set(data.data));
         this.setState({
-          news: data,
+          news: ids,
         });
       })
       .catch(console.log);
