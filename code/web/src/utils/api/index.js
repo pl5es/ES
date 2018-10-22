@@ -53,7 +53,7 @@ const deleteItem = endpoint => {
 
 const updateItem = (endpoint, data) => {
   const accessToken = localStorage.getItem('access_token');
-  return axiosInstance.post(endpoint, data,{
+  return axiosInstance.put(endpoint, data,{
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
