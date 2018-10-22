@@ -1,5 +1,4 @@
 import React from 'react';
-import data from 'utils/consts';
 import Navbar from 'components/Navbar';
 import BookmarkSelector from 'components/BookmarkSelector';
 import { getFolder, getFolders, createFolder, deleteFolder, updateFolder, getBookmark, createBookmark, updateBookmark, deleteBookmark } from 'utils/api';
@@ -15,7 +14,7 @@ export default class BookmarkSearch extends React.Component {
       showAddBookmark: false,
       showSearchResults:false,
       showSearch:false,
-      bookmarks: data.BookmarkData,
+      bookmarks: [],
       searchResults:[],
     };
   }
@@ -93,6 +92,8 @@ export default class BookmarkSearch extends React.Component {
 
   handleDeleteFolder = (event,deletedFolder) => {
     this.handleCloseSearchResults();
+    if(this.state.clickedFolder!=null)
+      this.handleFolderClick(event, this.state.clickedBookmark);
     var folderId=deletedFolder.id;
     event.preventDefault();
     deleteFolder(folderId).then(res => {
