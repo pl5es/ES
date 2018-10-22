@@ -14,6 +14,7 @@ export default class BookmarkSearch extends React.Component {
       showAddFolder: false,
       showAddBookmark: false,
       showSearchResults:false,
+      showSearch:false,
       bookmarks: data.BookmarkData,
       searchResults:[],
     };
@@ -30,6 +31,7 @@ export default class BookmarkSearch extends React.Component {
 
   handleAddFolder = (event, newFolder) => {
     event.preventDefault();
+    this.handleCloseSearchResults();
     console.log(newFolder);
     var postFolder={
         title: newFolder,
@@ -47,6 +49,7 @@ export default class BookmarkSearch extends React.Component {
 
   handleAddBookmark = (event,newBookmark,newHashtags, newURL, newFolder) => {
     event.preventDefault();
+    this.handleCloseSearchResults();
     //check if folder exists
     var exists = this.state.folders.filter(folder => folder.title===newFolder);
     if(exists.length===0) //folder doesnt exist
@@ -89,6 +92,7 @@ export default class BookmarkSearch extends React.Component {
   };
 
   handleDeleteFolder = (event,deletedFolder) => {
+    this.handleCloseSearchResults();
     var folderId=deletedFolder.id;
     event.preventDefault();
     deleteFolder(folderId).then(res => {
@@ -101,6 +105,7 @@ export default class BookmarkSearch extends React.Component {
   };
 
   handleDeleteBookmark = (event,bookmark) => {
+    this.handleCloseSearchResults();
     var bookmarkId=bookmark.id;
     var folderId=this.state.clickedFolder.id;
     event.preventDefault();
@@ -189,25 +194,33 @@ export default class BookmarkSearch extends React.Component {
         getBookmark(folder.id,bookmark.id).then(res => {
           res.data.interests.forEach(function (interest){
             if(hashtags.includes(interest.hashtag) && !bookmarks.includes(bookmark)){
+              bookmark.folderName=folder.title;
+              bookmark.matchingHashtag=interest.hashtag;
               bookmarks.push(bookmark);
             }
           });
         });
       });
     });
-    console.log(bookmarks);
     this.setState({
       searchResults: bookmarks,
-      showSearchResults:true,
+      showSearchResults:false,
+      showSearch:true,
     });
-    console.log(this.state.searchResults);
+  };
 
+  handleShowSearchResults = () => {
+    this.setState(currentState => {
+      return {
+        showSearchResults:!currentState.showSearchResults,
+      };
+    });
   };
 
   handleCloseSearchResults = () => {
     this.setState(currentState => {
       return {
-        showSearchResults:false,
+        showSearch:false,
       };
     });
   };
@@ -221,6 +234,7 @@ export default class BookmarkSearch extends React.Component {
       showAddBookmark: ShowAddBookmark,
       showAddFolder: ShowAddFolder,
       searchResults: SearchResults,
+      showSearch: ShowSearch,
       showSearchResults : ShowSearchResults
     } = this.state;
     return(
@@ -240,8 +254,10 @@ export default class BookmarkSearch extends React.Component {
           handleDeleteFolder={this.handleDeleteFolder}
           handleDeleteBookmark={this.handleDeleteBookmark}
 
+          handleShowSearchResults={this.handleShowSearchResults}
           handleCloseSearchResults={this.handleCloseSearchResults}
           searchResults={SearchResults}
+          showSearch={ShowSearch}
           showSearchResults={ShowSearchResults}
           handleSearchBookmark={this.handleSearchBookmark}
 
