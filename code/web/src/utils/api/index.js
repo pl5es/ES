@@ -2,7 +2,6 @@ import axios from 'axios';
 import { API_URL } from 'utils/config';
 
 export const axiosInstance = axios.create({
-  baseURL: 'http://localhost:3000/api',
   contentType: 'application/json',
 });
 
@@ -17,7 +16,7 @@ const post = (endpoint, data) => {
 
 const get = endpoint => {
   const accessToken = localStorage.getItem('access_token');
-  return axiosInstance.get(endpoint, {
+  return axios.get(`${API_URL}/${endpoint}`, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
