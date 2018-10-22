@@ -6,7 +6,7 @@ import InputField from "components/InputField";
 import { connect } from "react-redux";
 import { signup } from "actions/auth";
 import { Redirect } from "react-router-dom";
-import validationSchema from 'utils/validations';
+import signUpSchema from 'utils/validations/signUpSchema';
 
 import "styles/register.css";
 
@@ -69,7 +69,7 @@ class SignUp extends Component {
                       onSubmit={values =>
                         this.valuesToFormData(values, history, signup)
                       }
-                      validationSchema={validationSchema}
+                      validationSchema={signUpSchema}
                       initialValues={{
                         username: "",
                         email: "",

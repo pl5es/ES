@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-const validationSchema = yup.object().shape({
+const signUpSchema = yup.object().shape({
   username: yup.string().required('Username is required!'),
   email: yup
     .string()
@@ -45,4 +45,4 @@ const validationSchema = yup.object().shape({
     .required('ORCID number is required!'),
 });
 
-export default validationSchema;
+export default signUpSchema;

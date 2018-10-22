@@ -1,29 +1,34 @@
 const initState = {
   userError: null,
   user: null,
+  updated: false,
 };
 
 const userReducer = (state = initState, action) => {
   switch (action.type) {
-    case "GET_MY_INFO_ERROR":
+    case 'GET_MY_INFO_ERROR':
       return {
-        authError: "Error at fecthing your information",
+        authError: 'Error at fecthing your information',
         user: null,
+        updated: false,
       };
-    case "GET_MY_INFO_SUCCESS":
+    case 'GET_MY_INFO_SUCCESS':
       return {
         authError: null,
         user: action.payload,
+        updated: false,
       };
-      case "PROFILE_UPDATE_SUCCESS":
+    case 'PROFILE_UPDATE_SUCCESS':
       return {
         authError: null,
         user: action.payload,
+        updated: true,
       };
-      case "GET_MY_INFO_ERROR":
+    case 'PROFILE_UPDATE_ERROR':
       return {
         ...state,
-        authError: "Error at updating your information",
+        updated: false,
+        authError: 'Error at updating your information',
       };
     default:
       return state;

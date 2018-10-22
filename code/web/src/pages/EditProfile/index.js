@@ -1,180 +1,184 @@
-import React, { Component } from 'react';
-import { FieldArray, Field, Form, Formik } from 'formik';
-import InputField from 'components/InputField';
-import Navbar from 'components/Navbar';
-import { connect } from 'react-redux';
-import { edit } from 'actions/user';
-import Dropzone from 'react-dropzone';
+import React, { Component } from "react";
+import { FieldArray, Field, Form, Formik } from "formik";
+import InputField from "components/InputField";
+import Navbar from "components/Navbar";
+import { connect } from "react-redux";
+import { edit } from "actions/user";
+import Dropzone from "react-dropzone";
+import { Redirect } from "react-router-dom";
 import { API_URL } from "utils/config";
 
-import validationSchema from 'utils/validations';
+import editProfileSchema from "utils/validations/editProfileSchema";
 
 class EditProfile extends Component {
   state = {
-    imageFiles: [],
+    imageFiles: []
   };
 
   onDrop = (setFieldValue, imageFiles) => {
     this.setState({
-      imageFiles: imageFiles,
+      imageFiles: imageFiles
     });
-    setFieldValue('avatar', this.state.imageFiles[0]);
+    setFieldValue("avatar", this.state.imageFiles[0]);
   };
 
-  valuesToFormData(values, history, signup) {
+  valuesToFormData(values, history, edit) {
     const bodyFormData = new FormData();
     Object.keys(values).map(value => {
-      if (value !== 'interests') {
+      if (value !== "interests") {
         bodyFormData.append(value, values[value]);
       }
     });
 
-    for (var i = 0; i < values.interests.length; i++) {
-      bodyFormData.append('interests[]', values.interests[i]);
-    }
-
-    signup(bodyFormData, history);
+    edit(bodyFormData, history);
   }
 
   render() {
     const {
-      props: { user, edit },
+      props: { user, edit, history, updated }
     } = this;
-    console.log(user)
+    console.log(this.props);
     return (
       <div>
-        <Navbar />
-        {user && (
+        {updated === true ? (
+          <Redirect to="/profile" />
+        ) : (
           <div>
-            <div className="row">
-              <div className="register">
-                <Formik
-                  onSubmit={values => edit(values)}
-                  validationSchema={validationSchema}
-                  initialValues={user}
-                  render={({ setFieldValue }) => (
-                    <div>
-                      <Form>
-                        <div className="row">
-                          <div className="one-half column form-wrapper">
-                            <Field
-                              name="username"
-                              type="text"
-                              component={InputField}
-                              label="Username *"
-                              placeholder="Enter your username"
-                            />
-                            <Field
-                              name="email"
-                              type="text"
-                              component={InputField}
-                              label="Email *"
-                              placeholder="Enter your e-mail"
-                            />
-                            <Field
-                              name="orcid"
-                              type="text"
-                              component={InputField}
-                              label="ORCID Number *"
-                              placeholder="Enter your ORCID number"
-                            />
-                            <Field
-                              name="password"
-                              type="password"
-                              component={InputField}
-                              label="Password *"
-                              placeholder="Enter your password"
-                            />
-                            <h5>Detailed Info</h5>
-                            <Field
-                              name="name"
-                              type="text"
-                              component={InputField}
-                              label="Name *"
-                              placeholder="Enter your name"
-                            />
-                            <Field
-                              name="research_area"
-                              type="text"
-                              component={InputField}
-                              label="Research Area *"
-                              placeholder="Enter your subject"
-                            />
-                            <Field
-                              name="institution"
-                              type="text"
-                              component={InputField}
-                              label="Institution *"
-                              placeholder="Enter the name of your institution"
-                            />
-                          </div>
-                          <div className="one-half column">
-                            <div className="register_image" />
+            <Navbar />
+            {user && (
+              <div>
+                <div className="row">
+                  <div className="register">
+                    <Formik
+                      onSubmit={values =>
+                        this.valuesToFormData(values, history, edit)
+                      }
+                      validationSchema={editProfileSchema}
+                      initialValues={user}
+                      render={({ setFieldValue }) => (
+                        <div>
+                          <Form>
                             <div className="row">
-                              <Dropzone
-                                accept="image/jpeg, image/png"
-                                onDrop={ev => this.onDrop(setFieldValue, ev)}
-                                multiple={false}
-                              >
-                                <div className="one-third offset-by-four column">
-                                  {this.state.imageFiles.length > 0 ? (
-                                    <div>
-                                      {this.state.imageFiles.map(file => (
+                              <div className="one-half column form-wrapper">
+                                <Field
+                                  name="username"
+                                  type="text"
+                                  component={InputField}
+                                  label="Username *"
+                                  placeholder="Enter your username"
+                                />
+                                <Field
+                                  name="email"
+                                  type="text"
+                                  component={InputField}
+                                  label="Email *"
+                                  placeholder="Enter your e-mail"
+                                />
+                                <Field
+                                  name="orcid"
+                                  type="text"
+                                  component={InputField}
+                                  label="ORCID Number *"
+                                  placeholder="Enter your ORCID number"
+                                />
+                                <h5>Detailed Info</h5>
+                                <Field
+                                  name="name"
+                                  type="text"
+                                  component={InputField}
+                                  label="Name *"
+                                  placeholder="Enter your name"
+                                />
+                                <Field
+                                  name="research_area"
+                                  type="text"
+                                  component={InputField}
+                                  label="Research Area *"
+                                  placeholder="Enter your subject"
+                                />
+                                <Field
+                                  name="institution"
+                                  type="text"
+                                  component={InputField}
+                                  label="Institution *"
+                                  placeholder="Enter the name of your institution"
+                                />
+                              </div>
+                              <div className="one-half column">
+                                <div className="register_image" />
+                                <div className="row">
+                                  <Dropzone
+                                    accept="image/jpeg, image/png"
+                                    onDrop={ev =>
+                                      this.onDrop(setFieldValue, ev)
+                                    }
+                                    multiple={false}
+                                  >
+                                    <div className="one-third offset-by-four column">
+                                      {this.state.imageFiles.length > 0 ? (
+                                        <div>
+                                          {this.state.imageFiles.map(file => (
+                                            <img
+                                              id="avatar"
+                                              src={file.preview}
+                                              style={{
+                                                position: "absolute",
+                                                top: "50%",
+                                                left: "50%",
+                                                width: "100%",
+                                                height: "100%",
+                                                marginTop: "-50%",
+                                                marginLeft: "-50%"
+                                              }}
+                                            />
+                                          ))}
+                                        </div>
+                                      ) : (
                                         <img
                                           id="avatar"
-                                          src={file.preview}
+                                          src={user.avatar && `${API_URL}/${user.avatar.url}`}
                                           style={{
-                                            position: 'absolute',
-                                            top: '50%',
-                                            left: '50%',
-                                            width: '100%',
-                                            height: '100%',
-                                            marginTop: '-50%',
-                                            marginLeft: '-50%',
+                                            position: "absolute",
+                                            top: "50%",
+                                            left: "50%",
+                                            width: "100%",
+                                            height: "100%",
+                                            marginTop: "-50%",
+                                            marginLeft: "-50%"
                                           }}
                                         />
-                                      ))}
+                                      )}
                                     </div>
-                                  ) : <img
-                                          id="avatar"
-                                          src={`${API_URL}/${user.avatar.url}`}
-                                          style={{
-                                            position: 'absolute',
-                                            top: '50%',
-                                            left: '50%',
-                                            width: '100%',
-                                            height: '100%',
-                                            marginTop: '-50%',
-                                            marginLeft: '-50%',
-                                          }}
-                                        /> }
+                                  </Dropzone>
                                 </div>
-                              </Dropzone>
+                                <div id="description_container">
+                                  <Field
+                                    name="description"
+                                    type="textarea"
+                                    component={InputField}
+                                    label="Description"
+                                    style={{
+                                      height: "10em",
+                                      width: "30em"
+                                    }}
+                                  />
+                                </div>
+                              </div>
                             </div>
-                            <div id="description_container">
-                              <Field
-                                name="description"
-                                type="textarea"
-                                component={InputField}
-                                label="Description"
-                                style={{
-                                  height: '10em',
-                                  width: '30em',
-                                }}
-                              />
+                            <div className="four column offset-by-four u-center-block">
+                              <button type="submit">
+                                Confirm Registration
+                              </button>
                             </div>
-                          </div>
+                          </Form>
                         </div>
-                        <div className="four column offset-by-four u-center-block">
-                          <button type="submit">Confirm Registration</button>
-                        </div>
-                      </Form>
-                    </div>
-                  )}
-                />
+                      )}
+                    />
+                  </div>
+                </div>
+                <button>Cancel</button>
               </div>
-            </div>
-            <button>Cancel</button>
+            )}
           </div>
         )}
       </div>
@@ -184,7 +188,7 @@ class EditProfile extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    edit: values => dispatch(edit(values)),
+    edit: values => dispatch(edit(values))
   };
 };
 
@@ -192,10 +196,11 @@ const mapStateToProps = state => {
   return {
     userError: state.user.userError,
     user: state.user.user,
+    updated: state.user.updated,
   };
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(EditProfile);
