@@ -1,9 +1,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
-  username: diogo
-  password: diogo
+  host: db
+  username: postgres
+  password:
   pool: 5
 
 development:
@@ -19,4 +19,4 @@ production:
   <<: *default
   database: server_production
   username: server
-  password: <%= ENV['SERVER_DATABASE_PASSWORD'] %>
+password: <%= ENV['SERVER_DATABASE_PASSWORD'] %>
