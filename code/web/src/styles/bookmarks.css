@@ -1,0 +1,27 @@
+#cntnList{
+	height:200px;
+	overflow:hidden;
+	overflow-y: scroll;
+}
+
+#header{
+	margin-left:5px;
+	font-size:35px;
+}
+
+.cntntColumn{
+	margin-top:15px;
+	margin-bottom:15px;
+	padding:5px;
+	margin-left:1%;
+	float: left;
+    width: 32.33%;
+    border: 5px solid grey;
+    height:300px;
+}
+
+.cntntRow:after{
+	content: "";
+    display: table;
+    clear: both;
+}

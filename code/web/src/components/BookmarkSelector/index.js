@@ -50,7 +50,7 @@ class BookmarkSelector extends Component {
     return (
       <div>
         {/*Search Bar*/}
-        <label>SEARCH BOOKMARKS - Search bookmarks in folders by hashtag</label>
+        <label> <b>SEARCH BOOKMARKS</b> - Search bookmarks in folders by hashtag</label>
         <form
           onSubmit={event => {
             handleSearchBookmark(event, searchInput);
@@ -71,7 +71,7 @@ class BookmarkSelector extends Component {
 
         {/*Search Results*/}
         {showSearch && (
-          <label>
+          <p>
             {"Search Results:"}
             <button
               onClick={() => handleShowSearchResults()}
@@ -88,9 +88,10 @@ class BookmarkSelector extends Component {
               (Close)
             </button>
 
+            <ul>
             {showSearchResults &&
               searchResults.map(bookmark => (
-                <label key={bookmark.id}>
+                <li key={bookmark.id}>
                   {bookmark.title}
                   &#160;&#160;&#160;
                   {/*espaços em branco*/}
@@ -104,9 +105,10 @@ class BookmarkSelector extends Component {
                     " with matching hashtag:" +
                     bookmark.matchingHashtag +
                     ")"}
-                </label>
+                </li>
               ))}
-          </label>
+              </ul>
+          </p>
         )}
 
         {/*Show add folder form*/}
@@ -114,73 +116,91 @@ class BookmarkSelector extends Component {
           onClick={() => handleShowAddFolder()}
           style={{ color: "black" }}
         >
-          (Add Folder)
+          Add Folder
         </button>
         {/*Show add bookmark form*/}
         <button
           onClick={() => handleShowAddBookmark()}
           style={{ color: "black" }}
         >
-          (Add Bookmark)
+          Add Bookmark
         </button>
 
-        <label> YOUR FOLDERS - Click on one to view its bookmarks </label>
-        {/*Shows folders*/}
-        <label id="folders">
-          {folders.map(folder => (
-            <label key={folder.id}>
-              <button
-                onClick={event => handleFolderClick(event, folder)}
-                style={{ color: "black" }}
-              >
-                {folder.title}
-              </button>
-              <button
-                onClick={event => handleDeleteFolder(event, folder)}
-                style={{ color: "black" }}
-              >
-                Delete
-              </button>
-            </label>
-          ))}
-        </label>
 
-        {/*Shows bookmarks of folder you clicked on*/}
-        {clickedFolder != null && (
-          <label id="bookmarks">
-            {clickedFolder.title +
-              "'s bookmarks are: (Click on one to view its interests)"}
-            {clickedFolder.bookmarks.map(bookmark => (
-              <label key={bookmark.id}>
-                <button
-                  onClick={event => handleBookmarkClick(event, bookmark)}
-                  style={{ color: "black" }}
-                >
-                  {bookmark.title}
-                </button>
-                <a href={bookmark.url} target="_blank">
-                  OPEN LINK
-                </a>
-                <button
-                  onClick={event => handleDeleteBookmark(event, bookmark)}
-                  style={{ color: "black" }}
-                >
-                  Delete
-                </button>
-              </label>
-            ))}
-          </label>
-        )}
 
-        {/*Shows interests of bookmark you clicked on*/}
-        {clickedBookmark != null && (
-          <label id="interests">
-            {clickedBookmark.title + "'s hashtags are:"}
-            {clickedBookmark.interests.map(interest => (
-              <label key={interest.id}>{interest.hashtag}</label>
-            ))}
-          </label>
-        )}
+         <div class="cntntRow">
+          <div class="cntntColumn">
+            <label> Your folders - Click on one to view its bookmarks </label>
+            {/*Shows folders*/}
+            <ul id="cntnList">
+              {folders.map(folder => (
+                <li key={folder.id}>
+                  <button
+                    onClick={event => handleFolderClick(event, folder)}
+                    style={{ color: "black" }}
+                  >
+                    {folder.title}
+                  </button>
+                  <button
+                    onClick={event => handleDeleteFolder(event, folder)}
+                    style={{ color: "black" }}
+                  >
+                    Delete
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="cntntColumn">
+            {/*Shows bookmarks of folder you clicked on*/}
+            {clickedFolder != null && (
+              <ul id="cntnList">
+                {clickedFolder.title +
+                  " 's bookmarks: Click on one to view its interests"}
+                {clickedFolder.bookmarks.map(bookmark => (
+                  <li key={bookmark.id}>
+                    <button
+                      onClick={event => handleBookmarkClick(event, bookmark)}
+                      style={{ color: "black" }}
+                    >
+                      {bookmark.title}
+                    </button>
+                    <a href={bookmark.url} target="_blank">
+                      OPEN LINK
+                    </a>
+                    <button
+                      onClick={event => handleDeleteBookmark(event, bookmark)}
+                      style={{ color: "black" }}
+                    >
+                      Delete
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+          </div>
+          <div class="cntntColumn">
+            {/*Shows interests of bookmark you clicked on*/}
+            {clickedBookmark != null && (
+              <ul id="cntnList">
+                {clickedBookmark.title + "'s hashtags are:"}
+                {clickedBookmark.interests.map(interest => (
+                  <li key={interest.id}>{interest.hashtag}</li>
+                ))}
+              </ul>
+            )}
+
+          </div>
+        </div> 
+
+
+        
+
+        
+
+        
 
         {/* Add folder form*/}
         {showAddFolder && (
