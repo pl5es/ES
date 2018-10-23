@@ -1,0 +1,39 @@
+@font-face {
+    font-family: Roboto ;
+    src:url(../fotns/roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: Roboto R ;
+    src:url(../fotns/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto M ;
+    src:url(../fotns/roboto/Roboto-Medium.ttf);
+}
+
+
+@font-face {
+    font-family: Union ;
+    src:url(../fotns/union/Union-Rough.otf);
+}
+
+@font-face {
+    font-family: Union R ;
+    src:url(../fotns/union/Union-Regular.otf);
+}
+
+@font-face {
+    font-family: Roboto I;
+    src:url(../fotns/roboto/Roboto-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto BI;
+    src:url(../fotns/roboto/Roboto-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: Roboto MI;
+    src:url(../fotns/roboto/Roboto-MediumItalic.ttf);
+}
