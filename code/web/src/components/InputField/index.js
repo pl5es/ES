@@ -1,8 +1,8 @@
 import React from 'react';
 
-const InputField = ({ label, field, form: { touched, errors }, ...props }) => (
+const InputField = ({ label, field, labelClass, form: { touched, errors }, ...props }) => (
   <div>
-    <label>{label}</label>
+    <div class={labelClass}>{label}</div>
     <input {...field} {...props} />
     {touched[field.name] &&
       errors[field.name] && <div className="error">{errors[field.name]}</div>}

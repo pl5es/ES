@@ -10,6 +10,7 @@ json.(
   :orcid,
   :research_area,
   :username,
+  :interests,
   :created_at,
   :updated_at
 )

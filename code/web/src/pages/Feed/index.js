@@ -1,22 +1,32 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import NewsData from 'utils/consts';
-import NewsFeed from 'components/NewsFeed';
-import 'styles/feed.css';
 import Navbar from 'components/Navbar';
+import NewsFeed from 'components/NewsFeed';
 import CreatePost from 'components/CreatePost';
+// import 'styles/feed.css';
+import { tweets } from 'utils/consts';
+import { getTweets } from 'utils/api';
 
 export default class Feed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      _news: NewsData,
+      news: [],
       search_results: [],
     };
+
+    getTweets(20)
+      .then(data => {
+        // remover duplicados
+        const ids = Array.from(new Set(data.data));
+        this.setState({
+          news: ids,
+        });
+      })
+      .catch(console.log);
   }
 
   handleNewPost = values => {
-    if(!values) {
+    if (!values) {
       return;
     }
     this.setState(currentState => {
@@ -26,7 +36,7 @@ export default class Feed extends React.Component {
         src: '',
       };
       return {
-        _news: [newPost].concat(currentState._news),
+        news: [newPost].concat(currentState.news),
       };
     });
   };
@@ -37,7 +47,7 @@ export default class Feed extends React.Component {
     }
     this.setState(currentState => {
       return {
-        search_results: currentState._news.filter(_new =>
+        search_results: currentState.news.filter(_new =>
           _new.title.toLowerCase().includes(values.toLowerCase()),
         ),
       };
@@ -45,18 +55,20 @@ export default class Feed extends React.Component {
   };
 
   render() {
-    const { search_results: SearchResults, _news: NewsResults } = this.state;
+    const { search_results: SearchResults, news: NewsResults } = this.state;
     return (
-      <div id="Feed">
-        <img id="bg" src={require('assets/register_bg_Prancheta 1.png')} />
-        <img id="logofeed" src={require('assets/pando_logotipo.png')} />
-        <Navbar id="feednavbar" history={this.props.history} search={this.handleSearch} />
+      <div class="container">
+        <Navbar
+          id="feednavbar"
+          history={this.props.history}
+          search={this.handleSearch}
+        />
         <CreatePost post={this.handleNewPost} />
         <div id="SearchResults">
-          <NewsFeed _news={SearchResults} name="Search Results" />
+          <NewsFeed news={SearchResults} name="Search Results" />
         </div>
         <div id="NewsFeed">
-          <NewsFeed _news={NewsResults} name="News Feed" />
+          <NewsFeed news={NewsResults} name="News Feed" />
         </div>
       </div>
     );

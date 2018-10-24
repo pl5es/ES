@@ -1,0 +1,15 @@
+Mockups Realizados por Maria rodrigues (REQ) e Inês Gonçalves (REQ)
+
+última atualização: 
+
+		Inês Gonçalves 24/10/18 02:09
+		-criação de um menu para os bookmarks
+		(desenvolvimento dos icons no illustrator);
+		-alterações na tipografia;
+		-criação de um menu de pesquisa de
+		hashtags ("#")-bookmarks;
+
+A visualização dos mockups pode ser feita online através
+deste link:
+
+https://www.figma.com/file/HMfOCTIdfLOiQzY8YqG3NKQv/PANDO?node-id=517%3A120

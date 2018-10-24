@@ -3,6 +3,7 @@
 class Interest < ApplicationRecord
   has_and_belongs_to_many :users
   has_and_belongs_to_many :posts
+  has_and_belongs_to_many :bookmarks
 
   def self.associate(model, hashtags)
     model.interests.delete_all
@@ -20,5 +21,6 @@ class Interest < ApplicationRecord
     interests.each do |i|
       model.interests.push(i)
     end
+    model.interests.load
   end
 end

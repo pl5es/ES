@@ -2,8 +2,6 @@ import axios from 'axios';
 import { API_URL } from 'utils/config';
 
 export const axiosInstance = axios.create({
-  baseURL: 'https://localhost:300/api',
-  timeout: 5000,
   contentType: 'application/json',
 });
 
@@ -25,6 +23,55 @@ const get = endpoint => {
   });
 };
 
+const put = (endpoint, data) => {
+  const accessToken = localStorage.getItem('access_token');
+  return axios.put(`${API_URL}/${endpoint}`, data, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};
+
+const postItem = (endpoint, data) => {
+  const accessToken = localStorage.getItem('access_token');
+  return axios.post(`${API_URL}/${endpoint}`, data, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};
+
+const deleteItem = endpoint => {
+  const accessToken = localStorage.getItem('access_token');
+  return axios.delete(`${API_URL}/${endpoint}`, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};
+
+const updateItem = (endpoint, data) => {
+  const accessToken = localStorage.getItem('access_token');
+  return axios.put(`${API_URL}/${endpoint}`, data, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};
+
 export const signUp = data => post('api/users.json', data);
 export const signIn = data => post('api/oauth/token.json', data);
-export const getMyInfo = () => get('api/users/1.json');
+export const getMyInfo = () => get('api/users.json');
+export const updateMyInfo = data => put('api/users.json', data);
+export const getTweets = (count = 10) => get('api/users/tweets.json?count=' + count);
+
+export const getFolder = (id) => get('api/users/folders/'+id+'.json');
+export const getFolders = () => get('api/users/folders.json');
+export const createFolder = data => postItem('api/users/folders.json',data);
+export const deleteFolder = (id) => deleteItem('api/users/folders/'+id+'.json');
+export const updateFolder = (data,id) => updateItem('api/users/folders/'+id+'.json',data);
+
+export const getBookmark = (folderId,bookmarkId) => get('api/users/folders/'+folderId+'/bookmarks/'+bookmarkId+'.json');
+export const createBookmark = (data,id) => postItem('api/users/folders/'+id+'/bookmarks.json',data);
+export const deleteBookmark = (folderId,bookmarkId) => deleteItem('api/users/folders/'+folderId+'/bookmarks/'+bookmarkId+'.json');
+export const updateBookmark = (data,id) => updateItem('api/users/bookmarks/'+id+'.json',data);

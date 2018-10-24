@@ -1,4 +1,4 @@
-const newsdata = [
+const NewsData = [
   {
     title: 'EvoCOP 2019',
     desc:
@@ -21,4 +21,4 @@ const newsdata = [
   },
 ];
 
-export default newsdata;
+export default NewsData;
