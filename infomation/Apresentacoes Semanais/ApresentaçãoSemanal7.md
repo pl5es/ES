@@ -134,7 +134,7 @@ Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
 Inquérito de feedback sobre a aula passada | Francisco Monteiro | 15 min | 10 min
 Criação de uma conta no Bitwarden | Francisco Monteiro | 5 min | 5 min
-Resolução de problemas de upload no GitHub | 15 min | 15 min
+Resolução de problemas de upload no GitHub | Francisco Monteiro | 15 min | 15 min
 
 ## Gestão de Projeto
 ### A unidade
@@ -167,7 +167,7 @@ Análise Inquérito sobre Gestão de Pessoas e Risco | 1h
 Inquérito Rotações Sprint #3 | 20 min
 Processo 3.2.3  - Apresentação semanal <br> Processo 3.2.4 - Verificação das tarefas | 1h
 Testes de personalidade | 45 min
-Análise de Riscos, Planeamento dos Riscos, Monitorização dos Riscos - 2h
+Análise de Riscos, Planeamento dos Riscos, Monitorização dos Riscos | 2h
 
 
 
