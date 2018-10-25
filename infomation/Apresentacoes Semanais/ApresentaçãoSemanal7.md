@@ -160,6 +160,7 @@ Realização da tabela para avaliações semanais | António Eloi | 2h10 | 1h40
 Elaboração Parcial de Template para Inquéritos de Gestão de Risco e de Pessoas | Diogo Alves | 30 min | 25 min
 Elaboração do google forms de avaliação e gestão de pessoas e riscos | António Eloi | 1h | 1h10
 Pesquisa sobre o modelo Kantan | Diogo Fernandes | 20 min | 20 min
+Criação do processo 3.0.2MQ_ATRIBUICAO_TAREFAS | Diogo Fernandes | 1h30 | 1h30
 Gestão de Risco - Fase de Identificação de Riscos | Diogo Alves | 2h | 2h
 Preenchimento da tabela da avaliação semanal | Hanna Filatava | 30 min | 30 min
 Compilação das informações da apresentação de cada unidade para a apresentação final | Hanna Filatava | 45 min | 1h
