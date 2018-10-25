@@ -31,16 +31,15 @@ Correções no documento de requisitos Sprint#2 com base no documento de revisã
 Esclarecimento de dúvidas de IMP e comunicação com o Professor | António Morais | 1h30 | 1h30
 Criação de ícones relativos aos menus das bookmarks | Inês Gonçalves | 20 min | 20 min
 
-### Issues: 
-Documento entregue por testes pode ser usado como artefacto de sprint goal de requisitos?
-
-
 ### Atividades Planeadas para a Semana Seguinte
 
 Tarefa | Esforço Estimado
 ------------ | -------------
 Reunião com o cliente tendo em vista os objetivos do Sprint #3 | 1h
 Atualização do documento de requisitos para o Sprint #3 | 5h
+
+### Issues: 
+Documento entregue por testes pode ser usado como artefacto de sprint goal de requisitos?
 
 
 ## Implementação
