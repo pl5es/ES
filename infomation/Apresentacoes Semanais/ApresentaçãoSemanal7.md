@@ -178,9 +178,9 @@ Análise de Riscos, Planeamento dos Riscos, Monitorização dos Riscos | 2h
 
 ### Avaliação da PL da semana anterior
 
-![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/FeedbackPL%20-%20Week7.PNG)
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/FeedbackPL2_Week7.PNG)
 
-![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/FeedbackPL2%20-%20Week7.PNG)
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/FeedbackP_Week7.PNG)
 
 #### O que é que achas que se pode melhorar para a próxima aula? 
 1. A equipa de requisitos devia comunicar mais com o cliente
@@ -191,11 +191,11 @@ Aulas de 2 horas era fixe
 5. Uma aula de 2 horas ser de 2 horas era fixe :')
 
 ## Esforço Diário Por Elemento
-![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Pessoal_Pando_2018%20-%20Week7.jpg)
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Pessoal_Pando_2018_Week7.jpg)
 
 ## Esforço Diário Por Unidade
 
-![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Unidade_Pando_2018%20-%20Week7.jpg)
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Unidade_Pando_2018-Week7.jpg)
 
 ## Slack Analytics
 
