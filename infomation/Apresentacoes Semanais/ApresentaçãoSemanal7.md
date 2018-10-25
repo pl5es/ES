@@ -57,7 +57,7 @@ Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
 HTML + CSS páginas de registo e perfil | Daniel Santos | 5h45 | 11h
 Proxy para o twitter | Tiago Martins | 2h | 2h
-Bookmarks e Folders  |  | 4h | 5h
+Bookmarks e Folders  | Tiago Martins | 4h | 5h
 Mostrar posts do Twitter no feed | Alexandre Faria | 2h | 3h
 Criar conta Twitter Dev e gerar chaves | Alexandre Faria | 5min | 30min
 JS Bookmarks | João Almeida | 7h | 11h
@@ -115,22 +115,7 @@ Foto | Nome e Contacto | Cargo
 
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
-Versão final Ata 11/10 | Tiago Pessoa | 1h | 1h
-Revisão do Documento de Requisitos | Pedro Coelho | 40 min | 1h
-Criação de tabelas de esforço | Tiago Pessoa | 20 min | 20 min
-Ata da reunião de equipa | Tiago Pessoa | 1h20 | 1h20
-Revisão Manual de Qualidade | Ana Sofia Almeida, Guilherme Cruz | 2h | 1h35
-
-### Atividades Planeadas para a Semana Seguinte
-
-Tarefa | Esforço Estimado
------------- | -------------
-Ata de 18/10 | 1h
-Revisão Manual de Qualidade | 2h
-Revisão das métricas dos vários processos | 1h
-
-### Issues
-Especificações acerca dos gráficos a serem criados pela unidade.
+Revisão Manual de Qualidade | Pedro Coelho | 1h | 1h
 
 
 ## Ambiente
@@ -150,14 +135,6 @@ Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 Inquérito de feedback sobre a aula passada | Francisco Monteiro | 15 min | 10 min
 Criação de uma conta no Bitwarden | Francisco Monteiro | 5 min | 5 min
 Resolução de problemas de upload no GitHub | 15 min | 15 min
-
-### Atividades Planeadas para a Semana Seguinte
-
-Tarefa | Esforço Estimado
------------- | -------------
-Inquérito de feedback pós aula | 15 min
-Completar a integração do Codacy no GitHub | 30 min
-Revisão do manual de qualidade (Seção dos processos de ambiente) | 1h
 
 ## Gestão de Projeto
 ### A unidade
@@ -186,24 +163,46 @@ Compilação das informações da apresentação de cada unidade para a apresent
 
 Tarefa | Esforço Estimado
 ------------ | -------------
-Gestão de Risco | 3h
-Gestão de Pessoas | 2h
+Análise Inquérito sobre Gestão de Pessoas e Risco | 1h
+Inquérito Rotações Sprint #3 | 20 min
+Processo 3.2.3  - Apresentação semanal <br> Processo 3.2.4 - Verificação das tarefas | 1h
+Testes de personalidade | 45 min
+Análise de Riscos, Planeamento dos Riscos, Monitorização dos Riscos - 2h
+
 
 
 ### Avaliação da PL da semana anterior
 
-![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/FeedbackPL.png)
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/FeedbackPL%20-%20Week7.PNG)
 
-![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/FeedbackPL2.png)
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/FeedbackPL2%20-%20Week7.PNG)
 
 #### O que é que achas que se pode melhorar para a próxima aula? 
-1. Organização e comunicação entre as unidades
-2. Era benéfico se toda a equipa chegasse a horas.
-3. Temos de ver o resultado da reorganização da equipa para poder saber a evolução desde a aula passada...consequentemente as necessidades para poder melhorar :)
-4. Preparação para a aula
-5. Haver tempo para avaliação do desempenho da equipa PM
-6. Nada
-7. Tempo para as unidades
-8. Cada elemento podia falar do que esteve a fazer durante a semana de forma a que existir alguma dúvida seja esclarecida e para que o resto da equipa esteja a par do que está a acontecer, porque uma lista das tarefas semanais não é o suficiente. Ou pelo menos haver tempo para reunir todas as subunidades entre elas e partilharem o que fizeram.
-9. Apresentações semanais, conhecimento de tudo o que se passa no projeto.
+1. A equipa de requisitos devia comunicar mais com o cliente
+2. Membros da equipa deveriam ser mais específicos e claros ao preencher a doc. da apresentação semanal de modo a evitar problemas durante a apresentação ao professor.
+3. Ter o professor durante o tempo total de aula seria bastante vantajoso para todos os elementos.
+Aulas de 2 horas era fixe
+4. Mais tempo para tirar dúvidas
+5. Uma aula de 2 horas ser de 2 horas era fixe :')
+
+## Esforço Diário Por Elemento
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Pessoal_Pando_2018%20-%20Week7.jpg)
+
+## Esforço Diário Por Unidade
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Unidade_Pando_2018%20-%20Week7.jpg)
+
+## Slack Analytics
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_WeeklyActiveUsersWeek7.PNG)
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_DailyActiveUsersWeek7.PNG)
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_MessagesReadingWeek7.PNG)
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_MessagesSentWeek7.PNG)
+
+## GitHub Insights 
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/GitHub_Insights_Week7.PNG)
 
