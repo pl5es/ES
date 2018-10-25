@@ -136,6 +136,11 @@ Inquérito de feedback sobre a aula passada | Francisco Monteiro | 15 min | 10 m
 Criação de uma conta no Bitwarden | Francisco Monteiro | 5 min | 5 min
 Resolução de problemas de upload no GitHub | Francisco Monteiro | 15 min | 15 min
 
+### Atividades Planeadas para a Semana Seguinte
+Tarefa | Esforço Estimado
+------------ | -------------
+Inquérito Rotações Sprint #3 - Perguntar se os membros da equipa querem mudar de unidade | 20 min
+
 ## Gestão de Projeto
 ### A unidade
 
@@ -164,7 +169,6 @@ Compilação das informações da apresentação de cada unidade para a apresent
 Tarefa | Esforço Estimado
 ------------ | -------------
 Análise Inquérito sobre Gestão de Pessoas e Risco | 1h
-Inquérito Rotações Sprint #3 | 20 min
 Processo 3.2.3  - Apresentação semanal <br> Processo 3.2.4 - Verificação das tarefas | 1h
 Testes de personalidade | 45 min
 Análise de Riscos, Planeamento dos Riscos, Monitorização dos Riscos | 2h
