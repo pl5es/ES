@@ -29,6 +29,10 @@ Reunião com o cliente tendo em vista requisitos do Sprint #3 | Pedro Gonçalves
 Reunião com o cliente para atualização dos requisitos do Sprint #2 | António Morais | 30 min | 30 min
 Correções no documento de requisitos Sprint#2 com base no documento de revisão da unidade de qualidade | Sara Mendes | 30 min | 30 min
 Esclarecimento de dúvidas de IMP e comunicação com o Professor | António Morais | 1h30 | 1h30
+Criação de ícones relativos aos menus das bookmarks | Inês Gonçalves | 20 min | 20 min
+
+### Issues: 
+Documento entregue por testes pode ser usado como artefacto de sprint goal de requisitos?
 
 
 ### Atividades Planeadas para a Semana Seguinte
@@ -169,7 +173,7 @@ Compilação das informações da apresentação de cada unidade para a apresent
 
 Tarefa | Esforço Estimado
 ------------ | -------------
-Análise Inquérito sobre Gestão de Pessoas e Risco | 1h
+Análise Inquérito sobre Gestão de Pessoas e Risco | 3h
 Processo 3.2.3  - Apresentação semanal <br> Processo 3.2.4 - Verificação das tarefas | 1h
 Testes de personalidade | 45 min
 Análise de Riscos, Planeamento dos Riscos, Monitorização dos Riscos | 2h
