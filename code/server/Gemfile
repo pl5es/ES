@@ -16,6 +16,7 @@ gem "carrierwave", "~> 1.0"
 gem "mini_magick"
 gem "jbuilder", "~> 2.7.0"
 gem "twitter"
+gem "awesome_print"
 
 group :development, :test do
   gem "faker"
@@ -23,7 +24,6 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails", "~> 3.8"
   gem "rubocop-rails_config"
-  gem "awesome_print"
   gem "dotenv-rails"
 end
 

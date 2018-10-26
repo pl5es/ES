@@ -18,6 +18,7 @@ class FoldersController < ApplicationController
   # POST /folders.json
   def create
     @folder = Folder.new(folder_params)
+    ap folder_params
 
     if @folder.save
       render :show, status: :created

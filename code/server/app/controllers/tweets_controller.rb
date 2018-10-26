@@ -7,14 +7,11 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
     number_tweets = if params["count"] then params["count"].to_i else 10 end
-    ap "NUMBER TWEETS"
-    ap number_tweets
     tweet_ids = []
     if @user.interests
       for i in 1..number_tweets
         interest = @user.interests.sample
         tweet = Rails.application.config.twitter_client.search("#{interest[:hashtag]}", count: 1).take(1)
-        ap tweet
         tweet_ids.push(tweet.first.id.to_s)
       end
     end
