@@ -1,0 +1,266 @@
+/*--------------------------------------- */
+/* post box margins */
+
+
+.postBox * {
+    box-sizing:content-box;
+}
+.postBox {
+    margin-bottom: 100px;
+    margin-left: 30%;
+    margin-right: 10%;
+    min-height: 30%;
+    font-family: "Futura Std Medium";
+    color: azure;
+}
+
+.individualPost {
+    border-radius: 30px;
+    background-color: #1E212A;
+    padding: 40px;
+    padding-right: 70px;
+}
+
+/* END post box margins END */
+/*--------------------------------------- */
+
+.profileNameDate * {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    color: #F1F452;
+
+}
+.profileNameDate{
+    height: 40px;
+}
+
+/* circle profile image*/
+
+.profileNameDate .imageBox{
+
+    width: 60px;
+    height: 60px;
+    border: 2px solid azure;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+
+}
+
+.imageBox img{
+    width:80px;
+    position: relative;
+    margin-left: 2%;
+
+}
+
+/* END circle profile image END */
+
+/* header info postBox */
+.profileNameDate .b1 {
+
+    position: relative;
+    width: calc(100% - 68px);
+    height: 60px;
+    left: 80px;
+    top: -70px;
+}
+
+.b1 .name {
+    font-family: Union;
+    line-height: normal;
+    font-size: 36px;
+    color: #F1F452;
+    display: inline-block;
+    margin-top: calc(30px - 19px );
+}
+
+.b1 div {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    bottom: 0;
+    font-family: Union;
+    line-height: normal;
+    font-size: 20px;
+    text-align: right;
+
+}
+
+.b1 div h6 {
+    display: block;
+    margin-bottom: 3.5px;
+}
+
+.b1 div h6 ~ h6 {
+
+
+}
+
+.profileNameDate .line1 {
+    position: relative;
+    margin-left: 80px;
+    height: 0.2em;
+    width: calc(100% - 70px);
+    background-color: azure;
+    top: -84px;
+    border-radius: 25px;
+
+}
+
+/*  END info postBox END */
+
+/*--------------------------------------- */
+
+/* text postBox and tags */
+.postView{
+    position: relative;
+    font-family: Roboto R;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 18px;
+    margin-top:50px;
+    margin-left:80px;
+}
+
+.postView a {
+    display: inline-block;
+    margin-left: 5px ;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-size: 14px;
+    color: #ECEE67;
+    text-decoration: none;
+}
+
+.postView a b {
+padding-right:5px;
+}
+
+
+
+
+.tagLink{
+    width: 75%;
+    margin-left: 35px;
+
+}
+
+/* END text postBox END  */
+
+/* buttons postBox */
+.editButtons * {
+    display: inline-block;
+    position: relative;
+    margin:0;
+
+
+}
+
+.editButtons {
+
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.editButtons .b3{
+width: calc(100% - 128px) ;
+    height: 100%;
+
+}
+
+.b3 div {
+position: relative;
+float: right ;
+margin: auto;
+}
+
+.b3 div * {
+
+}
+
+.editButtons .upVotes{
+    position: absolute;
+    right: 0;
+    top: -20px;
+}
+
+.editButtons .comments{
+    position: absolute;
+    right: 0;
+    top: -45px;
+}
+
+
+.editButtons h5 {
+margin-right: 20px;
+    font-family: Union R;
+    font-style: normal;
+    line-height: normal;
+    font-size: 20px;
+    text-align: right;
+    color: #F9FFB4;
+
+}
+.editButtons h6 {
+
+    font-family: Union ;
+    font-style: normal;
+    line-height: normal;
+    font-size: 20px;
+    text-align: right;
+    color: #7c86a0;
+
+}
+
+.b2 {
+  display: inline-block;
+
+}
+.editButtons .comment{
+    height:44px;
+    width: 38px;
+    background-image: url(../icons/comment.svg);
+    background-size: 38px 44px;
+}
+
+.editButtons .like{
+    height:44px;
+    width: 38px;
+    background-image: url(../icons/like.svg);
+    background-size: 38px 44px;
+}
+ .editButtons .save{
+     height:44px;
+     width: 38px;
+     background-image: url(../icons/save.svg);
+
+ }
+
+/*END buttons postBox END */
+
+
+@media only screen and (max-width: 1000px){
+    .postBox {
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .postBox {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .postView {
+        margin-left: 0;
+    }
+
+
+}

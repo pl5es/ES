@@ -1,0 +1,362 @@
+
+
+.pText {
+    margin-top: 110px;
+    width: 429px;
+    height: 50px;
+    margin-left: calc((25% - 10% ) +  90px);
+    background: url('../icons/yourBookmarks.svg') left top   no-repeat;
+}
+
+.dtext {
+    font-family: Roboto;
+    width: 355px;
+    margin-left: calc((25% - 10% ) +  90px);
+    font-size: 18px;
+    color: #7D87A1;
+    margin-bottom: 30px;
+
+}
+
+
+.iconBookmark {
+    position: absolute;
+    margin-top: 110px;
+    width: 10%;
+    height: 201px;
+    margin-left: 10.5%;
+    left: 30px;
+    top: 0px;
+    display: inline-block;
+}
+.iconBookmark div {
+
+
+    height: 100%;
+    background: url("../icons/marker.svg") top center no-repeat ;
+
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+.bookmarks {
+    font-family: Roboto R;
+    height: 341px;
+    margin-right: 10%;
+    margin-left: 10%;
+    background: #EFEFEF;
+    border-radius: 20px;
+    padding: 13px 30px 30px 30px;
+    z-index: -1;
+
+
+}
+
+.bookmarks * {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+
+}
+.searchIcon {
+   float:right;
+    background: #7D87A1;
+    padding:5px;
+    width: 207px;
+    border-radius: 25px;
+    align-content: center;
+}
+
+.searchIcon input  {
+    height: 20px;
+    width: 170px;
+    margin-left: 14px;
+    background: #7D87A1;
+    padding-left: 10px;
+    text-decoration: none;
+    border: 0;
+    outline: transparent solid 1px;
+    border-bottom: solid #e4e4e4 2px ;
+    color: #e4e4e4;
+
+}
+
+.searchIcon input[placeholder=""] {
+background-image: url('../icons/logoNavSmal.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+
+}
+.bookmarks li *{
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+.bookmarks li:hover{
+    cursor: pointer;
+}
+
+
+
+.bookmarks .foldersBox {
+    top:60px;
+    width:25%;
+    font-size: 1em;
+
+
+}
+
+
+
+.bookmarks .f {
+    font-family: Roboto I;
+    color: #9B9B9B;
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 10px;
+    top:-5px;
+
+}
+
+.bookmarks .foldersBox div:nth-child(2){
+    width:16px;
+    height:4px;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background-size: 16px 4px;
+    background-image: url(../icons/threDoots.svg);
+    background-repeat: no-repeat;
+    display: inline-block;
+
+}
+
+.bookmarks .folders {
+   border: transparent solid 2px;
+    height:219px;
+    background: #7D87A1;
+    border-radius: 10px;
+    font-family: Roboto M;
+    font-size: 13px;
+    color: #C4C4C4;
+}
+
+.bookmarks .folders li {
+    margin-top: 7px;
+    margin-left: 12px;
+}
+
+.bookmarks .folders ul li:nth-child(1){
+color:white;
+
+}
+
+
+.bookmarks .marks{
+    left:calc(25% + 10px);
+    width:calc(80% - 60px);
+    top:-215px;
+    height: 100%;
+
+
+
+}
+.bookmarks .container {
+     height: 250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: rgba(125, 135, 161, 0.37);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.bookmarks .container .d1 {
+     background-color: white;
+     border-radius: 20px;
+     padding: 4px;
+     margin-bottom:10px;
+
+ }
+
+.bookmarks .container .d1 p {
+  margin-right: 5px;
+    font-family: Roboto R;
+
+}
+
+
+
+.bookmarks .container .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #878787;
+    left:2px;
+    bottom: 3px;
+}
+
+.bookmarks .container .d2 {
+    background-color: #2b3f73;
+    top:2px;
+    height: 17px;
+    width: 17px;
+    border-radius: 100%;
+    margin-right: 3px
+
+}
+
+/* --------------------------------------------------------------------------*/
+
+ .bookmarks .add {
+    width: 42px;
+     height: 42px;
+     position: absolute;
+     background: url('../icons/addMark.svg');
+     right: 30px;
+     bottom: 30px;
+}
+
+
+.bookmarks .add:hover {
+    cursor: pointer;
+}
+
+.createFolder {
+    position: absolute;
+    background: rgba(57, 63, 80, 0.93);
+    right:-20px;
+    height: 100%;
+    z-index: 3;
+    top: 0;
+    width:calc(100% + 20px) ;
+    padding:20px;
+    display: inline-block;
+}
+.createFolder .title  {
+    height: 45px;
+    width: calc(100px + 30% );
+    background: whitesmoke;
+    font-family: Roboto I ;
+    color: #3b3b3b;
+    border-radius: 30px ;
+    display: inline-block;
+}
+
+.createFolder .title .cc {
+   position: relative;
+    left:7px;
+    top:5px;
+    height: 25px;
+    width: 25px ;
+    display: inline-block;
+    background: #2b3f73;
+    border-radius: 100% ;
+}
+
+.createFolder .title input {
+
+    height: 20px;
+    width: 170px;
+    margin-top: 12px;
+    margin-left: 12px;
+    text-decoration: none;
+    border: 0;
+    outline: transparent solid 1px;
+    background: whitesmoke;
+}
+
+.drop{
+   display: inline-block;
+    position: relative;
+    width: calc(15+ 20px);
+    float:right;
+    visibility: visible;
+    margin-right: 25px;
+}
+
+.drop button {
+    height: 27px;
+    padding: 2px 2px 10px 10px ;
+    background:#1e212a;
+    font-family: Roboto R;
+    font-size: 13px;
+    outline: none;
+    box-shadow: none;
+
+}
+
+.drop button:focus {
+    height: 27px;
+    padding: 2px 2px 10px 10px ;
+    background:#1e212a;
+    font-family: Roboto R;
+    font-size: 13px;
+    box-shadow: none;
+    outline: none;
+
+}
+
+
+.drop .nTags {
+
+    border: white solid 3px;
+    display: inline-block;
+}
+
+.drop .nTags * {
+   display: inline-block;
+
+}
+
+
+
+
+
+
+
+
+ /*----------------------------------------------------------------------------------*/
+
+.bookmarks + div {
+
+    margin-top: 30px;
+    height: 40px;
+
+
+}
+
+.bookmarks + div .dot {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    background: #F4FE86;
+    left: 50%  ;
+    width: 22px;
+    height:22px;
+    margin-left: 9px;
+
+}
+
+
+.pt2 {
+    height: 38px;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    margin-top: 55px;
+    background: url('../icons/results.svg') left top no-repeat;
+}
+
+.pt3  p {
+    font-family: Roboto MI;
+    margin-left: 10%;
+    font-size: 22px;
+    color:#4B4B4B;
+    margin-bottom: 30px;
+}
+
+/*------------------------------------------------------------------------------------------------------------- */
+
+
+

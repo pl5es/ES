@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from 'components/Navbar';
 import BookmarkSelector from 'components/BookmarkSelector';
 import { getFolder, getFolders, createFolder, deleteFolder, updateFolder, getBookmark, createBookmark, updateBookmark, deleteBookmark } from 'utils/api';
+import "styles/bookmarks.css"
 
 export default class BookmarkSearch extends React.Component {
   constructor(props) {
@@ -30,6 +31,8 @@ export default class BookmarkSearch extends React.Component {
 
   handleAddFolder = (event, newFolder) => {
     event.preventDefault();
+    if(newFolder.length===0)
+      return;
     this.handleCloseSearchResults();
     console.log(newFolder);
     var postFolder={
@@ -241,7 +244,7 @@ export default class BookmarkSearch extends React.Component {
     return(
       <div className='container'>
         <Navbar history={this.props.history} />
-
+        <p id="header"> <b> YOUR BOOKMARKS </b> </p>
         <BookmarkSelector 
           folders={Folders}
 
