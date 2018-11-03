@@ -98,6 +98,8 @@ Foto | Nome e Contacto | Cargo
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
 Evidências da Inspecção formal à secção de Qualidade do Manual de Qualidade | Tiago Pessoa | 1h30 | 2h
+Evidências da Inspecção formal à secção de Qualidade do Manual de Qualidade | Pedro Coelho | 1h00 | 30min
+Inspecção formal ao Manual de Qualidade | Pedro Coelho | 1h | 50min
 
 
 ## Gestão de Projeto
