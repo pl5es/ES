@@ -1,1 +1,1 @@
-Gráficos do esforço individual e por equipa, tal como estattísticas do Slack
+Gráficos do esforço individual e por equipa, tal como estatísticas do Slack
