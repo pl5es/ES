@@ -7,6 +7,7 @@ import Profile from 'pages/Profile';
 import Feed from 'pages/Feed';
 import BookmarkSearch from 'pages/BookmarkSearch';
 import EditProfile from 'pages/EditProfile';
+import Interests from 'pages/Interests';
 import { PublicRoute, PrivateRoute } from 'router/routes';
 
 const RouterApp = () => (
@@ -18,6 +19,7 @@ const RouterApp = () => (
       <PrivateRoute path="/feed" component={Feed} />
       <PrivateRoute path="/bookmarks" component={BookmarkSearch} />
       <PrivateRoute path="/edit" component={EditProfile} />
+      <PrivateRoute path="/interests" component={Interests} />
     </Switch>
   </Router>
 );
