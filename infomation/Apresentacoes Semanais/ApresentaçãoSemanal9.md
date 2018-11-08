@@ -133,10 +133,42 @@ Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
 Recursos Humanos -  Inquéritos e Testes de personalidade | António Eloi | 3h30 | 2h10
 Gestão de Risco - Planeamento de Resposta aos Riscos | Diogo Alves | 1h | 2h20
-Compilação das informações da apresentação semanal de cada unidade para a apresentação final | Hanna Filatava | 45 min | 30 min
+Compilação das informações da apresentação semanal de cada unidade para a apresentação final | Hanna Filatava | 45 min | 45 min
 
 ### Atividades Planeadas para a Semana Seguinte
 
 Tarefa | Esforço Estimado
 ------------ | -------------
 Remodelação da parte de Gestão de Risco referente ao Manual de Qualidade | 1h30
+
+
+## Esforço Diário por Elemento (em minutos)
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Pessoal_Pando_2018_Week9.jpg)
+
+## Esforço por Unidade (em minutos)
+
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Unidade_Pando_2018_Week9.jpg)
+
+## Slack Analytics 
+### Membros Ativos por Semana
+Linha verde - Membros ativos por semana
+Linha azul - Membros por semana a enviar mensagens
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_WeeklyActiveUsersWeek9.PNG)
+
+### Membros Ativos Diariamente
+Linhas verde - Membros Ativos Diariamente
+Linha azul - Membros Ativos Diariamente a enviar mensagens
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_DailyActiveUsersWeek9.PNG)
+
+### Onde as mensagens são lidas
+Nos últimos 30 dias 54% das mensagens foram lidas em canais públicos, e 46% foram lidas em mensagens privadas.
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_MessagesReadingWeek9.PNG)
+
+### Para onde as mensagens são enviadas
+Nos últimos 30 dias 30% das mensagens foram enviadas para canais públicos, e 70% foram enviadas em mensagens privadas.
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_MessagesSentWeek9.PNG)
+
+## GitHub Insights
+Na última semana, 7 autores fizeram 12 commits.
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/GitHub_Insights_Week9.PNG)
+
