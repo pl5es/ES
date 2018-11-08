@@ -69,19 +69,18 @@ Foto | Nome e Contacto | Cargo
 
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
-Tentativa de integração do SonarQube | Renato Matos, Tiago Leal, Bernardo Correia, Pedro Rodrigues, Roman Kerny | 1h | 3h
+Preparar testes Sprint#3 | Bernardo Correia| 2h | 2h
+
 
 
 ### Atividades Planeadas para a Semana Seguinte
 
 Tarefa | Esforço Estimado
 ------------ | -------------
-Integração SonarQube | indefinido
-Preparar testes Sprint#3 | 2h
+Realizar testes Sprint#3 | 2h
 Realizar testes à aplicação de outra equipa | 2h
 
 ### Issues:
-Dificuldades na integração do SonarQube
 
 
 ## Qualidade
