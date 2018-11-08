@@ -70,6 +70,7 @@ Foto | Nome e Contacto | Cargo
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
 Preparar testes Sprint#3 | Bernardo Correia| 2h | 2h
+Pesquisa SonarQube | Roman Kernychyshyn|  | 40min
 
 
 
