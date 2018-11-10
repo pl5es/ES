@@ -4,15 +4,38 @@ import NewsFeed from 'components/NewsFeed';
 import CreatePost from 'components/CreatePost';
 // import 'styles/feed.css';
 import { tweets } from 'utils/consts';
-import { getTweets } from 'utils/api';
+import { getTweets, getRedditPost, getMyInfo } from 'utils/api';
 
 export default class Feed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       news: [],
+      posts: [],
       search_results: [],
     };
+
+    var subreddits = [];
+    getMyInfo().then( response =>{
+      var interests = response.data.interests;
+      interests.forEach( interest => {
+        var subreddit;
+        //get subreddit from interest (remove # if included)
+        if(interest.hashtag[0]=='#')
+          subreddit=interest.hashtag.slice(1,);
+        else
+          subreddit=interest.hashtag;
+        //get latest post from subreddit and add to list
+        getRedditPost(subreddit).then( response => {
+          var newPost = response.data.data.children[0].data;
+          this.setState(currentState => {
+            return {
+              posts: currentState.posts.concat([newPost]),
+            };
+          });
+        });
+      });
+    });
 
     getTweets(20)
       .then(data => {
@@ -55,7 +78,7 @@ export default class Feed extends React.Component {
   };
 
   render() {
-    const { search_results: SearchResults, news: NewsResults } = this.state;
+    const { search_results: SearchResults, news: NewsResults, posts: PostsResult } = this.state;
     return (
       <div class="container">
         <Navbar
@@ -68,7 +91,7 @@ export default class Feed extends React.Component {
           <NewsFeed news={SearchResults} name="Search Results" />
         </div>
         <div id="NewsFeed">
-          <NewsFeed news={NewsResults} name="News Feed" />
+          <NewsFeed news={NewsResults} posts={PostsResult} name="News Feed" />
         </div>
       </div>
     );
