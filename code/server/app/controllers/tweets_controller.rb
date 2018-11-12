@@ -2,6 +2,7 @@
 
 class TweetsController < ApplicationController
   before_action :set_user, only: [:index]
+  skip_before_action :doorkeeper_authorize!, only: [:callback]
 
   # GET /tweets
   # GET /tweets.json
@@ -19,17 +20,14 @@ class TweetsController < ApplicationController
     render json: tweet_ids, status: :ok
   end
 
-  def login
-      render json: "hello"
+  def callback
+    render json: request.env["omniauth.auth"]
   end
 
   def token
       @info = auth_hash
       render json: info
   end
-  
-
-
 
   private
     def set_user
@@ -40,9 +38,9 @@ class TweetsController < ApplicationController
       params.permit(:count)
     end
 
-    protected
+  protected
 
-  def auth_hash
-    request.env['omniauth.auth']
-  end
+    def auth_hash
+      request.env['omniauth.auth']
+    end
 end

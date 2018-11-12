@@ -20,4 +20,6 @@ Rails.application.routes.draw do
     post '/auth/twitter/reverse', :to => 'tweets#token'
     end
   end
+
+  get '/auth/twitter/callback', to: 'tweets#callback'
 end
