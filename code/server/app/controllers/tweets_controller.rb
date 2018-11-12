@@ -19,6 +19,18 @@ class TweetsController < ApplicationController
     render json: tweet_ids, status: :ok
   end
 
+  def login
+      render json: "hello"
+  end
+
+  def token
+      @info = auth_hash
+      render json: info
+  end
+  
+
+
+
   private
     def set_user
       @user = current_resource_owner
@@ -27,4 +39,10 @@ class TweetsController < ApplicationController
     def tweet_params
       params.permit(:count)
     end
+
+    protected
+
+  def auth_hash
+    request.env['omniauth.auth']
+  end
 end
