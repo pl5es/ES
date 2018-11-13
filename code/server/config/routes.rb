@@ -16,8 +16,9 @@ Rails.application.routes.draw do
           resources :bookmarks, only: [:create, :show, :update, :destroy]
         end
       end
-    post '/auth/twitter', :to => 'tweets#login'
+    post '/auth/twitter/request_token', :to => 'tweets#request_token'
     post '/auth/twitter/reverse', :to => 'tweets#token'
+    post '/twitter/tweet' , to: 'tweets#tweet' 
     end
   end
 

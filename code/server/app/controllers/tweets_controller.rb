@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 class TweetsController < ApplicationController
+  include HTTParty
   before_action :set_user, only: [:index]
   skip_before_action :doorkeeper_authorize!, only: [:callback]
+  base_uri 'https://api.twitter.com/oauth/'
 
   # GET /tweets
   # GET /tweets.json
@@ -20,14 +22,14 @@ class TweetsController < ApplicationController
     render json: tweet_ids, status: :ok
   end
 
-  def callback
-    render json: request.env["omniauth.auth"]
+  def tweet
+      client = Rails.application.config.twitter_client
+      message = params[:message]
+      a = client.update(message)
+      byebug
+      render status: 200
   end
 
-  def token
-      @info = auth_hash
-      render json: info
-  end
 
   private
     def set_user
@@ -38,9 +40,4 @@ class TweetsController < ApplicationController
       params.permit(:count)
     end
 
-  protected
-
-    def auth_hash
-      request.env['omniauth.auth']
-    end
 end
