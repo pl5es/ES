@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 class TweetsController < ApplicationController
-  include HTTParty
   before_action :set_user, only: [:index]
-  skip_before_action :doorkeeper_authorize!, only: [:callback]
-  base_uri 'https://api.twitter.com/oauth/'
+  skip_before_action :doorkeeper_authorize!, only: [:request_token, :oauth_verifier]
 
   # GET /tweets
   # GET /tweets.json
@@ -23,11 +21,34 @@ class TweetsController < ApplicationController
   end
 
   def tweet
-      client = Rails.application.config.twitter_client
-      message = params[:message]
-      a = client.update(message)
-      byebug
-      render status: 200
+    client = Rails.application.config.twitter_client
+    message = params[:message]
+    a = client.update(message)
+    byebug
+    render status: 200
+  end
+
+  def request_token
+    consumer = OAuth::Consumer.new(ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'],{
+      site: 'https://api.twitter.com',
+      request_token_path: '/oauth/request_token'
+    })
+    callback_url = 'http://localhost:3001'
+    request_token = consumer.get_request_token(oauth_callback: callback_url)
+    render json: { oauth_token: request_token.token, oauth_token_secret: request_token.secret }
+  end
+
+  def oauth_verifier
+    consumer = OAuth::Consumer.new(ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'],{
+      site: 'https://api.twitter.com',
+      access_token_path: '/oauth/access_token?oauth_verifier'
+    })
+
+    hash = { oauth_token: oauth_verifier_params[:oauth_token]}
+    request_token  = OAuth::RequestToken.from_hash(consumer, hash)
+    access_token = request_token.get_access_token(oauth_verifier: oauth_verifier_params[:oauth_verifier])
+    ap access_token.params
+    render json: {}
   end
 
 
@@ -38,6 +59,10 @@ class TweetsController < ApplicationController
 
     def tweet_params
       params.permit(:count)
+    end
+
+    def oauth_verifier_params
+      params.permit(:oauth_verifier, :oauth_token)
     end
 
 end

@@ -16,11 +16,14 @@ Rails.application.routes.draw do
           resources :bookmarks, only: [:create, :show, :update, :destroy]
         end
       end
-    post '/auth/twitter/request_token', :to => 'tweets#request_token'
-    post '/auth/twitter/reverse', :to => 'tweets#token'
-    post '/twitter/tweet' , to: 'tweets#tweet' 
+
+      #post '/auth/twitter/request_token', :to => 'tweets#request_token'
+      #post '/auth/twitter/reverse', :to => 'tweets#token'
+      post '/twitter/tweet' , to: 'tweets#tweet'
+
+      post '/auth/twitter/reverse', to: 'tweets#request_token'
+      post '/auth/twitter', to: 'tweets#oauth_verifier'
     end
   end
 
-  get '/auth/twitter/callback', to: 'tweets#callback'
 end
