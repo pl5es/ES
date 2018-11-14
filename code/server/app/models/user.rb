@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :bookmarks, through: :folders
   has_and_belongs_to_many :interests
 
-  validates_presence_of :username, :email, :name, :orcid, :research_area, :institution, :twitter_oauth_token, :twitter_oauth_token_secret
+  validates_presence_of :username, :email, :name, :orcid, :research_area, :institution, :twitter_user_id
   validates_uniqueness_of :username, :email, :orcid
   validates :avatar, file_size: { maximum: 2.megabytes }
 

@@ -33,7 +33,7 @@ class TwitterController < ApplicationController
     })
     callback_url = 'http://localhost:3001'
     request_token = consumer.get_request_token(oauth_callback: callback_url)
-    render json: { oauth_token: request_token.token, oauth_token_secret: request_token.secret }
+    render json: request_token.params
   end
 
   def oauth_verifier

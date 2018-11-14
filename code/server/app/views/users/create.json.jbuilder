@@ -10,6 +10,7 @@ json.(
   :orcid,
   :research_area,
   :username,
+  :twitter_user_id,
   :interests,
   :created_at,
   :updated_at

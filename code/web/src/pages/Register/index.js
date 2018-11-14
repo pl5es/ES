@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { signup } from 'actions/auth';
 import { Redirect } from 'react-router-dom';
 import signUpSchema from 'utils/validations/signUpSchema';
+import TwitterButton from 'components/TwitterButton';
 
 class SignUp extends Component {
   state = {
@@ -18,6 +19,10 @@ class SignUp extends Component {
       imageFiles: imageFiles,
     });
     setFieldValue('avatar', this.state.imageFiles[0]);
+  };
+
+  setUserId = (userid, setFieldValue) => {
+    setFieldValue('twitter_user_id', userid);
   };
 
   valuesToFormData(values, history, signup) {
@@ -68,6 +73,7 @@ class SignUp extends Component {
               validationSchema={signUpSchema}
               initialValues={{
                 username: '',
+                twitter_user_id: '',
                 email: '',
                 interests: '',
                 orcid: '',
@@ -116,7 +122,10 @@ class SignUp extends Component {
                             labelClass="input-title"
                             placeholder="Enter your password"
                           />
-                          <div class="subtitle">Detailed Info</div>
+                          <TwitterButton
+                            setUserId={x => this.setUserId(x, setFieldValue)}
+                           />
+                          <div className="subtitle">Detailed Info</div>
                           <Field
                             name="name"
                             type="text"
@@ -148,8 +157,8 @@ class SignUp extends Component {
                             )}
                           />
                           {registerError ? <p>{registerError}</p> : null}
-                          </div>
                         </div>
+                      </div>
                       <div className="col-md-4 about-area">
                         <div className="picture-area">
                           <div className="photo-area">
@@ -182,7 +191,7 @@ class SignUp extends Component {
                       <div className="row container-confirm-button">
                         <div className="col-md-4" />
                         <div className="col-md-4">
-                        <button type="submit">Confirm Registration</button>
+                            <button type="submit">Confirm Registration</button>
                         </div>
                         <div className="col-md-4" />
                       </div>

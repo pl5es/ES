@@ -93,6 +93,9 @@ ActiveRecord::Schema.define(version: 2018_10_21_142037) do
     t.string "password_digest"
     t.string "research_area"
     t.string "username"
+    t.string "twitter_user_id"
+    t.string "twitter_oauth_token"
+    t.string "twitter_oauth_token_secret"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

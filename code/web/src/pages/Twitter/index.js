@@ -11,14 +11,16 @@ export default class Twitter extends Component {
     console.log('error');
   }
 
-  onSuccess() {
-    console.log('success');
+  onSuccess(response) {
+    response.json().then(body => {
+      alert(JSON.stringify(body));
+    });
   }
 
   postTweet() {
     const { tweet } = this.state;
     let newTweet = {
-      message : tweet,
+      message: tweet,
     };
     postToTwitter(newTweet);
   }
@@ -34,7 +36,6 @@ export default class Twitter extends Component {
           loginUrl="http://localhost:3000/api/auth/twitter"
           onFailure={this.onFailed}
           onSuccess={this.onSuccess}
-          customHeaders={customHeader}
           requestTokenUrl="http://localhost:3000/api/auth/twitter/reverse"
         />
 
