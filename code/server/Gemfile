@@ -15,7 +15,8 @@ gem "rack-cors", require: "rack/cors"
 gem "carrierwave", "~> 1.0"
 gem "mini_magick"
 gem "jbuilder", "~> 2.7.0"
-gem "twitter"
+gem "twitter", "~> 6.2.0"
+gem "oauth", "~> 0.5.4"
 gem "awesome_print"
 
 group :development, :test do

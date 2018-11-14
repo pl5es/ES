@@ -14,6 +14,10 @@ const post = (endpoint, data) => {
   return axios.post(`${API_URL}/${endpoint}`, data);
 };
 
+const postNoData = endpoint => {
+  return axios.post(`${API_URL}/${endpoint}`);
+};
+
 const get = endpoint => {
   const accessToken = localStorage.getItem('access_token');
   return axios.get(`${API_URL}/${endpoint}`, {
@@ -63,15 +67,32 @@ export const signUp = data => post('api/users.json', data);
 export const signIn = data => post('api/oauth/token.json', data);
 export const getMyInfo = () => get('api/users.json');
 export const updateMyInfo = data => put('api/users.json', data);
-export const getTweets = (count = 10) => get('api/users/tweets.json?count=' + count);
+export const getTweets = (count = 10) =>
+  get(`api/users/tweets.json?count=${count}`);
 
-export const getFolder = (id) => get('api/users/folders/'+id+'.json');
+export const getFolder = id => get('api/users/folders/' + id + '.json');
 export const getFolders = () => get('api/users/folders.json');
-export const createFolder = data => postItem('api/users/folders.json',data);
-export const deleteFolder = (id) => deleteItem('api/users/folders/'+id+'.json');
-export const updateFolder = (data,id) => updateItem('api/users/folders/'+id+'.json',data);
+export const createFolder = data => postItem('api/users/folders.json', data);
+export const deleteFolder = id =>
+  deleteItem('api/users/folders/' + id + '.json');
+export const updateFolder = (data, id) =>
+  updateItem(`api/users/folders/${  id  }.json`, data);
 
-export const getBookmark = (folderId,bookmarkId) => get('api/users/folders/'+folderId+'/bookmarks/'+bookmarkId+'.json');
-export const createBookmark = (data,id) => postItem('api/users/folders/'+id+'/bookmarks.json',data);
-export const deleteBookmark = (folderId,bookmarkId) => deleteItem('api/users/folders/'+folderId+'/bookmarks/'+bookmarkId+'.json');
-export const updateBookmark = (data,id) => updateItem('api/users/bookmarks/'+id+'.json',data);
+export const getBookmark = (folderId, bookmarkId) =>
+  get('api/users/folders/' + folderId + '/bookmarks/' + bookmarkId + '.json');
+
+export const createBookmark = (data, id) =>
+  postItem('api/users/folders/' + id + '/bookmarks.json', data);
+
+export const deleteBookmark = (folderId, bookmarkId) =>
+  deleteItem(
+    'api/users/folders/' + folderId + '/bookmarks/' + bookmarkId + '.json',
+  );
+
+export const updateBookmark = (data, id) =>
+  updateItem('api/users/bookmarks/' + id + '.json', data);
+
+export const getRequestToken = () =>
+  postNoData('api//auth/twitter/request_token');
+
+export const postToTwitter = message => postItem('api/twitter/tweet', message);
