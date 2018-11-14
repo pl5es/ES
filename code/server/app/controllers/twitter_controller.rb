@@ -24,23 +24,23 @@ class TwitterController < ApplicationController
   end
 
   def request_token
-    consumer = OAuth::Consumer.new(ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'],{
-      site: 'https://api.twitter.com',
-      request_token_path: '/oauth/request_token'
-    })
-    callback_url = 'http://localhost:3001'
+    consumer = OAuth::Consumer.new(ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"],
+      site: "https://api.twitter.com",
+      request_token_path: "/oauth/request_token"
+    )
+    callback_url = ENV["TWITTER_CALLBACK_URL"]
     request_token = consumer.get_request_token(oauth_callback: callback_url)
     render json: request_token.params
   end
 
   def oauth_verifier
-    consumer = OAuth::Consumer.new(ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'],{
-      site: 'https://api.twitter.com',
-      access_token_path: '/oauth/access_token?oauth_verifier'
-    })
+    consumer = OAuth::Consumer.new(ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"],
+      site: "https://api.twitter.com",
+      access_token_path: "/oauth/access_token?oauth_verifier"
+    )
 
-    hash = { oauth_token: oauth_verifier_params[:oauth_token]}
-    request_token  = OAuth::RequestToken.from_hash(consumer, hash)
+    hash = { oauth_token: oauth_verifier_params[:oauth_token] }
+    request_token = OAuth::RequestToken.from_hash(consumer, hash)
     access_token = request_token.get_access_token(oauth_verifier: oauth_verifier_params[:oauth_verifier])
     render json: access_token.params
   end

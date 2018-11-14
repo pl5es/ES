@@ -17,11 +17,9 @@ Rails.application.routes.draw do
         end
       end
 
-      post '/twitter/tweet' , to: 'twitter#post_tweet'
-
-      post '/auth/twitter/reverse', to: 'twitter#request_token'
-      post '/auth/twitter', to: 'twitter#oauth_verifier'
+      post "/twitter/tweet", to: "twitter#post_tweet"
+      post "/auth/twitter/reverse", to: "twitter#request_token"
+      post "/auth/twitter", to: "twitter#oauth_verifier"
     end
   end
-
 end

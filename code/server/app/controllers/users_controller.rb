@@ -32,25 +32,25 @@ class UsersController < ApplicationController
 
   private
 
-  def set_user
-    @user = current_resource_owner
-  end
+    def set_user
+      @user = current_resource_owner
+    end
 
-  def user_params
-    params.permit(
-      :username,
-      :name,
-      :password,
-      :email,
-      :description,
-      :orcid,
-      :research_area,
-      :institution,
-      :avatar,
-      :twitter_user_id,
-      :twitter_oauth_token,
-      :twitter_oauth_token_secret,
-      interests: []
-    )
-  end
+    def user_params
+      params.permit(
+        :username,
+        :name,
+        :password,
+        :email,
+        :description,
+        :orcid,
+        :research_area,
+        :institution,
+        :avatar,
+        :twitter_user_id,
+        :twitter_oauth_token,
+        :twitter_oauth_token_secret,
+        interests: []
+      )
+    end
 end
