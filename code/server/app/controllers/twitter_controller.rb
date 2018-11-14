@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TwitterController < ApplicationController
-  before_action :set_user, only: [:index]
+  before_action :set_user, only: [:index, :post_tweet]
   skip_before_action :doorkeeper_authorize!, only: [:request_token, :oauth_verifier]
 
   def index
@@ -18,11 +18,8 @@ class TwitterController < ApplicationController
     render json: tweet_ids, status: :ok
   end
 
-  def tweet
-    client = Rails.application.config.twitter_client
-    message = params[:message]
-    a = client.update(message)
-    byebug
+  def post_tweet
+    @user.twitter.update(params[:message])
     render status: 200
   end
 
