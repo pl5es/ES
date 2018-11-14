@@ -35,7 +35,7 @@ export default class Twitter extends Component {
           onFailure={this.onFailed}
           onSuccess={this.onSuccess}
           customHeaders={customHeader}
-          requestTokenUrl="http://localhost:3000/auth/twitter"
+          requestTokenUrl="http://localhost:3000/api/auth/twitter/reverse"
         />
 
         <br />

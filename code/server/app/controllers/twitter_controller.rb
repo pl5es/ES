@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-class TweetsController < ApplicationController
+class TwitterController < ApplicationController
   before_action :set_user, only: [:index]
   skip_before_action :doorkeeper_authorize!, only: [:request_token, :oauth_verifier]
 
-  # GET /tweets
-  # GET /tweets.json
   def index
     number_tweets = if params["count"] then params["count"].to_i else 10 end
     tweet_ids = []
@@ -47,8 +45,7 @@ class TweetsController < ApplicationController
     hash = { oauth_token: oauth_verifier_params[:oauth_token]}
     request_token  = OAuth::RequestToken.from_hash(consumer, hash)
     access_token = request_token.get_access_token(oauth_verifier: oauth_verifier_params[:oauth_verifier])
-    ap access_token.params
-    render json: {}
+    render json: access_token.params
   end
 
 
@@ -64,5 +61,4 @@ class TweetsController < ApplicationController
     def oauth_verifier_params
       params.permit(:oauth_verifier, :oauth_token)
     end
-
 end

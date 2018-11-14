@@ -10,19 +10,17 @@ Rails.application.routes.draw do
       end
 
       resource :users, only: [:create, :show, :update] do
-        resources :tweets, only: [:index, ]
+        resources :twitter, only: [:index, ]
         resources :posts, only: [:create, :show, :index]
         resources :folders, only: [:create, :show, :index, :update, :destroy] do
           resources :bookmarks, only: [:create, :show, :update, :destroy]
         end
       end
 
-      #post '/auth/twitter/request_token', :to => 'tweets#request_token'
-      #post '/auth/twitter/reverse', :to => 'tweets#token'
-      post '/twitter/tweet' , to: 'tweets#tweet'
+      post '/twitter/tweet' , to: 'twitter#tweet'
 
-      post '/auth/twitter/reverse', to: 'tweets#request_token'
-      post '/auth/twitter', to: 'tweets#oauth_verifier'
+      post '/auth/twitter/reverse', to: 'twitter#request_token'
+      post '/auth/twitter', to: 'twitter#oauth_verifier'
     end
   end
 

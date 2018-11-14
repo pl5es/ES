@@ -14,8 +14,13 @@ Doorkeeper.configure do
 
   # In this flow, a token is requested in exchange for the resource owner credentials (username and password)
   resource_owner_from_credentials do |routes|
-    user = User.where("username = ? OR email = ? OR orcid = ?", params[:identifier], params[:identifier], params[:identifier]).first
-    user.try(:authenticate, params[:password]) ? user : nil
+    case params[:auth_type]
+    when 'twitter'
+      user = User.find_by(twitter_user_id: params[:twitter_user_id])
+    else
+      user = User.where("username = ? OR email = ? OR orcid = ?", params[:identifier], params[:identifier], params[:identifier]).first
+      user.try(:authenticate, params[:password]) ? user : nil
+    end
   end
 
   # If you didn't skip applications controller from Doorkeeper routes in your application routes.rb
