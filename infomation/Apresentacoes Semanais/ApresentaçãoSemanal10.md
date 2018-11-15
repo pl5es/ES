@@ -14,12 +14,12 @@
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Ant%C3%B3nio%20Morais%20(L-REQ).jpg) | António Morais <br> antoniomorais.nn@gmail.com | Coordenador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/In%C3%AAs%20Gon%C3%A7alves%20(REQ).jpg) | Inês Gonçalves <br> inesmedeiros98@gmail.com | Vice-Coordenadora 
+![](https://github.com/pl5es/ES/blob/master/infomation/fotos/In%C3%AAs%20Gon%C3%A7alves%20(REQ).jpg) | Inês Gonçalves <br> inesmedeiros98@gmail.com | Vice-Coordenadora
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Pedro%20Goncalves%20(REQ).jpg) | Pedro Gonçalves <br> pjgoncalves.97@hotmail.com | Colaborador
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Sara%20Mendes%20(REQ).jpg) | Sara Mendes <br> saramendes_98@hotmail.com | Colaboradora
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Maria%20Rodrigues%20(REQ).jpg) | Maria Rodrigues <br> m_carmoro@sapo.pt | Colaboradora
 
-### Atividades Realizadas 
+### Atividades Realizadas
 
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
@@ -48,6 +48,9 @@ Posts reddit | João Almeida |  | 2h
 Aprender React | Daniel Santos | 3h | 1h
 Estudo react | Diogo Loureiro | 1h30 | 1h30
 Twitter/ORCID API | Alexandre Faria | 30 min | 2h
+Twitter Oauth | Tiago Martins <br> Diogo Isidoro | 5h | 10h
+Twitter Login | Tiago Martins <br> Diogo Isidoro | 5h | 8h
+Post tweets | Tiago Martins <br> Diogo Isidoro | 5h | 4h
 
 
 
@@ -110,8 +113,8 @@ Foto | Nome e Contacto | Cargo
 
 ### Atividades Realizadas
 
-Tarefa | Responsável 
------------- | ------------- 
+Tarefa | Responsável
+------------ | -------------
 Elaboração do documento da arquitetura da aplicação (Por concluir) | Unidade | 10h | 4h
 Organização do Lanche | Carolina Bandeira, Rodrigo Cardoso
 
@@ -132,7 +135,7 @@ Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 Remodelação da parte do Manual de Qualidade referente a Gestão de Riscos | Diogo Alves | 1h20 | 2h45
 Recursos Humanos -  Realização do documento com a organização da equipa durante a Sprint#3 | Hanna Filatava | 30 min | 30 min
 Reunião da Unidade | Unidade | 1h | 1h05
-Código de Conduta | Unidade | 5h | 5h 
+Código de Conduta | Unidade | 5h | 5h
 Remodelação da parte do Manual de Qualidade referente a RH + Junção da Gestão de Riscos | António Eloi | | 2h20
 Legendar os gráficos do Slack em função das entregas, feriados e fim-de-semanas | Hanna Filatava | 30 min | 30 min
 Reunião emergência | António Eloi, Diogo Fernandes | | 20 min
@@ -160,7 +163,7 @@ Elaborar mapa do Sprint #4 | 120 mins (consulta + elaboração)
 ![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Pessoal_Pando_2018_Week10.png)
 
 
-## Slack Analytics 
+## Slack Analytics
 ### Membros Ativos por Semana
 
 ![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_WeeklyActiveUsersWeek10.jpg)
