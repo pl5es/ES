@@ -4,7 +4,7 @@ import NewsFeed from 'components/NewsFeed';
 import CreatePost from 'components/CreatePost';
 // import 'styles/feed.css';
 import { tweets } from 'utils/consts';
-import { getTweets } from 'utils/api';
+import { getTweets, postToTwitter } from 'utils/api';
 
 export default class Feed extends React.Component {
   constructor(props) {
@@ -29,16 +29,7 @@ export default class Feed extends React.Component {
     if (!values) {
       return;
     }
-    this.setState(currentState => {
-      var newPost = {
-        title: `My post from ${Date().toLocaleString()}`,
-        desc: values,
-        src: '',
-      };
-      return {
-        news: [newPost].concat(currentState.news),
-      };
-    });
+    postToTwitter(values);
   };
 
   handleSearch = values => {

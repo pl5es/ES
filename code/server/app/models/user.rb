@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_many :folders
   has_many :bookmarks, through: :folders
   has_and_belongs_to_many :interests
-  validates_presence_of :username, :email, :name, :orcid, :research_area, :institution
+
+  validates_presence_of :username, :email, :name, :orcid, :research_area, :institution, :twitter_user_id
   validates_uniqueness_of :username, :email, :orcid
   validates :avatar, file_size: { maximum: 2.megabytes }
 
@@ -22,5 +23,14 @@ class User < ApplicationRecord
           only: :url
         }
       }])
+  end
+
+  def twitter
+    @client ||= Twitter::REST::Client.new do |config|
+      config.consumer_key = ENV["TWITTER_CONSUMER_KEY"]
+      config.consumer_secret = ENV["TWITTER_CONSUMER_SECRET"]
+      config.access_token = twitter_oauth_token
+      config.access_token_secret = twitter_oauth_token_secret
+    end
   end
 end

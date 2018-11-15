@@ -47,7 +47,9 @@ class UsersController < ApplicationController
         :research_area,
         :institution,
         :avatar,
-        :user_id,
+        :twitter_user_id,
+        :twitter_oauth_token,
+        :twitter_oauth_token_secret,
         interests: []
       )
     end

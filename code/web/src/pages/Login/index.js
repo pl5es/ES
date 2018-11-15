@@ -1,10 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Formik, Field, Form } from "formik";
-import { Redirect } from "react-router-dom";
-import InputField from "components/InputField";
-import { connect } from "react-redux";
-import { login } from "actions/auth";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Formik, Field, Form } from 'formik';
+import { Redirect } from 'react-router-dom';
+import InputField from 'components/InputField';
+import { connect } from 'react-redux';
+import { login } from 'actions/auth';
+import TwitterButton from 'components/TwitterButton';
 
 const Login = ({ history, login, authError, authenticated }) =>
   authenticated === true ? (
@@ -29,9 +30,9 @@ const Login = ({ history, login, authError, authenticated }) =>
             <div className="title">LOG IN</div>
             <Formik
               initialValues={{
-                identifier: "",
-                password: "",
-                grant_type: "password"
+                identifier: '',
+                password: '',
+                grant_type: 'password',
               }}
               onSubmit={values => {
                 login(values);
@@ -64,16 +65,17 @@ const Login = ({ history, login, authError, authenticated }) =>
             <button
               id="register-button"
               type="button"
-              onClick={() => history.push("/register")}
+              onClick={() => history.push('/register')}
             >
               CREATE NEW ACCOUNT
             </button>
           </div>
           {authError ? <p>{authError}</p> : null}
+          <TwitterButton login={login} />
         </div>
       </div>
-      <div class="footer" id="footer-login">
-        <div class="container">
+      <div className="footer" id="footer-login">
+        <div className="container">
           <div>Information</div>
           <div>Contacts</div>
         </div>
@@ -83,22 +85,22 @@ const Login = ({ history, login, authError, authenticated }) =>
 
 const mapDispatchToProps = dispatch => {
   return {
-    login: creds => dispatch(login(creds))
+    login: creds => dispatch(login(creds)),
   };
 };
 
 const mapStateToProps = state => {
   return {
     authError: state.auth.authError,
-    authenticated: state.auth.authenticated
+    authenticated: state.auth.authenticated,
   };
 };
 
 Login.propTypes = {
-  history: PropTypes.func.isRequired
+  history: PropTypes.func.isRequired,
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Login);
