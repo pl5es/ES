@@ -23,8 +23,10 @@ Foto | Nome e Contacto | Cargo
 
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
-Organização da tabela de requisitos, presente no Doc. de REQ | Inês Gonçalves | 15 min | 15 min
+Organização da tabela de requisitos, presente no Doc. de REQ | Inês Gonçalves, Maria Rodrigues | 30 min | 30 min
 Reunião com a equipa PANDO para discutir sobre as unidades de REQ, IMP e TST | Inês Gonçalves, António Morais, Sara Mendes e Pedro Gonçalves | 30 min | 30 min
+Inspeção Formal do Doc. de Requisitos | António Morais, Inês Gonçalves, Maria Rodrigues, Pedro Gonçalves e Sara Mendes | 10h | 10h
+Atualização de Doc. de Requisitos para Integração com Reddit | António Morais, Inês Gonçalves, Maria Rodrigues, Pedro Gonçalves e Sara Mendes | 5h | 5h
 
 
 
