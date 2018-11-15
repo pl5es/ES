@@ -38,7 +38,7 @@ jobs:
 
     - stage: Deploy Web
       language: generic
-      before_script:
+      before_install:
         - bash -c "cd code/web && rm -rf yarn.lock package-lock.lock"
       deploy:
         provider: heroku
