@@ -40,8 +40,7 @@ jobs:
       language: generic
       before_install:
         - cd code/web
-        - git rm yarn.lock package-lock.lock
-        #-
+        - git rm package-lock.json
       deploy:
         provider: heroku
         api_key: $HEROKU_API_KEY
