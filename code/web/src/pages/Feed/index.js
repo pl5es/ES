@@ -1,19 +1,26 @@
-import React from 'react';
-import Navbar from 'components/Navbar';
-import NewsFeed from 'components/NewsFeed';
-import CreatePost from 'components/CreatePost';
-// import 'styles/feed.css';
+import React from "react";
+import Navbar from "components/Navbar";
+import NewsFeed from "components/NewsFeed";
+import CreatePost from "components/CreatePost";
 import { tweets } from 'utils/consts';
-import { getTweets, postToTwitter } from 'utils/api';
+import { getTweets, getRedditPost, getMyInfo, postToTwitter } from "utils/api";
 
 export default class Feed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       news: [],
+      posts: [],
       search_results: [],
     };
+  }
 
+  componentDidMount() {
+    this.addRedditPosts();
+    this.addTweets();
+  }
+
+  addTweets = () => {
     getTweets(20)
       .then(data => {
         // remover duplicados
@@ -23,7 +30,32 @@ export default class Feed extends React.Component {
         });
       })
       .catch(console.log);
-  }
+  };
+
+  addRedditPosts = () => {
+    getMyInfo().then(response => {
+      var interests = response.data.interests;
+      interests.forEach(interest => {
+        var subreddit;
+        //get subreddit from interest (remove # if included)
+        interest.hashtag[0] == "#"
+          ? (subreddit = interest.hashtag.slice(1))
+          : (subreddit = interest.hashtag);
+        this.getLastestSubredditPost(subreddit);
+      });
+    });
+  };
+
+  getLastestSubredditPost = subreddit => {
+    getRedditPost(subreddit).then(response => {
+      var newPost = response.data.data.children[0].data;
+      this.setState(currentState => {
+        return {
+          posts: currentState.posts.concat([newPost])
+        };
+      });
+    });
+  };
 
   handleNewPost = (tweet) => {
     console.log(tweet)
@@ -44,14 +76,18 @@ export default class Feed extends React.Component {
     this.setState(currentState => {
       return {
         search_results: currentState.news.filter(_new =>
-          _new.title.toLowerCase().includes(values.toLowerCase()),
-        ),
+          _new.title.toLowerCase().includes(values.toLowerCase())
+        )
       };
     });
   };
 
   render() {
-    const { search_results: SearchResults, news: NewsResults } = this.state;
+    const {
+      search_results: SearchResults,
+      news: NewsResults,
+      posts: PostsResult
+    } = this.state;
     return (
       <div className="container">
         <Navbar
@@ -64,7 +100,7 @@ export default class Feed extends React.Component {
           <NewsFeed news={SearchResults} name="Search Results" />
         </div>
         <div id="NewsFeed">
-          <NewsFeed news={NewsResults} name="News Feed" />
+          <NewsFeed news={NewsResults} posts={PostsResult} name="News Feed" />
         </div>
       </div>
     );
