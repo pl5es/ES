@@ -11,6 +11,7 @@ export default class Navbar extends Component {
 
   logout = () => {
     localStorage.removeItem("access_token");
+    //eslint-disable-next-line
     <Redirect to="/" />;
   };
 

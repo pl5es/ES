@@ -27,6 +27,10 @@ module Server
       config.access_token = ENV["TWITTER_ACCESS_TOKEN"]
       config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
     end
+
+    config.middleware.insert_after ActiveRecord::Migration::CheckPending, ActionDispatch::Cookies
+    config.middleware.insert_after ActionDispatch::Cookies, ActionDispatch::Session::CookieStore
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 

@@ -10,6 +10,9 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.string :research_area
       t.string :username
+      t.string :twitter_user_id
+      t.string :twitter_oauth_token
+      t.string :twitter_oauth_token_secret
       t.timestamps
     end
 
