@@ -1,9 +1,10 @@
-import React from "react";
-import TwitterLogin from "react-twitter-auth";
+import React from 'react';
+import TwitterLogin from 'react-twitter-auth';
+import { API_URL } from 'utils/config';
 
 const TwitterButton = props => (
   <TwitterLogin
-    loginUrl="http://localhost:3000/api/auth/twitter"
+    loginUrl={`${API_URL}/api/auth/twitter`}
     onFailure={onFailed}
     onSuccess={response => {
       props.setUserId
@@ -11,22 +12,18 @@ const TwitterButton = props => (
         : loginUser(response, props.login);
     }}
     showIcon
-    requestTokenUrl="http://localhost:3000/api/auth/twitter/reverse"
+    requestTokenUrl={`${API_URL}/api/auth/twitter/reverse`}
   >
     Connect with Twitter
   </TwitterLogin>
 );
 
 const onFailed = () => {
-  console.log("error");
+  console.log('error');
 };
 
 const registerUser = (response, setUserId) => {
   response.json().then(body => setUserId(body.user_id));
-};
-
-const loginUser = (response, login) => {
-  response.json().then(body => postInfo(body, login));
 };
 
 const postInfo = (body, login) => {
@@ -39,6 +36,11 @@ const postInfo = (body, login) => {
   };
 
   login(loginObject);
+};
+
+
+const loginUser = (response, login) => {
+  response.json().then(body => postInfo(body, login));
 };
 
 export default TwitterButton;

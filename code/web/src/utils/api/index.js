@@ -75,7 +75,7 @@ export const signIn = data => post('api/oauth/token.json', data);
 export const getMyInfo = () => get('api/users.json');
 export const updateMyInfo = data => put('api/users.json', data);
 export const getTweets = (count = 10) =>
-  get(`api/users/tweets.json?count=${count}`);
+  get(`api/users/twitter.json?count=${count}`);
 
 export const getFolder = id => get('api/users/folders/' + id + '.json');
 export const getFolders = () => get('api/users/folders.json');

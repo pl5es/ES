@@ -57,12 +57,17 @@ export default class Feed extends React.Component {
     });
   };
 
-  handleNewPost = values => {
-    if (!values) {
-      return;
-    }
-    postToTwitter(values);
-  };
+  handleNewPost = (tweet) => {
+    console.log(tweet)
+    tweet.length > 0 && this.postTweet(tweet);
+  }
+
+  postTweet(tweet) {
+    let newTweet = {
+      message: tweet,
+    };
+    postToTwitter(newTweet);
+  }
 
   handleSearch = values => {
     if (!values.search) {
@@ -84,7 +89,7 @@ export default class Feed extends React.Component {
       posts: PostsResult
     } = this.state;
     return (
-      <div class="container">
+      <div className="container">
         <Navbar
           id="feednavbar"
           history={this.props.history}

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       end
 
       resource :users, only: [:create, :show, :update] do
-        resources :twitter, only: [:index, ]
+        resources :twitter, only: [:index]
         resources :posts, only: [:create, :show, :index]
         resources :folders, only: [:create, :show, :index, :update, :destroy] do
           resources :bookmarks, only: [:create, :show, :update, :destroy]
