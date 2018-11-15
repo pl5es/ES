@@ -38,10 +38,8 @@ jobs:
 
     - stage: Deploy Web
       language: generic
-      before_install:
+      before_script:
         - cd code/web
-        - git rm package-lock.json
-        - git commit -a
       deploy:
         provider: heroku
         api_key: $HEROKU_API_KEY
