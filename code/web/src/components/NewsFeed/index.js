@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 
-const NewsFeed = ({ news, name }) => (
+const NewsFeed = ({ news, name, posts }) => (
   <div>
     <label id="newsfeedheader">{news.length > 0 && name}</label>
+
     <ul id="newslist">
       {news.map(id => (
         <li id="newsitem" key={id}>
@@ -12,6 +13,19 @@ const NewsFeed = ({ news, name }) => (
         </li>
       ))}
     </ul>
+
+    {posts && <ul id="postlist">
+      {posts.map(post => (
+        <li key={post.name}>
+          <a href={post.url} target="_blank">{post.title}</a>
+          <p> By: {post.author} in r/{post.subreddit}, 
+            {post.num_comments} <a href={"https://reddit.com"+post.permalink} target="_blank">comments</a>, 
+            {post.score} upvotes 
+          </p>
+        </li>
+      ))}
+    </ul>}
+
   </div>
 );
 

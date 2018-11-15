@@ -63,6 +63,13 @@ const updateItem = (endpoint, data) => {
   });
 };
 
+export const getRedditPost =  (subreddit) => {
+  return axios.get('https://www.reddit.com/r/'+subreddit+'/new.json?limit=1')
+    .catch(function (error) {
+    console.log(error);
+  });
+}
+
 export const signUp = data => post('api/users.json', data);
 export const signIn = data => post('api/oauth/token.json', data);
 export const getMyInfo = () => get('api/users.json');
