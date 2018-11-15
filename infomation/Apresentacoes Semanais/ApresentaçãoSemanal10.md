@@ -24,6 +24,8 @@ Foto | Nome e Contacto | Cargo
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
 Organização da tabela de requisitos, presente no Doc. de REQ | Inês Gonçalves | 15 min | 15 min
+Reunião com a equipa PANDO para discutir sobre as unidades de REQ, IMP e TST | Inês Gonçalves, António Morais, Sara Mendes e Pedro Gonçalves | 30 min | 30 min
+
 
 
 ## Implementação
@@ -44,6 +46,8 @@ Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
 Posts reddit | João Almeida |  | 2h
 Aprender React | Daniel Santos | 3h | 1h
+Estudo react | Diogo Loureiro | 1h30 | 1h30
+Twitter/ORCID API | Alexandre Faria | 30 min | 2h
 
 
 
@@ -125,11 +129,13 @@ Foto | Nome e Contacto | Cargo
 
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo
 ------------ | ------------- | ------------- | -------------
+Remodelação da parte do Manual de Qualidade referente a Gestão de Riscos | Diogo Alves | 1h20 | 2h45
 Recursos Humanos -  Realização do documento com a organização da equipa durante a Sprint#3 | Hanna Filatava | 30 min | 30 min
 Reunião da Unidade | Unidade | 1h | 1h05
-Realização do Código de Conduta | Unidade | 1h30 | 5h 
-Relaboração do Manual de Qualidade | António Eloi | 2h40 | 3h
+Código de Conduta | Unidade | 5h | 5h 
+Remodelação da parte do Manual de Qualidade referente a RH + Junção da Gestão de Riscos | António Eloi | | 2h20
 Legendar os gráficos do Slack em função das entregas, feriados e fim-de-semanas | Hanna Filatava | 30 min | 30 min
+Reunião emergência | António Eloi, Diogo Fernandes | | 20 min
 Compilação das informações de cada unidade para a apresentação incluir na apresentação semanal | Hanna Filatava | 30 min | 30 min
 
 
@@ -138,12 +144,21 @@ Compilação das informações de cada unidade para a apresentação incluir na 
 Tarefa | Esforço Estimado
 ------------ | -------------
 Relatório dos inquéritos dos Recursos Humanos | 1h30
+Elaborar mapa do Sprint #4 | 120 mins (consulta + elaboração)
 
 ## Avaliação da PL da semana anterior
 
 ![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/feedback1pl1sprint3.png)
 
 ![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/feedback2pl1sprint3.png)
+
+## Esforço Diário por Elemento (em minutos)
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Unidade_Pando_2018_Week10.png)
+
+
+## Esforço por Unidade (em minutos)
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/Esforco_Pessoal_Pando_2018_Week10.png)
+
 
 ## Slack Analytics 
 ### Membros Ativos por Semana
@@ -158,3 +173,9 @@ Relatório dos inquéritos dos Recursos Humanos | 1h30
 
 ### Para onde as mensagens são enviadas
 ![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/SlackStats_MessagesSentWeek10.jpg)
+
+## GitHub Insights
+Na última semana, 10 autores fizeram 27 commits.
+![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/graficos/GitHub_Insights_Week10.PNG)
+
+
