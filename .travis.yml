@@ -41,6 +41,7 @@ jobs:
       before_install:
         - cd code/web
         - git rm package-lock.json
+        - git commit -a
       deploy:
         provider: heroku
         api_key: $HEROKU_API_KEY
