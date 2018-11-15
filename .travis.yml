@@ -39,7 +39,7 @@ jobs:
     - stage: Deploy Web
       language: generic
       before_install:
-        - bash -c "cd code/web && rm -rf yarn.lock package-lock.lock"
+        - bash -c "cd code/web && git rm yarn.lock package-lock.lock"
       deploy:
         provider: heroku
         api_key: $HEROKU_API_KEY
