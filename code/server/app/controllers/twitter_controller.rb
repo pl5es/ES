@@ -50,22 +50,22 @@ class TwitterController < ApplicationController
 
 
   private
-  def set_user
-    @user = current_resource_owner
-  end
+    def set_user
+      @user = current_resource_owner
+    end
 
-  def tweet_params
-    params.permit(:count)
-  end
+    def tweet_params
+      params.permit(:count)
+    end
 
-  def oauth_verifier_params
-    params.permit(:oauth_verifier, :oauth_token)
-  end
+    def oauth_verifier_params
+      params.permit(:oauth_verifier, :oauth_token)
+    end
 
-  def fetch_from_twitter(count, query)
-    ids = []
-    tweets = Rails.application.config.twitter_client.search("#{query}", count: count).to_h[:statuses]
-    tweets.each { |t| ids.push(t[:id_str]) }
-    ids
-  end
+    def fetch_from_twitter(count, query)
+      ids = []
+      tweets = Rails.application.config.twitter_client.search("#{query}", count: count).to_h[:statuses]
+      tweets.each { |t| ids.push(t[:id_str]) }
+      ids
+    end
 end
