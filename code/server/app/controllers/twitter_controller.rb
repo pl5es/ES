@@ -10,7 +10,6 @@ class TwitterController < ApplicationController
     cache = {}
     if @user.interests.any?
       for i in 1..number_tweets
-        #ap cache
         interest = @user.interests.sample
         interest_tweets = cache.fetch(interest.hashtag) { |i| cache[i] = fetch_from_twitter(number_tweets, interest.hashtag) }
         id = interest_tweets.sample
