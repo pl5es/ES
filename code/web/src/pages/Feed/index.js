@@ -21,7 +21,7 @@ export default class Feed extends React.Component {
   }
 
   addTweets = () => {
-    getTweets(20)
+    getTweets()
       .then(data => {
         // remover duplicados
         const ids = Array.from(new Set(data.data));
