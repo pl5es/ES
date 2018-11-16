@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { TwitterTweetEmbed } from 'react-twitter-embed';
+import React from "react";
+import PropTypes from "prop-types";
+import { TwitterTweetEmbed } from "react-twitter-embed";
 
 const NewsFeed = ({ news, name, posts }) => (
   <div>
@@ -22,24 +22,24 @@ const NewsFeed = ({ news, name, posts }) => (
               {post.title}
             </a>
             <p>
-              {' '}
+              {" "}
               By: {post.author} in r/
-              {post.subreddit},{post.num_comments}{' '}
-              <a href={'https://reddit.com' + post.permalink} target="_blank">
+              {post.subreddit},{post.num_comments}{" "}
+              <a href={"https://reddit.com" + post.permalink} target="_blank">
                 comments
               </a>
               ,{post.score} upvotes
             </p>
           </li>
         ))}
-              </ul>}
-
+      </ul>
+    )}
   </div>
 );
 
 NewsFeed.propTypes = {
   news: PropTypes.array.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 
 export default NewsFeed;
