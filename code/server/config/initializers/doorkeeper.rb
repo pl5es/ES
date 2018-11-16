@@ -14,11 +14,9 @@ Doorkeeper.configure do
 
   # In this flow, a token is requested in exchange for the resource owner credentials (username and password)
   resource_owner_from_credentials do |routes|
-    ap params
     case params[:auth_type]
     when "twitter"
       user = User.find_by(twitter_user_id: params[:twitter_user_id])
-      ap "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
       if user
         user.update_columns(
           twitter_oauth_token: params[:twitter_oauth_token],
