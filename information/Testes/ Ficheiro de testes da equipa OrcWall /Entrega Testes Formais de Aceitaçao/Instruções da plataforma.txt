@@ -1,0 +1,10 @@
+A plataforma está presente no Github onde é possível fazer o seu download.
+
+https://github.com/carladrim/carladrim.github.io
+
+Para instalar seguir as intruções do ficheiro ReadME que foi enviado juntamente com o Zip.
+
+Toda a equipa de Testes, Requisitos e Implementação possui a plataforma a correr.
+
+Em caso de problemas com a configuração de servidor contactar:
+eduardamduarte@gmail.com
