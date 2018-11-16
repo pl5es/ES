@@ -48,12 +48,14 @@ export default class Feed extends React.Component {
 
   getLastestSubredditPost = subreddit => {
     getRedditPost(subreddit).then(response => {
-      var newPost = response.data.data.children[0].data;
-      this.setState(currentState => {
-        return {
-          posts: currentState.posts.concat([newPost])
-        };
-      });
+      if (response) {
+        var newPost = response.data.data.children[0].data;
+        this.setState(currentState => {
+          return {
+            posts: currentState.posts.concat([newPost])
+          };
+        });
+      }
     });
   };
 

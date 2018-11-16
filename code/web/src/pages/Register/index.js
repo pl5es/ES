@@ -21,8 +21,10 @@ class SignUp extends Component {
     setFieldValue('avatar', this.state.imageFiles[0]);
   };
 
-  setUserId = (userid, setFieldValue) => {
-    setFieldValue('twitter_user_id', userid);
+  setUserId = (values, setFieldValue) => {
+    setFieldValue('twitter_user_id', values[0]);
+    setFieldValue('twitter_oauth_token', values[1]);
+    setFieldValue('twitter_oauth_token_secret', values[2]);
   };
 
   valuesToFormData(values, history, signup) {
@@ -74,6 +76,8 @@ class SignUp extends Component {
               initialValues={{
                 username: '',
                 twitter_user_id: '',
+                twitter_oauth_token: '',
+                twitter_oauth_token_secret: '',
                 email: '',
                 interests: '',
                 orcid: '',
