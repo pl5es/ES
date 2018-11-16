@@ -20,7 +20,7 @@ class TwitterController < ApplicationController
 
   def post_tweet
     @user.twitter.update(params[:message])
-    render status: 200
+    head :no_content
   end
 
   def request_token
