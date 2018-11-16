@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { getMyInfo } from "utils/api";
-import Navbar from "components/Navbar";
-import { API_URL } from "utils/config";
-import { connect } from "react-redux";
-import { show } from "actions/user";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { getMyInfo } from 'utils/api';
+import Navbar from 'components/Navbar';
+import { API_URL } from 'utils/config';
+import { connect } from 'react-redux';
+import { show } from 'actions/user';
+import { Link } from 'react-router-dom';
 
 class Profile extends Component {
   componentWillReceiveProps() {
@@ -14,7 +14,7 @@ class Profile extends Component {
 
   render() {
     const {
-      props: { user }
+      props: { user },
     } = this;
     return (
       <div>
@@ -40,8 +40,8 @@ class Profile extends Component {
                 </div>
                 <div className="description">{user.description}</div>
               </div>
-              <div class="col-md-2 container-edit-profile">
-              <Link to="/edit">Edit Profile</Link>
+              <div className="col-md-2 container-edit-profile">
+                <Link to="/edit">Edit Profile</Link>
               </div>
             </div>
           </div>
@@ -53,18 +53,18 @@ class Profile extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    show: dispatch(show())
+    show: dispatch(show()),
   };
 };
 
 const mapStateToProps = state => {
   return {
     userError: state.user.userError,
-    user: state.user.user
+    user: state.user.user,
   };
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Profile);

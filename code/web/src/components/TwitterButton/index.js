@@ -38,7 +38,6 @@ const postInfo = (body, login) => {
   login(loginObject);
 };
 
-
 const loginUser = (response, login) => {
   response.json().then(body => postInfo(body, login));
 };
