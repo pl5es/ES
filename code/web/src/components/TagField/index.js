@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class TagField extends Component {
   state = {
-    currentInput: ""
+    currentInput: '',
   };
 
   render() {
@@ -12,9 +12,9 @@ class TagField extends Component {
         form: { values },
         label,
         push,
-        remove
+        remove,
       },
-      state: { currentInput }
+      state: { currentInput },
     } = this;
     return (
       <div className="row">
@@ -29,18 +29,18 @@ class TagField extends Component {
               e.preventDefault();
               if (currentInput.length > 1) {
                 push(currentInput);
-                this.setState({ currentInput: "" });
+                this.setState({ currentInput: '' });
               }
             }
           }}
         />
 
-        <div class="row interests-area">
+        <div className="row interests-area">
           {values[this.props.name].length > 0 &&
             values[this.props.name].map((field, index) => (
-              <div class="col-md-2 container-element">
-                <div class="interest">
-                  <div class="text">
+              <div className="col-md-2 container-element">
+                <div className="interest">
+                  <div className="text">
                     {field}
                     <button
                       onClick={ev => {
@@ -62,12 +62,12 @@ class TagField extends Component {
 
 TagField.propTypes = {
   form: PropTypes.shape({
-    values: PropTypes.shape()
+    values: PropTypes.shape(),
   }),
   name: PropTypes.string.isRequired,
   push: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  remove: PropTypes.func.isRequired
+  remove: PropTypes.func.isRequired,
 };
 
 export default TagField;

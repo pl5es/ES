@@ -14,17 +14,25 @@ const NewsFeed = ({ news, name, posts }) => (
       ))}
     </ul>
 
-    {posts && <ul id="postlist">
-      {posts.map(post => (
-        <li key={post.name}>
-          <a href={post.url} target="_blank">{post.title}</a>
-          <p> By: {post.author} in r/{post.subreddit}, 
-            {post.num_comments} <a href={"https://reddit.com"+post.permalink} target="_blank">comments</a>, 
-            {post.score} upvotes 
-          </p>
-        </li>
-      ))}
-    </ul>}
+    {posts && (
+      <ul id="postlist">
+        {posts.map(post => (
+          <li key={post.name}>
+            <a href={post.url} target="_blank">
+              {post.title}
+            </a>
+            <p>
+              {' '}
+              By: {post.author} in r/
+              {post.subreddit},{post.num_comments}{' '}
+              <a href={'https://reddit.com' + post.permalink} target="_blank">
+                comments
+              </a>
+              ,{post.score} upvotes
+            </p>
+          </li>
+        ))}
+              </ul>}
 
   </div>
 );

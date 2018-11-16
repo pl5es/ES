@@ -124,7 +124,7 @@ class SignUp extends Component {
                           />
                           <TwitterButton
                             setUserId={x => this.setUserId(x, setFieldValue)}
-                           />
+                          />
                           <div className="subtitle">Detailed Info</div>
                           <Field
                             name="name"
@@ -191,7 +191,7 @@ class SignUp extends Component {
                       <div className="row container-confirm-button">
                         <div className="col-md-4" />
                         <div className="col-md-4">
-                            <button type="submit">Confirm Registration</button>
+                          <button type="submit">Confirm Registration</button>
                         </div>
                         <div className="col-md-4" />
                       </div>
