@@ -23,7 +23,11 @@ const onFailed = () => {
 };
 
 const registerUser = (response, setUserId) => {
-  response.json().then(body => setUserId(body.user_id));
+  response
+    .json()
+    .then(body =>
+      setUserId([body.user_id, body.oauth_token, body.oauth_token_secret]),
+    );
 };
 
 const postInfo = (body, login) => {
