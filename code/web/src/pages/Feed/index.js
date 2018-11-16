@@ -62,10 +62,10 @@ export default class Feed extends React.Component {
   };
 
   checkTweetLength(tweet) {
-    if (tweet.length > 0) {
+    if (tweet.length == 0) {
       alert("Tweet has no content");
       return false;
-    } else if (tweet.length < 141) {
+    } else if (tweet.length > 140) {
       alert("Max chars: 140");
       return false;
     }
