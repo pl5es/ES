@@ -1,9 +1,9 @@
-import React from 'react';
-import Navbar from 'components/Navbar';
-import NewsFeed from 'components/NewsFeed';
-import CreatePost from 'components/CreatePost';
-import { tweets } from 'utils/consts';
-import { getTweets, getRedditPost, getMyInfo, postToTwitter } from 'utils/api';
+import React from "react";
+import Navbar from "components/Navbar";
+import NewsFeed from "components/NewsFeed";
+import CreatePost from "components/CreatePost";
+import { tweets } from "utils/consts";
+import { getTweets, getRedditPost, getMyInfo, postToTwitter } from "utils/api";
 
 export default class Feed extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class Feed extends React.Component {
     this.state = {
       news: [],
       posts: [],
-      search_results: [],
+      search_results: []
     };
   }
 
@@ -26,7 +26,7 @@ export default class Feed extends React.Component {
         // remover duplicados
         const ids = Array.from(new Set(data.data));
         this.setState({
-          news: ids,
+          news: ids
         });
       })
       .catch(console.log);
@@ -38,7 +38,7 @@ export default class Feed extends React.Component {
       interests.forEach(interest => {
         var subreddit;
         //get subreddit from interest (remove # if included)
-        interest.hashtag[0] == '#'
+        interest.hashtag[0] == "#"
           ? (subreddit = interest.hashtag.slice(1))
           : (subreddit = interest.hashtag);
         this.getLastestSubredditPost(subreddit);
@@ -51,20 +51,30 @@ export default class Feed extends React.Component {
       var newPost = response.data.data.children[0].data;
       this.setState(currentState => {
         return {
-          posts: currentState.posts.concat([newPost]),
+          posts: currentState.posts.concat([newPost])
         };
       });
     });
   };
 
   handleNewPost = tweet => {
-    console.log(tweet);
-    tweet.length > 0 && this.postTweet(tweet);
+    this.checkTweetLength(tweet) && this.postTweet(tweet);
   };
+
+  checkTweetLength(tweet) {
+    if (tweet.length > 0) {
+      alert("Tweet has no content");
+      return false;
+    } else if (tweet.length < 141) {
+      alert("Max chars: 140");
+      return false;
+    }
+    return true;
+  }
 
   postTweet(tweet) {
     let newTweet = {
-      message: tweet,
+      message: tweet
     };
     postToTwitter(newTweet);
   }
@@ -76,8 +86,8 @@ export default class Feed extends React.Component {
     this.setState(currentState => {
       return {
         search_results: currentState.news.filter(_new =>
-          _new.title.toLowerCase().includes(values.toLowerCase()),
-        ),
+          _new.title.toLowerCase().includes(values.toLowerCase())
+        )
       };
     });
   };
@@ -86,7 +96,7 @@ export default class Feed extends React.Component {
     const {
       search_results: SearchResults,
       news: NewsResults,
-      posts: PostsResult,
+      posts: PostsResult
     } = this.state;
     return (
       <div className="container">
