@@ -75,8 +75,8 @@ export const signUp = data => post('api/users.json', data);
 export const signIn = data => post('api/oauth/token.json', data);
 export const getMyInfo = () => get('api/users.json');
 export const updateMyInfo = data => put('api/users.json', data);
-export const getTweets = (count = 10) =>
-  get(`api/users/twitter.json?count=${count}`);
+export const getTweets = (count = 7) =>
+  get(`api/users/twitter/tweets.json?count=${count}`);
 
 export const getFolder = id => get(`api/users/folders/${id}.json`);
 export const getFolders = () => get('api/users/folders.json');
@@ -100,4 +100,4 @@ export const updateBookmark = (data, id) =>
 export const getRequestToken = () =>
   postNoData('api//auth/twitter/request_token');
 
-export const postToTwitter = message => postItem('api/twitter/tweet', message);
+export const postToTwitter = message => postItem('api/users/twitter/post_tweet', message);
