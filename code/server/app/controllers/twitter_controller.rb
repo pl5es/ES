@@ -10,8 +10,9 @@ class TwitterController < ApplicationController
     cache = {}
     if @user.interests.any?
       for i in 1..number_tweets
+        #ap cache
         interest = @user.interests.sample
-        interest_tweets = cache.fetch(interest) { |i| cache[i] = fetch_from_twitter(number_tweets, interest.hashtag) }
+        interest_tweets = cache.fetch(interest.hashtag) { |i| cache[i] = fetch_from_twitter(number_tweets, interest.hashtag) }
         id = interest_tweets.sample
         tweets_ids.push(id)
         interest_tweets.delete(id)
@@ -63,7 +64,6 @@ class TwitterController < ApplicationController
     end
 
     def fetch_from_twitter(count, query)
-      ap query
       ids = []
       tweets = Rails.application.config.twitter_client.search("#{query}", count: count).to_h[:statuses]
       tweets.each { |t| ids.push(t[:id_str]) }
