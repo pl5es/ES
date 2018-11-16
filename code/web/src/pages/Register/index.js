@@ -21,8 +21,10 @@ class SignUp extends Component {
     setFieldValue('avatar', this.state.imageFiles[0]);
   };
 
-  setUserId = (userid, setFieldValue) => {
-    setFieldValue('twitter_user_id', userid);
+  setUserId = (values, setFieldValue) => {
+    setFieldValue('twitter_user_id', values[0]);
+    setFieldValue('twitter_oauth_token', values[1]);
+    setFieldValue('twitter_oauth_token_secret', values[2]);
   };
 
   valuesToFormData(values, history, signup) {
@@ -74,6 +76,8 @@ class SignUp extends Component {
               initialValues={{
                 username: '',
                 twitter_user_id: '',
+                twitter_oauth_token: '',
+                twitter_oauth_token_secret: '',
                 email: '',
                 interests: '',
                 orcid: '',
@@ -124,7 +128,7 @@ class SignUp extends Component {
                           />
                           <TwitterButton
                             setUserId={x => this.setUserId(x, setFieldValue)}
-                           />
+                          />
                           <div className="subtitle">Detailed Info</div>
                           <Field
                             name="name"
@@ -191,7 +195,7 @@ class SignUp extends Component {
                       <div className="row container-confirm-button">
                         <div className="col-md-4" />
                         <div className="col-md-4">
-                            <button type="submit">Confirm Registration</button>
+                          <button type="submit">Confirm Registration</button>
                         </div>
                         <div className="col-md-4" />
                       </div>

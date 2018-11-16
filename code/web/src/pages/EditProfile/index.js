@@ -1,31 +1,31 @@
-import React, { Component } from "react";
-import { FieldArray, Field, Form, Formik } from "formik";
-import InputField from "components/InputField";
-import Navbar from "components/Navbar";
-import { connect } from "react-redux";
-import { edit } from "actions/user";
-import Dropzone from "react-dropzone";
-import { Redirect, Link } from "react-router-dom";
-import { API_URL } from "utils/config";
+import React, { Component } from 'react';
+import { FieldArray, Field, Form, Formik } from 'formik';
+import InputField from 'components/InputField';
+import Navbar from 'components/Navbar';
+import { connect } from 'react-redux';
+import { edit } from 'actions/user';
+import Dropzone from 'react-dropzone';
+import { Redirect, Link } from 'react-router-dom';
+import { API_URL } from 'utils/config';
 
-import editProfileSchema from "utils/validations/editProfileSchema";
+import editProfileSchema from 'utils/validations/editProfileSchema';
 
 class EditProfile extends Component {
   state = {
-    imageFiles: []
+    imageFiles: [],
   };
 
   onDrop = (setFieldValue, imageFiles) => {
     this.setState({
-      imageFiles: imageFiles
+      imageFiles: imageFiles,
     });
-    setFieldValue("avatar", this.state.imageFiles[0]);
+    setFieldValue('avatar', this.state.imageFiles[0]);
   };
 
   valuesToFormData(values, history, edit) {
     const bodyFormData = new FormData();
     Object.keys(values).map(value => {
-      if (value !== "interests") {
+      if (value !== 'interests') {
         bodyFormData.append(value, values[value]);
       }
     });
@@ -35,7 +35,7 @@ class EditProfile extends Component {
 
   render() {
     const {
-      props: { user, edit, history, updated }
+      props: { user, edit, history, updated },
     } = this;
     console.log(this.props);
     return (
@@ -43,7 +43,7 @@ class EditProfile extends Component {
         {updated === true ? (
           <Redirect to="/profile" />
         ) : (
-          <div class="container">
+          <div className="container">
             <Navbar />
             {user ? (
               <div>
@@ -122,13 +122,13 @@ class EditProfile extends Component {
                                               id="avatar"
                                               src={file.preview}
                                               style={{
-                                                position: "absolute",
-                                                top: "50%",
-                                                left: "50%",
-                                                width: "100%",
-                                                height: "100%",
-                                                marginTop: "-50%",
-                                                marginLeft: "-50%"
+                                                position: 'absolute',
+                                                top: '50%',
+                                                left: '50%',
+                                                width: '100%',
+                                                height: '100%',
+                                                marginTop: '-50%',
+                                                marginLeft: '-50%',
                                               }}
                                             />
                                           ))}
@@ -136,15 +136,18 @@ class EditProfile extends Component {
                                       ) : (
                                         <img
                                           id="avatar"
-                                          src={user.avatar && `${API_URL}/${user.avatar.url}`}
+                                          src={
+                                            user.avatar &&
+                                            `${API_URL}/${user.avatar.url}`
+                                          }
                                           style={{
-                                            position: "absolute",
-                                            top: "50%",
-                                            left: "50%",
-                                            width: "100%",
-                                            height: "100%",
-                                            marginTop: "-50%",
-                                            marginLeft: "-50%"
+                                            position: 'absolute',
+                                            top: '50%',
+                                            left: '50%',
+                                            width: '100%',
+                                            height: '100%',
+                                            marginTop: '-50%',
+                                            marginLeft: '-50%',
                                           }}
                                         />
                                       )}
@@ -158,8 +161,8 @@ class EditProfile extends Component {
                                     component={InputField}
                                     label="Description"
                                     style={{
-                                      height: "10em",
-                                      width: "30em"
+                                      height: '10em',
+                                      width: '30em',
                                     }}
                                   />
                                 </div>
@@ -178,7 +181,9 @@ class EditProfile extends Component {
                 </div>
                 <Link to="/profile">Cancel</Link>
               </div>
-            ) : <Redirect to="/profile" />}
+            ) : (
+              <Redirect to="/profile" />
+            )}
           </div>
         )}
       </div>
@@ -188,7 +193,7 @@ class EditProfile extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    edit: values => dispatch(edit(values))
+    edit: values => dispatch(edit(values)),
   };
 };
 
@@ -202,5 +207,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(EditProfile);

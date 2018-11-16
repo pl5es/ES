@@ -63,43 +63,41 @@ const updateItem = (endpoint, data) => {
   });
 };
 
-export const getRedditPost =  (subreddit) => {
-  return axios.get('https://www.reddit.com/r/'+subreddit+'/new.json?limit=1')
-    .catch(function (error) {
-    console.log(error);
-  });
-}
+export const getRedditPost = subreddit => {
+  return axios
+    .get(`https://www.reddit.com/r/${subreddit}/new.json?limit=1`)
+    .catch(error => {
+      console.log(error);
+    });
+};
 
 export const signUp = data => post('api/users.json', data);
 export const signIn = data => post('api/oauth/token.json', data);
 export const getMyInfo = () => get('api/users.json');
 export const updateMyInfo = data => put('api/users.json', data);
-export const getTweets = (count = 10) =>
-  get(`api/users/twitter.json?count=${count}`);
+export const getTweets = (count = 7) =>
+  get(`api/users/twitter/tweets.json?count=${count}`);
 
-export const getFolder = id => get('api/users/folders/' + id + '.json');
+export const getFolder = id => get(`api/users/folders/${id}.json`);
 export const getFolders = () => get('api/users/folders.json');
 export const createFolder = data => postItem('api/users/folders.json', data);
-export const deleteFolder = id =>
-  deleteItem('api/users/folders/' + id + '.json');
+export const deleteFolder = id => deleteItem(`api/users/folders/${id}.json`);
 export const updateFolder = (data, id) =>
-  updateItem(`api/users/folders/${  id  }.json`, data);
+  updateItem(`api/users/folders/${id}.json`, data);
 
 export const getBookmark = (folderId, bookmarkId) =>
-  get('api/users/folders/' + folderId + '/bookmarks/' + bookmarkId + '.json');
+  get(`api/users/folders/${folderId}/bookmarks/${bookmarkId}.json`);
 
 export const createBookmark = (data, id) =>
-  postItem('api/users/folders/' + id + '/bookmarks.json', data);
+  postItem(`api/users/folders/${id}/bookmarks.json`, data);
 
 export const deleteBookmark = (folderId, bookmarkId) =>
-  deleteItem(
-    'api/users/folders/' + folderId + '/bookmarks/' + bookmarkId + '.json',
-  );
+  deleteItem(`api/users/folders/${folderId}/bookmarks/${bookmarkId}.json`);
 
 export const updateBookmark = (data, id) =>
-  updateItem('api/users/bookmarks/' + id + '.json', data);
+  updateItem(`api/users/bookmarks/${id}.json`, data);
 
 export const getRequestToken = () =>
   postNoData('api//auth/twitter/request_token');
 
-export const postToTwitter = message => postItem('api/twitter/tweet', message);
+export const postToTwitter = message => postItem('api/users/twitter/post_tweet', message);

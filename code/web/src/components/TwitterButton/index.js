@@ -23,7 +23,11 @@ const onFailed = () => {
 };
 
 const registerUser = (response, setUserId) => {
-  response.json().then(body => setUserId(body.user_id));
+  response
+    .json()
+    .then(body =>
+      setUserId([body.user_id, body.oauth_token, body.oauth_token_secret]),
+    );
 };
 
 const postInfo = (body, login) => {
@@ -37,7 +41,6 @@ const postInfo = (body, login) => {
 
   login(loginObject);
 };
-
 
 const loginUser = (response, login) => {
   response.json().then(body => postInfo(body, login));

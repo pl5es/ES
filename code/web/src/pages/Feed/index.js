@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "components/Navbar";
 import NewsFeed from "components/NewsFeed";
 import CreatePost from "components/CreatePost";
-import { tweets } from 'utils/consts';
+import { tweets } from "utils/consts";
 import { getTweets, getRedditPost, getMyInfo, postToTwitter } from "utils/api";
 
 export default class Feed extends React.Component {
@@ -11,7 +11,7 @@ export default class Feed extends React.Component {
     this.state = {
       news: [],
       posts: [],
-      search_results: [],
+      search_results: []
     };
   }
 
@@ -21,12 +21,12 @@ export default class Feed extends React.Component {
   }
 
   addTweets = () => {
-    getTweets(20)
+    getTweets()
       .then(data => {
         // remover duplicados
         const ids = Array.from(new Set(data.data));
         this.setState({
-          news: ids,
+          news: ids
         });
       })
       .catch(console.log);
@@ -48,23 +48,35 @@ export default class Feed extends React.Component {
 
   getLastestSubredditPost = subreddit => {
     getRedditPost(subreddit).then(response => {
-      var newPost = response.data.data.children[0].data;
-      this.setState(currentState => {
-        return {
-          posts: currentState.posts.concat([newPost])
-        };
-      });
+      if (response) {
+        var newPost = response.data.data.children[0].data;
+        this.setState(currentState => {
+          return {
+            posts: currentState.posts.concat([newPost])
+          };
+        });
+      }
     });
   };
 
-  handleNewPost = (tweet) => {
-    console.log(tweet)
-    tweet.length > 0 && this.postTweet(tweet);
+  handleNewPost = tweet => {
+    this.checkTweetLength(tweet) && this.postTweet(tweet);
+  };
+
+  checkTweetLength(tweet) {
+    if (tweet.length == 0) {
+      alert("Tweet has no content");
+      return false;
+    } else if (tweet.length > 140) {
+      alert("Max chars: 140");
+      return false;
+    }
+    return true;
   }
 
   postTweet(tweet) {
     let newTweet = {
-      message: tweet,
+      message: tweet
     };
     postToTwitter(newTweet);
   }
