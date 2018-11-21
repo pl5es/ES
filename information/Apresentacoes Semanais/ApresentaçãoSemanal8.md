@@ -3,7 +3,7 @@
 
 <br>
 
-![](https://github.com/pl5es/ES/blob/master/infomation/logo_tipo.png)
+![](https://github.com/pl5es/ES/blob/master/information/logo_tipo.png)
 
 
 
@@ -13,11 +13,11 @@
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Ant%C3%B3nio%20Morais%20(L-REQ).jpg) | António Morais <br> antoniomorais.nn@gmail.com | Coordenador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/In%C3%AAs%20Gon%C3%A7alves%20(REQ).jpg) | Inês Gonçalves <br> inesmedeiros98@gmail.com | Colaboradora 
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Pedro%20Goncalves%20(REQ).jpg) | Pedro Gonçalves <br> pjgoncalves.97@hotmail.com | Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Sara%20Mendes%20(REQ).jpg) | Sara Mendes <br> saramendes_98@hotmail.com | Colaboradora
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Maria%20Rodrigues%20(REQ).jpg) | Maria Rodrigues <br> m_carmoro@sapo.pt | Colaboradora
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Ant%C3%B3nio%20Morais%20(L-REQ).jpg) | António Morais <br> antoniomorais.nn@gmail.com | Coordenador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/In%C3%AAs%20Gon%C3%A7alves%20(REQ).jpg) | Inês Gonçalves <br> inesmedeiros98@gmail.com | Colaboradora 
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Pedro%20Goncalves%20(REQ).jpg) | Pedro Gonçalves <br> pjgoncalves.97@hotmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Sara%20Mendes%20(REQ).jpg) | Sara Mendes <br> saramendes_98@hotmail.com | Colaboradora
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Maria%20Rodrigues%20(REQ).jpg) | Maria Rodrigues <br> m_carmoro@sapo.pt | Colaboradora
 
 ### Atividades Realizadas 
 
@@ -38,12 +38,12 @@ Esclarecimento de dúvidas de IMP | 1h
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Tiago%20Martins(L-IMP).jpg) | Tiago Martins <br> tiagomartins282@gmail.com | Coordenador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Alexandre%20Faria%20(IMP).jpg) | Alexandre Faria <br> afaria@student.dei.uc.pt | Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Daniel%20Santos%20(IMP).jpg) | Daniel Santos <br> danielsantos0710@gmail.com | Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Isidoro(IMP).jpg) | Diogo Isidoro <br> diogoisidoro8@gmail.com | Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Loureiro%20(IMP).jpg) | Diogo Loureiro <br> diogo.azev97@gmail.com | Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Joao%20Almeida%20(IMP).jpg) | João Luís Almeida <br> menesesdealmeida@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Tiago%20Martins(L-IMP).jpg) | Tiago Martins <br> tiagomartins282@gmail.com | Coordenador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Alexandre%20Faria%20(IMP).jpg) | Alexandre Faria <br> afaria@student.dei.uc.pt | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Daniel%20Santos%20(IMP).jpg) | Daniel Santos <br> danielsantos0710@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Diogo%20Isidoro(IMP).jpg) | Diogo Isidoro <br> diogoisidoro8@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Diogo%20Loureiro%20(IMP).jpg) | Diogo Loureiro <br> diogo.azev97@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Joao%20Almeida%20(IMP).jpg) | João Luís Almeida <br> menesesdealmeida@gmail.com | Colaborador
 
 ### Atividades Realizadas
 
@@ -57,11 +57,11 @@ Preparação + Apresentação Demo | João Almeida | 1h | 2h
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Renato%20Matos%20(L-TEST).jpg) | Renato Matos <br> renatomiguelmatos@gmail.com | Coordenador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Bernardo%20Correia%20(TEST).jpg) | Bernardo Correia <br> bernardonunescorreia@gmail.com | Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Pedro%20Rodrigues%20(TEST).jpg) | Pedro Rodrigues <br> pedrofil98@hotmail.com | Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Roman%20(QUA).jpg) | Roman Kernychyshyn <br> romanvk@student.dei.uc.pt | Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Tiago%20Leal%20(TEST).jpg) | Tiago Leal <br> tgcunha999@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Renato%20Matos%20(L-TEST).jpg) | Renato Matos <br> renatomiguelmatos@gmail.com | Coordenador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Bernardo%20Correia%20(TEST).jpg) | Bernardo Correia <br> bernardonunescorreia@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Pedro%20Rodrigues%20(TEST).jpg) | Pedro Rodrigues <br> pedrofil98@hotmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Roman%20(QUA).jpg) | Roman Kernychyshyn <br> romanvk@student.dei.uc.pt | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Tiago%20Leal%20(TEST).jpg) | Tiago Leal <br> tgcunha999@gmail.com | Colaborador
 
 ### Atividades Realizadas
 
@@ -87,11 +87,11 @@ Dificuldades na integração do SonarQube
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Pedro%20Coelho%20(L-QUA)%20.jpg) | Pedro Coelho <br> pedromjc18@gmail.com | Coordenador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Guilherme%20Cruz%20(QUA).jpg) | Guilherme Cruz <br> gjsd.cruz98@gmail.com | Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Joao%20Lopes%20(QUA).jpg) | João Lopes <br> joaofcp98@hotmail.com| Colaborador
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Sofia%20Almeida%20(QUA).jpg) | Sofia Almeida <br> sofiasotoalmeida@gmail.com | Colaboradora
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Tiago%20Pessoa%20(QUA).jpg) | Tiago Pessoa <br> tiagopessoa123@hotmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Pedro%20Coelho%20(L-QUA)%20.jpg) | Pedro Coelho <br> pedromjc18@gmail.com | Coordenador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Guilherme%20Cruz%20(QUA).jpg) | Guilherme Cruz <br> gjsd.cruz98@gmail.com | Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Joao%20Lopes%20(QUA).jpg) | João Lopes <br> joaofcp98@hotmail.com| Colaborador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Sofia%20Almeida%20(QUA).jpg) | Sofia Almeida <br> sofiasotoalmeida@gmail.com | Colaboradora
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Tiago%20Pessoa%20(QUA).jpg) | Tiago Pessoa <br> tiagopessoa123@hotmail.com | Colaborador
 
 ### Atividades Realizadas
 
@@ -107,10 +107,10 @@ Inspecção formal ao Manual de Qualidade | Pedro Coelho | 1h | 50min
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Ant%C3%B3nio%20Eloi%20(L-PM).jpg)| António Eloi <br> aeloi.email@gmail.com | Gestor de Projeto
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Alves(PM).jpg) | Diogo Alves <br> diogo.cordeiro.alves@hotmail.com | Colaborador
- ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Diogo%20Fernandes%20(PM).jpg) | Diogo Fernandes <br> diogo.fernandes.12@hotmail.com | Colaborador
- ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Hanna%20Filatava%20(PM).jpg) | Hanna Filatava <br> filana10@gmail.com | Colaboradora
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Ant%C3%B3nio%20Eloi%20(L-PM).jpg)| António Eloi <br> aeloi.email@gmail.com | Gestor de Projeto
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Diogo%20Alves(PM).jpg) | Diogo Alves <br> diogo.cordeiro.alves@hotmail.com | Colaborador
+ ![](https://github.com/pl5es/ES/blob/master/information/fotos/Diogo%20Fernandes%20(PM).jpg) | Diogo Fernandes <br> diogo.fernandes.12@hotmail.com | Colaborador
+ ![](https://github.com/pl5es/ES/blob/master/information/fotos/Hanna%20Filatava%20(PM).jpg) | Hanna Filatava <br> filana10@gmail.com | Colaboradora
 
 ### Atividades Realizadas
 
@@ -131,6 +131,6 @@ Gestão de Risco - Fase de Planeamento de resposta aos riscos | 1h
 
 
 ### Avaliação da PL da semana anterior
-![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/FeedbackPL%20-%20Week8.png)
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/inqueritos/FeedbackPL%20-%20Week8.png)
 
-![](https://github.com/pl5es/ES/blob/master/infomation/Apresentacoes%20Semanais/inqueritos/Feedback2PL%20-%20Week8.png.png)
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/inqueritos/Feedback2PL%20-%20Week8.png.png)
