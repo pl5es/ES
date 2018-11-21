@@ -13,7 +13,7 @@
 
 Foto | Nome e Contacto | Cargo
 ------------ | ------------- | -------------
-![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Ant%C3%B3nio%20Morais%20(L-REQ).jpg) | António Morais <br> antoniomorais.nn@gmail.com | Coordenador
+![](https://github.com/pl5es/ES/blob/master/information/fotos/Ant%C3%B3nio%20Morais%20(L-REQ).jpg) | António Morais <br> antoniomorais.nn@gmail.com | Coordenador
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/In%C3%AAs%20Gon%C3%A7alves%20(REQ).jpg) | Inês Gonçalves <br> inesmedeiros98@gmail.com | Vice-Coordenadora
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Pedro%20Goncalves%20(REQ).jpg) | Pedro Gonçalves <br> pjgoncalves.97@hotmail.com | Colaborador
 ![](https://github.com/pl5es/ES/blob/master/infomation/fotos/Sara%20Mendes%20(REQ).jpg) | Sara Mendes <br> saramendes_98@hotmail.com | Colaboradora
