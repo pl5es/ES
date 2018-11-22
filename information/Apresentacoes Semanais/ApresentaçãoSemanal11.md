@@ -162,24 +162,25 @@ Formulário Motivação week #12 | 10 min
 
 
 ## Esforço Diário por Elemento (em minutos)
-
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/Esforco_Pessoal_Pando_2018_Week11.png)
 
 
 ## Esforço por Unidade (em minutos)
-
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/Esforco_Equipa_Pando_2018_Week11.png)
 
 
 ## Slack Analytics
 ### Membros Ativos por Semana
 
-
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/SlackStats_WeeklyActiveUsersWeek11.jpg)
 
 ### Membros Ativos Diariamente
-
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/SlackStats_DailyActiveUsersWeek11.jpg)
 
 ### Onde as mensagens são lidas
 
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/SlackStats_MessagesReadingWeek11.jpg)
 
 ### Para onde as mensagens são enviadas
-
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/SlackStats_MessagesSentWeek11.jpg)
 
