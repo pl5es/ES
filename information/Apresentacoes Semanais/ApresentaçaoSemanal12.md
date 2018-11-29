@@ -25,6 +25,7 @@ Foto | Nome e Contacto | Cargo
 
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo | Status
 ------------ | ------------- | ------------- | ------------- | -------------
+Gestão do Projeto :) | Unidade | | | Em curso
 Legendar os gráficos do Slack e ompilação das informações de cada unidade para incluir na apresentação semanal | Hanna Filatava | 1h | 1h | Concluído
 
 
@@ -32,15 +33,6 @@ Legendar os gráficos do Slack e ompilação das informações de cada unidade p
 <br>
 <br>
 
-### Atividades Planeadas para a próxima semana
-
-Tarefa | Esforço Estimado
------------- | -------------
-
-
-<br>
-<br>
-<br>
 
 
 ## Requisitos
@@ -63,21 +55,12 @@ Foto | Nome e Contacto | Cargo
 
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo | Status
 ------------ | ------------- | ------------- | ------------- | -------------
-
-
-<br>
-<br>
-<br>
-
-### Atividades Planeadas para a próxima semana
-
-Tarefa |  Esforço Estimado
------------- | ------------
-
+Atualização do Documento de Requisitos com os requisitos para o Sprint 4 | Pedro Gonçalves | 1h | 40 min | Concluído
 
 <br>
 <br>
 <br>
+
 
 ## Implementação
 ### A unidade
@@ -132,15 +115,6 @@ Tarefa | Responsável | Esforço Estimado | Esforço Efetivo | Status
 <br>
 <br>
 
-### Atividades Planeadas para a próxima semana
-
-Tarefa | Esforço Estimado
------------- | -------------
-
-
-<br>
-<br>
-<br>
 
 ## Qualidade
 ### A unidade
@@ -167,15 +141,6 @@ Criação de formulário de auxílio ao processo 3.4.3 | Pedro Coelho | 20 min |
 <br>
 <br>
 
-### Atividades Planeadas para a próxima semana
-
-Tarefa | Esforço Estimado
------------- | -------------
-
-
-<br>
-<br>
-<br>
 
 ## Ambiente
 ### A unidade
@@ -196,23 +161,6 @@ Tarefa | Responsável | Esforço Estimado | Esforço Efetivo | Status
 ------------ | ------------- | ------------- | ------------- | -------------
 
 
-<br>
-<br>
-<br>
-
-## Avaliação da PL da semana anterior
-
-
-<br>
-<br>
-<br>
-
-
-## Esforço Diário por Elemento (em minutos)
-
-
-
-## Esforço por Unidade (em minutos)
 
 
 <br>
