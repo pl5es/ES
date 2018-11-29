@@ -162,7 +162,7 @@ Foto | Nome e Contacto | Cargo
 
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo | Status
 ------------ | ------------- | ------------- | ------------- | -------------
-
+Resolução de problemas no GitHub| Unidade |  | 1h | Em curso
 
 
 
