@@ -56,13 +56,28 @@ Foto | Nome e Contacto | Cargo
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo | Status
 ------------ | ------------- | ------------- | ------------- | -------------
 Reunião com o Professor | António Morais | 30min | 30min | Concluído
-Escrita dos Pontos a adicionar à Tabela de Requisitos | António Morais | 1h | 30min | Concluído
-Atualização do Documento de Requisitos com os requisitos para o Sprint 4 | Pedro Gonçalves | 1h | 40 min | Concluído
+Escrita dos Pontos a adicionar à Tabela de Requisitos | António Morais | 1h | 30min | Em Curso
+Atualização do Documento de Requisitos com os requisitos para o Sprint 4 | Pedro Gonçalves | 1h | 40 min | Em Curso
+Realização de Mockups | Maria Rodrigues | 30min | 30min | Em Curso
 
 
 <br>
 <br>
 <br>
+
+
+### Atividades Planeadas
+
+Tarefa | Responsável | Esforço Estimado 
+------------ | ------------- | -------------
+Conclusão do Doc. de Requisitos | António Morais | 1h
+Mockups | Maria Rodrigues | 2h
+
+<br>
+<br>
+<br>
+
+
 
 
 ## Implementação
