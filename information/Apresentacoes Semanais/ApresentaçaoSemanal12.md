@@ -170,6 +170,12 @@ Tarefa | Responsável | Esforço Estimado | Esforço Efetivo | Status
 <br>
 <br>
 
+
+## Avaliação da PL da semana anterior
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/inqueritos/fig1_1sp4.png)
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/inqueritos/fig1_2s4.png)
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/inqueritos/fig1_3s4.png)
+
 ## Slack Analytics
 ### Membros Ativos por Semana
 
