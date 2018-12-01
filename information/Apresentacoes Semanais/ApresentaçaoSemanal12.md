@@ -205,17 +205,3 @@ Resolução de problemas no GitHub| Unidade |  | 1h | Em curso
 
 ### Para onde as mensagens são enviadas
 ![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/SlackStats_MessagesSentWeek12.jpg)
-
-### MOTIVAÇÃO SEMANAL
-
-#### Unidade 
-
-![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/MOTIVACAO/11/11Unidade.png)
-
-#### Cargo
-
-![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/MOTIVACAO/11/11Cargo.png)
-
-### Coordenadores
-
-![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/MOTIVACAO/11/11Coord1.png)
