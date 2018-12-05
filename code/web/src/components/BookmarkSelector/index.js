@@ -9,6 +9,11 @@ class BookmarkSelector extends Component {
     newURLInput: '',
     newHashtagsInput: '',
     newFolderInput: '',
+
+    updatedBookmarkInput:'',
+    updatedURLInput:'',
+    updatedHashtagsInput:'',
+    updatedFolderInput:'',
   };
 
   render() {
@@ -28,8 +33,6 @@ class BookmarkSelector extends Component {
         handleCloseSearchResults,
         handleShowSearchResults,
 
-        handleAddFolder,
-        handleAddBookmark,
         handleDeleteFolder,
         handleDeleteBookmark,
 
@@ -37,10 +40,18 @@ class BookmarkSelector extends Component {
         showAddBookmark,
         handleShowAddBookmark,
         handleShowAddFolder,
+        handleAddFolder,
+        handleAddBookmark,
 
         errorMessage,
         showErrorMessage,
         handleErrorMessage,
+
+        showEditBookmark,
+        handleShowEditBookmark,
+        handleEditBookmark,
+        toBeEditedBookmark,
+        toBeEditedBookmarkFolder,
       },
       state: {
         newFolder,
@@ -49,6 +60,11 @@ class BookmarkSelector extends Component {
         newHashtagsInput,
         newFolderInput,
         searchInput,
+
+        updatedBookmarkInput,
+        updatedURLInput,
+        updatedHashtagsInput,
+        updatedFolderInput,
       },
     } = this;
     return (
@@ -196,6 +212,12 @@ class BookmarkSelector extends Component {
                     >
                       Delete
                     </button>
+                    <button
+                      onClick={event => handleShowEditBookmark(bookmark,clickedFolder)}
+                      style={{ color: 'black' }}
+                    >
+                      Edit
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -300,6 +322,71 @@ class BookmarkSelector extends Component {
             <input type="submit" value="Add" style={{ color: 'black' }} />
           </form>
         )}
+
+        {/* Edit bookmark form*/}
+        {showEditBookmark && (
+          <form
+            onSubmit={event => {
+              handleEditBookmark(
+                event,
+                updatedBookmarkInput,
+                updatedHashtagsInput,
+                updatedURLInput,
+                updatedFolderInput,
+              );
+              this.setState({
+                updatedBookmarkInput: '',
+                updatedURLInput: '',
+                updatedHashtagsInput: '',
+                updatedFolderInput: '',
+              });
+            }}
+          >
+            <h3>Edit bookmark {toBeEditedBookmark.title} in folder {toBeEditedBookmarkFolder.title}...</h3>
+            <label>
+              New name:
+              <input
+                type="text"
+                value={updatedBookmarkInput}
+                onChange={ev => {
+                  this.setState({ updatedBookmarkInput: ev.target.value });
+                }}
+              />
+            </label>
+            <label>
+              New URL:
+              <input
+                type="text"
+                value={updatedURLInput}
+                onChange={ev => {
+                  this.setState({ updatedURLInput: ev.target.value });
+                }}
+              />
+            </label>
+            <label>
+              New hashtags:
+              <input
+                type="text"
+                value={updatedHashtagsInput}
+                onChange={ev => {
+                  this.setState({ updatedHashtagsInput: ev.target.value });
+                }}
+              />
+            </label>
+            <label>
+              New folder:
+              <input
+                type="text"
+                value={updatedFolderInput}
+                onChange={ev => {
+                  this.setState({ updatedFolderInput: ev.target.value });
+                }}
+              />
+            </label>
+            <input type="submit" value="Edit" style={{ color: 'black' }} />
+          </form>
+        )}
+
       </div>
     );
   }

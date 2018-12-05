@@ -29,6 +29,9 @@ export default class BookmarkSearch extends React.Component {
       searchResults: [],
       errorMessage:'',
       showErrorMessage:false,
+      showEditBookmark: false,
+      toBeEditedBookmark:null,
+      toBeEditedBookmarkFolder:null,
     };
   }
 
@@ -47,15 +50,13 @@ export default class BookmarkSearch extends React.Component {
       this.handleErrorMessage(true,"Non empty name please!");
       return;
     }
-    
+
     this.handleCloseSearchResults();
-    console.log(newFolder);
     var postFolder = {
       title: newFolder,
     };
     createFolder(postFolder).then(res => {
       var novoFolder = res.data;
-      console.log(res.data);
       this.setState(currentState => {
         return {
           folders: currentState.folders.concat([novoFolder]),
@@ -111,7 +112,7 @@ export default class BookmarkSearch extends React.Component {
         this.setState(currentState => {
           return {
             folders: [res.data].concat(
-              currentState.folders.filter(folder => folder.title !== newFolder),
+              currentState.folders.filter(folder => folder.id !== exists[0].id),
             ),
           };
         });
@@ -141,7 +142,6 @@ export default class BookmarkSearch extends React.Component {
     this.handleCloseSearchResults();
     var bookmarkId = bookmark.id;
     var folderId = this.state.clickedFolder.id;
-    event.preventDefault();
     deleteBookmark(folderId, bookmarkId).then(res => {
       getFolder(folderId).then(res => {
         this.setState(currentState => {
@@ -157,6 +157,7 @@ export default class BookmarkSearch extends React.Component {
   };
 
   handleFolderClick = (event, folder) => {
+    //hide clicked bookmark
     if (this.state.clickedBookmark !== null)
       this.handleBookmarkClick(event, this.state.clickedBookmark);
     event.preventDefault();
@@ -209,6 +210,125 @@ export default class BookmarkSearch extends React.Component {
     this.setState(currentState => {
       return {
         showAddBookmark: !currentState.showAddBookmark,
+      };
+    });
+  };
+
+  //functional spaghetti/tagliatelle/tortellini/linguini/...
+  handleEditBookmark = (event, newBookmark, newHashtags, newURL, newFolder) => {
+    event.preventDefault();
+    this.handleCloseSearchResults();
+    var editedBookmarkFolder = this.state.toBeEditedBookmarkFolder;
+
+    //use old value if not inputted
+    if(newFolder.length === 0)
+      newFolder = editedBookmarkFolder.title;
+    else{//otherwisse check if folder inputted exists
+      var exists = this.state.folders.filter(
+        folder => folder.title === newFolder,
+      );
+      if (exists.length === 0){
+        this.handleErrorMessage(true,"New folder does not exist!");
+        return;
+      }
+    }
+
+    //use old value if not inputted
+    if(newBookmark.length === 0)
+      newBookmark = this.state.toBeEditedBookmark.title;
+
+    //use old value if not inputted
+    if(newURL.length === 0)
+      newURL = this.state.toBeEditedBookmark.url;
+    else{ //add http://www. if missing
+      newURL = newURL.toLowerCase();
+      var prefix = 'www.';
+      if (newURL.substr(0, prefix.length) !== prefix) {
+        newURL = prefix + newURL;
+      }
+      prefix = 'http://';
+      if (newURL.substr(0, prefix.length) !== prefix) {
+        newURL = prefix + newURL;
+      }
+    }
+
+    //get edited bookmark full info (need interests in case user leaves them blank)
+    getBookmark(editedBookmarkFolder.id, this.state.toBeEditedBookmark.id).then(res => {
+      var editedBookmark = res.data;
+
+      var hashtags =[];
+      //use old value if not inputted
+      if(newHashtags.length === 0){
+        editedBookmark.interests.forEach((element, index, array) => {
+          hashtags.push(element.hashtag);
+        });
+      }else{
+        //add # to hashtags if missing
+        hashtags = newHashtags.split(' ');
+        hashtags.forEach((element, index, array) => {
+          if (element.charAt(0) !== '#') array[index] = `#${element}`;
+        });
+      }
+
+      var postBookmark = {
+        title: newBookmark,
+        interests: hashtags,
+        url: newURL,
+      };
+
+      // same folder
+      if(newFolder === editedBookmarkFolder.title){
+        updateBookmark(postBookmark, editedBookmarkFolder.id,editedBookmark.id).then(res => {
+          getFolder(editedBookmarkFolder.id).then(res => {
+            this.setState(currentState => {
+              return {
+                folders: [res.data].concat(
+                  currentState.folders.filter(folder => folder.id !== editedBookmarkFolder.id),
+                ),
+              };
+            });
+            this.handleFolderClick(event, res.data);
+          });
+        });
+      }else{ // move to different folder (delete then add to that folder)
+        deleteBookmark(editedBookmarkFolder.id, editedBookmark.id).then(res => {
+          createBookmark(postBookmark, exists[0].id).then(res => {
+            //update old folder in state
+            getFolder(editedBookmarkFolder.id).then(res => {
+              this.setState(currentState => {
+                return {
+                  folders: [res.data].concat(
+                    currentState.folders.filter(folder => folder.id !== editedBookmarkFolder.id),
+                  ),
+                };
+              });
+            });
+            //update new folder state
+            getFolder(exists[0].id).then(res => {
+              this.setState(currentState => {
+                return {
+                  folders: [res.data].concat(
+                    currentState.folders.filter(folder => folder.id !== exists[0].id),
+                  ),
+                };
+              });
+              this.handleFolderClick(event, res.data);
+            });
+          });
+        });
+      }
+      // hide edit input
+      this.handleShowEditBookmark(this.state.toBeEditedBookmark,this.state.toBeEditedBookmarkFolder);
+    });
+    //sorry for pasta code
+  };
+
+  handleShowEditBookmark = (bookmark,folder) => {
+    this.setState(currentState => {
+      return {
+        showEditBookmark: bookmark!=currentState.toBeEditedBookmark ? true : !currentState.showEditBookmark,
+        toBeEditedBookmark: bookmark,
+        toBeEditedBookmarkFolder: folder,
       };
     });
   };
@@ -286,8 +406,13 @@ export default class BookmarkSearch extends React.Component {
       searchResults: SearchResults,
       showSearch: ShowSearch,
       showSearchResults: ShowSearchResults,
+
       errorMessage:ErrorMessage,
       showErrorMessage:ShowErrorMessage,
+
+      showEditBookmark: ShowEditBookmark,
+      toBeEditedBookmark: ToBeEditedBookmark,
+      toBeEditedBookmarkFolder: ToBeEditedBookmarkFolder,
     } = this.state;
     return (
       <div className="container">
@@ -317,9 +442,16 @@ export default class BookmarkSearch extends React.Component {
           showAddFolder={ShowAddFolder}
           handleShowAddBookmark={this.handleShowAddBookmark}
           handleShowAddFolder={this.handleShowAddFolder}
+
           errorMessage={ErrorMessage}
           showErrorMessage={ShowErrorMessage}
           handleErrorMessage={this.handleErrorMessage}
+
+          showEditBookmark={ShowEditBookmark}
+          handleEditBookmark={this.handleEditBookmark}
+          handleShowEditBookmark={this.handleShowEditBookmark}
+          toBeEditedBookmark={ToBeEditedBookmark}
+          toBeEditedBookmarkFolder={ToBeEditedBookmarkFolder}
         />
       </div>
     );
