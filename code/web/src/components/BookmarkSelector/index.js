@@ -37,6 +37,10 @@ class BookmarkSelector extends Component {
         showAddBookmark,
         handleShowAddBookmark,
         handleShowAddFolder,
+
+        errorMessage,
+        showErrorMessage,
+        handleErrorMessage,
       },
       state: {
         newFolder,
@@ -128,6 +132,21 @@ class BookmarkSelector extends Component {
         >
           Add Bookmark
         </button>
+
+        {/*Error message*/}
+        {showErrorMessage && (
+          <p style={{ color: 'red' }}><b>
+            Error: {errorMessage}
+          </b>
+            <button
+              onClick={() => handleErrorMessage(false,'')}
+              style={{ color: 'black' }}
+            >
+              Hide
+            </button>
+          </p>
+          
+        )}
 
         <div className="cntntRow">
           <div className="cntntColumn">

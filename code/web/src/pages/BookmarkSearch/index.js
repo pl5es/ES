@@ -27,6 +27,8 @@ export default class BookmarkSearch extends React.Component {
       showSearch: false,
       bookmarks: [],
       searchResults: [],
+      errorMessage:'',
+      showErrorMessage:false,
     };
   }
 
@@ -41,7 +43,11 @@ export default class BookmarkSearch extends React.Component {
 
   handleAddFolder = (event, newFolder) => {
     event.preventDefault();
-    if (newFolder.length === 0) return;
+    if (newFolder.length === 0){
+      this.handleErrorMessage(true,"Non empty name please!");
+      return;
+    }
+    
     this.handleCloseSearchResults();
     console.log(newFolder);
     var postFolder = {
@@ -65,18 +71,21 @@ export default class BookmarkSearch extends React.Component {
     var exists = this.state.folders.filter(
       folder => folder.title === newFolder,
     );
-    if (exists.length === 0)
-      //folder doesnt exist
+    if (exists.length === 0){
+      this.handleErrorMessage(true,"Folder does not exist!");
       return;
+    }
+
     //add # to hashtags if missing
     var hashtags = newHashtags.split(' ');
     if (
       hashtags.length === 0 ||
       newBookmark.length === 0 ||
       newURL.length === 0
-    )
-      //non empty pls
+    ){
+      this.handleErrorMessage(true,"Non empty values please!");
       return;
+    }
     hashtags.forEach((element, index, array) => {
       if (element.charAt(0) !== '#') array[index] = `#${element}`;
     });
@@ -207,7 +216,10 @@ export default class BookmarkSearch extends React.Component {
   handleSearchBookmark = (event, keywords) => {
     event.preventDefault();
     //add # to hashtags if missing
-    if (keywords === '') return;
+    if (keywords === ''){
+      this.handleErrorMessage(true,"Non empty search please!");
+      return;
+    } 
     var hashtags = keywords.split(' ');
     hashtags.forEach((element, index, array) => {
       if (element.charAt(0) !== '#') array[index] = `#${element}`;
@@ -254,6 +266,15 @@ export default class BookmarkSearch extends React.Component {
     });
   };
 
+  handleErrorMessage = (show, message) => {
+    this.setState(currentState => {
+      return {
+        showErrorMessage:show,
+        errorMessage:message,
+      };
+    });
+  };
+
   //
   render() {
     const {
@@ -265,6 +286,8 @@ export default class BookmarkSearch extends React.Component {
       searchResults: SearchResults,
       showSearch: ShowSearch,
       showSearchResults: ShowSearchResults,
+      errorMessage:ErrorMessage,
+      showErrorMessage:ShowErrorMessage,
     } = this.state;
     return (
       <div className="container">
@@ -294,6 +317,9 @@ export default class BookmarkSearch extends React.Component {
           showAddFolder={ShowAddFolder}
           handleShowAddBookmark={this.handleShowAddBookmark}
           handleShowAddFolder={this.handleShowAddFolder}
+          errorMessage={ErrorMessage}
+          showErrorMessage={ShowErrorMessage}
+          handleErrorMessage={this.handleErrorMessage}
         />
       </div>
     );
