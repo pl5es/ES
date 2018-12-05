@@ -10,6 +10,18 @@ const getRefreshToken = () => {
   return token;
 };
 
+const externalPost = (url, data) => {
+  return axios.post(url, data);
+};
+
+const externalGet = url => {
+  return axios.get(url, {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  });
+};
+
 const post = (endpoint, data) => {
   return axios.post(`${API_URL}/${endpoint}`, data);
 };
@@ -100,4 +112,10 @@ export const updateBookmark = (data, id) =>
 export const getRequestToken = () =>
   postNoData('api//auth/twitter/request_token');
 
-export const postToTwitter = message => postItem('api/users/twitter/post_tweet', message);
+export const postToTwitter = message =>
+  postItem('api/users/twitter/post_tweet', message);
+
+export const authorizeOrcid = () =>
+  externalGet(
+    'https://orcid.org/oauth/authorize?client_id=APP-D7HK0ZRV7DLASQHI&response_type=code&scope=/authenticate&redirect_uri=http://localhost:3001',
+  );
