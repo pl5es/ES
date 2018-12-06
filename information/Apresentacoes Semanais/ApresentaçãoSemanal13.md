@@ -94,6 +94,10 @@ Aperfeiçoamento do documento de requisitos | Continuação | 1h30
 Aperfeiçoamento das Mockups | Continuação | 30 min
 
 <br>
+
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/Diagrama_Gantt_Requisitos_Week13.png)
+
+<br>
 <br>
 <br>
 
@@ -129,9 +133,10 @@ Resolução de bugs | Alexandre Faria | 10h | 2h | Em Curso
 
 ### Atividades Planeadas para a próxima semana
 
-Tarefa | Esforço Estimado
------------- | -------------
-Resolução de bugs | 10h
+Tarefa | Tipo | Esforço Estimado
+------------ | ------------- | -------------
+Resolução de bugs | Nova | 10h
+Passagem de CSS para React | Nova | 5h
 
 <br>
 <br>
@@ -268,11 +273,19 @@ Conclusão da checklist de verificação das heuristicas | Continuação | Indef
 
 
 
-## Esforço Diário por Elemento (em minutos)
+## Esforço Semanal por Elemento (em minutos)
 
 
 
-## Esforço por Unidade (em minutos)
+## Esforço Semanal por Unidade (em minutos)
+
+## Esforço Cumulativo por Elemento (em minutos)
+
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/Esforco_Comulativo_Elemento_Week13.PNG)
+
+## Esforço Cumulativo por Unidade (em minutos)
+
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/Esforco_Comulativo_Unidade_Week13.PNG)
 
 
 
@@ -388,7 +401,7 @@ Taxa de resposta de 66%.
 
 ## Conclusões
 <br>
-Conclusões
+
 Com base no observado, a equipa encontra-se motivada embora haja uma parte significativa a achar que ainda há muitos aspetos a melhorar como pessoas que não fazem nada, falta de cooperação e de participação.
 A taxa de resposta subiu 21% em relação ao questionário de motivação anterior, mas continua a não ser adequada para tirar conclusões mais acertadas.
 
