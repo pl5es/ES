@@ -120,6 +120,7 @@ Tarefa | Responsável | Esforço Estimado | Esforço Efetivo | Status
 ------------ | ------------- | ------------- | ------------- | -------------
 Update página bookmarks | João Almeida | 4h | 3h | Concluído
 ORCID Oauth | Tiago Martins, Diogo Isidoro | 4h | 6h | Concluído
+Resolução de bugs | Alexandre Faria | 10h | 2h | Em Curso
 
 <br>
 <br>
