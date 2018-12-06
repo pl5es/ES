@@ -269,7 +269,9 @@ Conclusão da checklist de verificação das heuristicas | Continuação | Indef
 
 
 ## Avaliação da PL da semana anterior
-
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/inqueritos/sp4pl2fig1.png)
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/inqueritos/sp4pl2fig2.png)
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/inqueritos/sp4pl2fig4.png)
 
 
 
