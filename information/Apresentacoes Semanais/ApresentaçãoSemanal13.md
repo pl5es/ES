@@ -414,3 +414,15 @@ A taxa de resposta subiu 21% em relação ao questionário de motivação anteri
 
 
 # Participação #13
+
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/PARTICIPACAO/13PM.png) <br>
+
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/PARTICIPACAO/13REQ.png) <br>
+
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/PARTICIPACAO/13IMP.png) <br>
+
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/PARTICIPACAO/13TST.png) <br>
+
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/PARTICIPACAO/13QUA.png) <br>
+
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/PARTICIPACAO/13ENV.png) <br>
