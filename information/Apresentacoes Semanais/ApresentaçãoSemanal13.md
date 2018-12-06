@@ -266,6 +266,11 @@ Conclusão da checklist de verificação das heuristicas | Continuação | Indef
 <br>
 <br>
 
+<br>
+
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/gantambiente1.png)
+
+<br>
 
 
 ## Avaliação da PL da semana anterior
