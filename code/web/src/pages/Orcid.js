@@ -1,18 +1,35 @@
 import React, { Component } from "react";
-import { authorizeOrcid } from "utils/api";
+import { orcidPost } from "utils/api";
 
 export default class Orcid extends Component {
-  orcidAuth() {
-    authorizeOrcid.then(async resp => await {
-        let resp = await resp.json();
-        console.log(resp);
+  state = {
+    response: {}
+  };
+
+  componentDidMount() {
+    const { search } = this.props.location;
+    const params = new URLSearchParams(search);
+    const code = params.get("code");
+    if (code) {
+
+      orcidPost(code)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
     }
   }
 
   render() {
     return (
       <div>
-        <button onClick={this.orcidAuth}> Authenticate with ORCID</button>
+        {this.state.response ? (
+          <div>
+            <a href="https://orcid.org/oauth/authorize?client_id=APP-D7HK0ZRV7DLASQHI&response_type=code&scope=/authenticate&redirect_uri=http://localhost:3001/auth/orcid/callback">
+              Authorize request
+            </a>
+          </div>
+        ) : (
+          <h1>oi</h1>
+        )}
       </div>
     );
   }

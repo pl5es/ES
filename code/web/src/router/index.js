@@ -20,6 +20,7 @@ const RouterApp = () => (
       <PrivateRoute path="/bookmarks" component={BookmarkSearch} />
       <PrivateRoute path="/edit" component={EditProfile} />
       <Route path="/orcid" component={Orcid} />
+      <Route path="/auth/orcid/callback" component={Orcid} />
     </Switch>
   </Router>
 );
