@@ -71,11 +71,8 @@ class BookmarkSelector extends Component {
       <div>
         {/*Search Bar*/}
         <label>
-          {' '}
-          <b>SEARCH BOOKMARKS</b>
-{' '}
-- Search bookmarks in folders by hashtag
-</label>
+          <b>SEARCH BOOKMARKS</b> in folders by hashtag
+        </label>
         <form
           onSubmit={event => {
             handleSearchBookmark(event, searchInput);
@@ -132,36 +129,6 @@ class BookmarkSelector extends Component {
                 ))}
             </ul>
           </p>
-        )}
-
-        {/*Show add folder form*/}
-        <button
-          onClick={() => handleShowAddFolder()}
-          style={{ color: 'black' }}
-        >
-          Add Folder
-        </button>
-        {/*Show add bookmark form*/}
-        <button
-          onClick={() => handleShowAddBookmark()}
-          style={{ color: 'black' }}
-        >
-          Add Bookmark
-        </button>
-
-        {/*Error message*/}
-        {showErrorMessage && (
-          <p style={{ color: 'red' }}><b>
-            Error: {errorMessage}
-          </b>
-            <button
-              onClick={() => handleErrorMessage(false,'')}
-              style={{ color: 'black' }}
-            >
-              Hide
-            </button>
-          </p>
-          
         )}
 
         <div className="cntntRow">
@@ -236,8 +203,38 @@ class BookmarkSelector extends Component {
           </div>
         </div>
 
+        {/*Show add folder form*/}
+        <button
+          onClick={() => handleShowAddFolder()}
+          style={{ backgroundColor: showAddFolder }}
+        >
+          Add Folder
+        </button>
+        {/*Show add bookmark form*/}
+        <button
+          onClick={() => handleShowAddBookmark()}
+          style={{ backgroundColor: showAddBookmark }}
+        >
+          Add Bookmark
+        </button>
+
+        {/*Error message*/}
+        {showErrorMessage && (
+          <p style={{ color: 'red' }}><b>
+            Error: {errorMessage}
+          </b>
+            <button
+              onClick={() => handleErrorMessage(false,'')}
+              style={{ color: 'black' }}
+            >
+              Hide
+            </button>
+          </p>
+          
+        )}
+
         {/* Add folder form*/}
-        {showAddFolder && (
+        {showAddFolder==='#cccccc' && ( //changed from true/false to color if true/color if false
           <form
             onSubmit={event => {
               handleAddFolder(event, newFolder);
@@ -260,7 +257,7 @@ class BookmarkSelector extends Component {
         )}
 
         {/* Add bookmark form*/}
-        {showAddBookmark && (
+        {showAddBookmark==='#cccccc' && ( //changed from true/false to color if true/color if false
           <form
             onSubmit={event => {
               handleAddBookmark(
@@ -343,6 +340,7 @@ class BookmarkSelector extends Component {
             }}
           >
             <h3>Edit bookmark {toBeEditedBookmark.title} in folder {toBeEditedBookmarkFolder.title}...</h3>
+            <p>Leave empty fields to keep current value</p>
             <label>
               New name:
               <input

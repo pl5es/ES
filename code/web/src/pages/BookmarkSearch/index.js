@@ -21,8 +21,8 @@ export default class BookmarkSearch extends React.Component {
       folders: [],
       clickedFolder: null,
       clickedBookmark: null,
-      showAddFolder: false,
-      showAddBookmark: false,
+      showAddFolder: '#eeeeee', //changed from true/false to color if true/color if false (of button)
+      showAddBookmark: '#eeeeee',
       showSearchResults: false,
       showSearch: false,
       bookmarks: [],
@@ -201,7 +201,8 @@ export default class BookmarkSearch extends React.Component {
   handleShowAddFolder = () => {
     this.setState(currentState => {
       return {
-        showAddFolder: !currentState.showAddFolder,
+        //showAddFolder: !currentState.showAddFolder,
+        showAddFolder: currentState.showAddFolder==='#eeeeee'?'#cccccc':'#eeeeee', //changed from true/false to color if true/color if false
       };
     });
   };
@@ -209,7 +210,8 @@ export default class BookmarkSearch extends React.Component {
   handleShowAddBookmark = () => {
     this.setState(currentState => {
       return {
-        showAddBookmark: !currentState.showAddBookmark,
+        //showAddBookmark: !currentState.showAddBookmark,
+        showAddBookmark: currentState.showAddBookmark==='#eeeeee'?'#cccccc':'#eeeeee', //changed from true/false to color if true/color if false
       };
     });
   };
