@@ -251,7 +251,6 @@ Conclusão da checklist de verificação das heuristicas | Continuação | 1h
 <br>
 ![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/gantambiente2.png)
 
-
 <br>
 
 
