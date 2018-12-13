@@ -82,6 +82,8 @@ Foto | Nome e Contacto | Cargo
 Tarefa | Tipo | Esforço Estimado
 ------------ | ------------- | -------------
 Preparação da apresentação final | Nova | 2h
+Melhoria da Estética do Doc. de Requisitos | Nova | 2h
+Revisão do Doc. de Requisitos | Nova | 2h
 
 
 <br>
