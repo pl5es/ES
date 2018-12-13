@@ -231,9 +231,7 @@ Foto | Nome e Contacto | Cargo
 
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo | Status
 ------------ | ------------- | ------------- | ------------- | -------------
-Conclusão da resolução de problemas no Github | Francisco Monteiro | 1h30 | 1h30 | Concluído
-Elabaroção da checklist de verificação das heuristicas | Unidade | 3h30 | 3h30 | Em curso
-Criação do documento relativo às sanções do Código de Conduta | João Cunha | 1h | 1h | Concluído
+Elabaroção da checklist de verificação das heuristicas | Unidade |  | 3h | Em curso
 
 <br>
 <br>
@@ -244,7 +242,7 @@ Criação do documento relativo às sanções do Código de Conduta | João Cunh
 
 Tarefa | Tipo | Esforço Estimado
 ------------ | ------------- | -------------
-Conclusão da checklist de verificação das heuristicas | Continuação | Indefinido
+Conclusão da checklist de verificação das heuristicas | Continuação | 1h
 
 <br>
 <br>
@@ -257,7 +255,9 @@ Conclusão da checklist de verificação das heuristicas | Continuação | Indef
 
 
 ## Avaliação da PL da semana anterior
-
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/inqueritos/semana3fig1.png)
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/inqueritos/semana3fig2.png)
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/inqueritos/semana3fig3.png)
 ## Esforço Semanal por Elemento (em minutos)
 ![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/Esforco_Semanal_Elemento_Week14.png)
 
