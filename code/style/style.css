@@ -1,0 +1,597 @@
+@font-face {
+  font-family: "Union";
+  src: url("./Union Font/Union-Regular.otf");
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("./Quicksand/Quicksand-Light.ttf");
+}
+
+html body {
+  overflow-x: hidden;
+  font-family: Union;
+}
+
+.container {
+  margin-bottom: 40px;
+  font-family: Quicksand;
+}
+
+.container-title-login .title-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 15px;
+  padding-right: 50px;
+  margin-top: 40px;
+}
+
+.title-area .logo {
+  position: relative;
+  height: 150px;
+  width: 100%;
+  background-image: url(./logo_tipo.png);
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+.margin-left .logo {
+  position: relative;
+  height: 40px;
+  width: 100%;
+  background-image: url(./logo_tipo.png);
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.title-area .description {
+  margin-bottom: 50px;
+}
+
+.login-area .login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em;
+  height: 350px;
+  margin-bottom: 40px;
+  background-color: #eeeeee;
+}
+
+.login .title {
+  margin-top: 30px;
+  font-family: Union;
+}
+
+.login .title,
+.register .title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.register .title {
+  color: white;
+  font-family: Union;
+}
+
+.login-area input {
+  margin-bottom: 15px;
+}
+
+.login button {
+  max-width: 100px;
+  align-self: flex-end;
+  margin-top: 20px;
+  border-radius: 5px;
+  border-color: transparent;
+  background-color: yellow;
+  font-family: Union;
+}
+
+.register button {
+  background-color: grey;
+  color: white;
+  border-radius: 5px;
+  border-color: transparent;
+  font-family: Union;
+}
+
+.login-area .register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em;
+  height: 200px;
+  background-color: rgb(48, 63, 110);
+}
+
+.footer {
+  padding-top: 20px;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100vw;
+  background: lightyellow;
+}
+
+#footer-login {
+  position: absolute;
+}
+
+@media only screen and (max-width: 767px) {
+  #footer-login {
+    position: static;
+  }
+}
+
+/*Register*/
+
+.container-header {
+  margin-bottom: 20px;
+}
+
+.container-title-profile {
+  margin-bottom: 50px;
+}
+
+.container-title-profile .content {
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+.container-title-profile .warning {
+  text-align: right;
+  font-weight: 100;
+}
+
+.container-title-profile .headline {
+  text-align: center;
+  font-size: 3em;
+  font-family: Union;
+}
+
+.container-profile {
+  margin-bottom: 60px;
+}
+
+.interests-title {
+  margin-bottom: 15px;
+}
+
+.profile-area .form-area .input-area .input-title {
+  font-weight: 500;
+  color: grey;
+}
+
+.container-profile .form-area input {
+  margin-bottom: 20px;
+  border-left: transparent;
+  border-right: transparent;
+  border-top: transparent;
+  border-bottom: solid 1px #fff000;
+}
+
+.subtitle {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: rgb(48, 63, 110);
+}
+
+.about-area .picture-area .photo-area {
+  border: solid 3px yellow;
+  height: 194px;
+  width: 194px;
+  border-radius: 100%;
+  margin-bottom: 14px;
+  padding-left: 8px;
+  margin-left: -8px;
+  padding-top: 8px;
+  margin-top: -8px;
+}
+
+.about-area .picture-area .photo-area .photo {
+  background-image: url(./profile-pic.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 173px;
+  width: 173px;
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+
+.about-area .picture-area .text {
+  margin-bottom: 40px;
+}
+
+.about-area .description-area .text {
+  background-color: #eeeeee;
+  margin-left: -20px;
+  padding-left: 20px;
+  padding-top: 15px;
+  margin-right: -20px;
+  padding-right: 20px;
+  margin-bottom: -20px;
+  padding-bottom: 15px;
+  border-radius: 10px;
+}
+
+.interests-area {
+  margin-bottom: 20px;
+}
+
+.interest {
+  background-color: rgb(48, 63, 110);
+  height: 50px;
+  border-radius: 50px;
+  color: white;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 787px) {
+  .interests-area {
+    margin-bottom: 0px;
+  }
+
+  .interest {
+    margin-bottom: 10px;
+  }
+}
+
+.container-confirm-button {
+  margin-top: 60px;
+}
+
+.confirm-button {
+  background-color: yellow;
+  text-align: center;
+  height: 35px;
+  border-radius: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Union;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+/*Perfil*/
+.container-header {
+  margin-bottom: 100px;
+}
+
+.header {
+  background-color: rgb(48, 63, 110);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-header .header .container-search-bar {
+  height: 40px;
+}
+
+.container-search-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.container-search-bar input {
+  background-color: transparent;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  color: white;
+  border-bottom: solid 1px white;
+  margin-left: 15px;
+}
+
+.search-icon {
+  background-image: url(./logo.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.container-header .container-icons {
+  height: 40px;
+}
+
+.container-icons .icons {
+  background-color: white;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  padding-top: 10px;
+  direction: rtl;
+  margin-right: 10px;
+  background-image: url(./profile-pic.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.personal-info .name {
+  font-family: Union;
+  text-transform: uppercase;
+  font-size: 2.4em;
+}
+
+.ORCID-number {
+  font-family: Union;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.ORCID-id {
+  display: inline;
+  font-family: Quicksand;
+  font-size: 0.7em;
+  padding-left: 10px;
+  color: #888888;
+}
+
+.container-personal-info .photo-area {
+  background-image: url(./profile-pic.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  margin-right: 50px;
+  margin-bottom: -10px;
+}
+
+.container-personal-info .photo-area,
+.container-personal-info .personal-info {
+  display: inline-block;
+}
+
+.container-personal-info .personal-info {
+  vertical-align: top;
+  margin-top: 30px;
+}
+
+@media only screen and (min-width: 756px) {
+  .profile {
+    background-color: #dddddd;
+    box-shadow: 4px 4px 0px #bbbbbb;
+    height: 196px;
+  }
+
+  .container-personal-info .photo-area {
+    margin-left: -115px;
+  }
+
+  .buttons {
+    margin-top: 200px;
+  }
+}
+
+.container-edit-profile {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Union;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 755px) {
+  .container-edit-profile .text {
+    text-align: right;
+    margin-top: 20px;
+  }
+}
+
+.container-profile .profile .description {
+  margin-top: 30px;
+  font-size: 0.9em;
+}
+
+.buttons .col-md-2 {
+  text-align: center;
+}
+
+.buttons .col-md-2 .container-buttons button {
+  width: 80%;
+  border-radius: 50px;
+  height: 40px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  min-width: 90px;
+}
+
+button:focus {
+  outline: none !important;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.buttons .col-md-2 .container-buttons button:first-child {
+  background-color: yellow;
+}
+
+.buttons .col-md-2 .container-buttons button:nth-child(2) {
+  background-color: rgb(48, 63, 110);
+  color: white;
+}
+
+.container-post .col-md-8 {
+  background-color: #222933;
+  border-radius: 40px;
+}
+
+.container-post .col-md-8 .post {
+  padding: 20px;
+  color: white;
+  font-size: 0.9em;
+}
+
+.container-post .col-md-8 .post .author {
+  border-bottom: 1px solid darkgrey;
+  padding-bottom: 10px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-post .col-md-8 .post .author .id .photo {
+  background-image: url(./profile-pic.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.container-post .col-md-8 .post .author .id .name {
+  color: yellow;
+  font-family: Union;
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.container-post .col-md-8 .post .author .id {
+  display: flex;
+  align-items: center;
+}
+
+.container-post .col-md-8 .post .author .area {
+  text-align: center;
+  display: inline-block;
+  width: 20%;
+  position: absolute;
+  left: calc((100% - 20%) / 2);
+}
+
+.container-post .col-md-8 .post .author .area .text {
+  display: flex;
+  justify-content: center;
+}
+
+.container-post .col-md-8 .post .author .area .text .grey {
+  margin-right: 5px;
+  color: #888888;
+}
+
+.container-post .col-md-8 .post .author .date {
+  text-align: right;
+  display: flex;
+  justify-self: end;
+}
+
+.container-post .col-md-8 .post .author .date .day {
+  margin-right: 10px;
+}
+
+.container-post .col-md-8 .post .content {
+  margin-top: 20px;
+}
+
+.container-post .col-md-8 .post .link .article {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.container-post .col-md-8 .post .link .article .title {
+  color: rgb(48, 63, 110);
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+.container-post .col-md-8 .post .link .article .url {
+  color: #888888;
+  margin-top: -5px;
+}
+
+.container-post .col-md-8 .post .link .hashtags .text {
+  display: inline-block;
+  color: yellow;
+  font-size: 0.8em;
+}
+
+.container-post .col-md-8 .post .botoes .icon {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  background-image: url(./profile-pic.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.container-post .col-md-8 .post .engagement {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.container-post .col-md-8 .post .engagement .numbers {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.container-post .col-md-8 .post .engagement .botoes {
+  display: inline-flex;
+  justify-content: flex-start;
+}
+
+.container-post .col-md-8 .post .engagement .numbers .number {
+  color: yellow;
+}
+
+.engagement .numbers .upvotes,
+.engagement .numbers .comments {
+  display: flex;
+  align-items: center;
+}
+
+.engagement .numbers .upvotes .number,
+.engagement .numbers .comments .number {
+  margin-right: 10px;
+}
