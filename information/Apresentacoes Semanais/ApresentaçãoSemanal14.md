@@ -31,6 +31,8 @@ Relatório Recursos Humanos - análise do estado da Equipa | Hanna Filatava | 1h
 Monitorização de Riscos | Diogo Alves | 1h | 1h10 | Em Curso (processo sempre ativo)
 Análise de Riscos | Diogo Alves | 45 min | 1h05 | Concluído
 Planeamento de Riscos | Diogo Alves | 30 min | 55 min | Concluído
+Processo de Participação #14 | António Eloi | 1h | 1h | Concluído
+Processo de Motivação #14| António Eloi | 1h | 1h | Concluído
 Apresentação Semanal #14 | Hanna Filatava | 30 min | 30 min | Concluído
 
 
@@ -43,14 +45,16 @@ Apresentação Semanal #14 | Hanna Filatava | 30 min | 30 min | Concluído
 
 Tarefa | Tipo | Esforço Estimado
 ------------ | ------------- | -------------
-Inquérito e Relatório de Participação #15 | Nova | 1h
-Inquérito e Relatório de Motivação #15 | Nova | 1h
-Apresentação Semanal #15 | Nova | 30 min
+Processo de Participação #15 | Continuação | 35 min
+Processo de Motivação #15 | Continuação | 35 min
+Report Final Participação | Nova | 1h
+Report Final Motivação | Nova | 1h
 Preparação para a Apresentação Final | Nova | 2h
+Apresentação Semanal #15 (?) | Nova | 30 min
 
 <br>
 
-
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/Diagrama_Gantt_GestaodeProjeto_Week14.png)
 
 <br>
 <br>
@@ -118,7 +122,7 @@ ORCID | Tiago Martins, Diogo Isidoro | 5h | 5h20 | Em curso
 
 Tarefa | Tipo | Esforço Estimado
 ------------ | ------------- | -------------
-Preparação da apresentação final | Nova | 4h
+Preparação da apresentação final | Nova | 1h
 
 <br>
 <br>
@@ -185,8 +189,8 @@ Foto | Nome e Contacto | Cargo
 
 Tarefa | Responsável | Esforço Estimado | Esforço Efetivo | Status
 ------------ | ------------- | ------------- | ------------- | -------------
-Revisão documento de requesitos | Pedro Coelho | 30 min | 25 min | Concluído
-Diagrama de Gantt 13ª Semana | Pedro Coelho | 30 min | 20 min | Concluído
+Verificar se processos do MQ estão a ser cumpridos | Unidade | 2h/pessoa/semana | N/A | Em curso
+Elaboração de gráficos para apresentação semanal | Tiago Pessoa | 30 min | 30 min | Concluído
 
 <br>
 
@@ -201,8 +205,8 @@ Diagrama de Gantt 13ª Semana | Pedro Coelho | 30 min | 20 min | Concluído
 
 Tarefa | Tipo | Esforço Estimado
 ------------ | ------------- | -------------
-Escrever e formatar ata de 6/12 | Nova | 15 min
-Verificar se processos do MQ estão a ser cumpridos | Nova | 2h por pessoa
+Verificar se processos do MQ estão a ser cumpridos | Continuação | 2h por pessoa
+Escrever e formatar ata de 13/12 | Nova | 15 min
 Elaboração de gráficos para apresentação semanal | Nova | 30 min
 
 <br>
@@ -255,12 +259,11 @@ Conclusão da checklist de verificação das heuristicas | Continuação | Indef
 ## Avaliação da PL da semana anterior
 
 ## Esforço Semanal por Elemento (em minutos)
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/Esforco_Semanal_Elemento_Week14.png)
 
 ## Esforço Semanal por Unidade (em minutos)
+![](https://github.com/pl5es/ES/blob/master/information/Apresentacoes%20Semanais/graficos/Esforco_Semanal_Unidade_Week14.png)
 
-## Esforço Cumulativo por Elemento (em minutos)
-
-## Esforço Cumulativo por Unidade (em minutos)
 
 
 
