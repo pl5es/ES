@@ -113,6 +113,7 @@ Tarefa | Responsável | Esforço Estimado | Esforço Efetivo | Status
 ------------ | ------------- | ------------- | ------------- | -------------
 Página de perfil em React | Daniel Santos | 5h | 40 min | Concluído
 ORCID | Tiago Martins, Diogo Isidoro | 5h | 5h20 | Em curso
+Correção defeitos | João Almeida | 2h | 1h | Em curso
 
 
 <br>
