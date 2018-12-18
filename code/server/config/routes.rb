@@ -21,6 +21,10 @@ Rails.application.routes.draw do
 
       post "/auth/twitter/reverse", to: "twitter#request_token"
       post "/auth/twitter", to: "twitter#oauth_verifier"
+
+
+      post "/auth/orcid/reverse", to: "orcid#request_token"
+      post "/auth/orcid/reverse/login", to: "orcid#login_request_token"
     end
   end
 end

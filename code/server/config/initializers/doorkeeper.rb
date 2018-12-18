@@ -23,6 +23,13 @@ Doorkeeper.configure do
           twitter_oauth_token_secret: params[:twitter_oauth_token_secret]
         )
       end
+    when "orcid"
+      user = User.find_by(orcid: params[:orcid])
+      if user
+        user.update_columns(
+          orcid_access_token: params[:orcid_access_token]
+        )
+      end
     else
       user = User.where("username = ? OR email = ?", params[:identifier], params[:identifier]).first
       user.try(:authenticate, params[:password]) ? user : nil

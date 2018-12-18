@@ -1,0 +1,2 @@
+class Orcid < ApplicationRecord
+end

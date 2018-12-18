@@ -18,6 +18,7 @@ gem "jbuilder", "~> 2.7.0"
 gem "twitter", "~> 6.2.0"
 gem "oauth", "~> 0.5.4"
 gem "awesome_print"
+gem 'httparty', '~> 0.13.7'
 
 group :development, :test do
   gem "faker"

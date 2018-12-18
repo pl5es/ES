@@ -8,10 +8,14 @@ import { signup } from 'actions/auth';
 import { Redirect } from 'react-router-dom';
 import signUpSchema from 'utils/validations/signUpSchema';
 import TwitterButton from 'components/TwitterButton';
+import Orcid from 'pages/Orcid';
+import { orcidPost } from 'utils/api';
 
 class SignUp extends Component {
   state = {
     imageFiles: [],
+    orcid: '',
+    orcid_access_token: '',
   };
 
   onDrop = (setFieldValue, imageFiles) => {
@@ -20,6 +24,12 @@ class SignUp extends Component {
     });
     setFieldValue('avatar', this.state.imageFiles[0]);
   };
+
+  getChildContext() {
+    return {
+      location: this.props.location,
+    };
+  }
 
   setUserId = (values, setFieldValue) => {
     setFieldValue('twitter_user_id', values[0]);
@@ -35,6 +45,9 @@ class SignUp extends Component {
       }
     });
 
+    bodyFormData.append("orcid", this.state.orcid);
+    bodyFormData.append("orcid_access_token", this.state.orcid_access_token);
+
     for (var i = 0; i < values.interests.length; i++) {
       bodyFormData.append('interests[]', values.interests[i]);
     }
@@ -42,11 +55,28 @@ class SignUp extends Component {
     signup(bodyFormData, history);
   }
 
+  componentDidMount() {
+    const { search } = this.props.location;
+    const params = new URLSearchParams(search);
+    const code = params.get('code');
+
+    if (code) {
+      orcidPost(code).then(res => {
+        console.log(res.data.orcid);
+        this.setState({
+          orcid: res.data.orcid,
+          orcid_access_token: res.data.access_token,
+        });
+      });
+    }
+  }
+
   render() {
     const {
       props: { history, signup, registerError, registered },
+      state: { orcid, orcid_access_token },
     } = this;
-    console.log(this.props);
+    console.log(this.state);
     return (
       <div>
         {registered === true ? (
@@ -69,9 +99,10 @@ class SignUp extends Component {
               <div className="col-md-3 margin-right" />
             </div>
             <Formik
-              onSubmit={values =>
-                this.valuesToFormData(values, history, signup)
-              }
+              onSubmit={values => {
+                console.log(values);
+                this.valuesToFormData(values, history, signup);
+              }}
               validationSchema={signUpSchema}
               initialValues={{
                 username: '',
@@ -80,7 +111,8 @@ class SignUp extends Component {
                 twitter_oauth_token_secret: '',
                 email: '',
                 interests: '',
-                orcid: '',
+                orcid: { orcid },
+                orcid_access_token: orcid_access_token,
                 name: '',
                 research_area: '',
                 institution: '',
@@ -111,14 +143,6 @@ class SignUp extends Component {
                             placeholder="Enter your e-mail"
                           />
                           <Field
-                            name="orcid"
-                            type="text"
-                            component={InputField}
-                            label="ORCID Number *"
-                            labelClass="input-title"
-                            placeholder="Enter your ORCID number"
-                          />
-                          <Field
                             name="password"
                             type="password"
                             component={InputField}
@@ -129,6 +153,9 @@ class SignUp extends Component {
                           <TwitterButton
                             setUserId={x => this.setUserId(x, setFieldValue)}
                           />
+                          <a href="https://orcid.org/oauth/authorize?client_id=APP-D7HK0ZRV7DLASQHI&response_type=code&scope=/authenticate&redirect_uri=http://localhost:3001/register">
+                            Connect with Orcid
+                          </a>
                           <div className="subtitle">Detailed Info</div>
                           <Field
                             name="name"

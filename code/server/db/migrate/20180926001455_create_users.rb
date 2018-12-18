@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :institution
       t.string :name
       t.string :orcid
+      t.string :orcid_access_token
       t.string :password_digest
       t.string :research_area
       t.string :username

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_21_142037) do
+ActiveRecord::Schema.define(version: 2018_12_12_182650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,11 @@ ActiveRecord::Schema.define(version: 2018_10_21_142037) do
     t.index ["token"], name: "index_oauth_access_tokens_on_token", unique: true
   end
 
+  create_table "orcids", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id"
     t.text "content"
@@ -90,6 +95,7 @@ ActiveRecord::Schema.define(version: 2018_10_21_142037) do
     t.string "institution"
     t.string "name"
     t.string "orcid"
+    t.string "orcid_access_token"
     t.string "password_digest"
     t.string "research_area"
     t.string "username"

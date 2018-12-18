@@ -44,6 +44,7 @@ class UsersController < ApplicationController
         :email,
         :description,
         :orcid,
+        :orcid_access_token,
         :research_area,
         :institution,
         :avatar,

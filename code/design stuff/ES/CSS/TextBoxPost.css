@@ -1,0 +1,111 @@
+
+
+
+.writePost {
+
+margin-left: 30%;
+margin-right: 10%;
+margin-top:100px ;
+margin-bottom:50px;
+
+}
+
+
+.writePost  h2 {
+    font-family: Union R;
+    line-height: normal;
+    font-size: 50px;
+    margin-left: 125px;
+
+}
+
+.writePost .newPost {
+    height: 32px;
+
+    margin-left: 125px;
+    background-image: url(../icons/NewPost.svg);
+    background-repeat: no-repeat;
+
+}
+
+.writePost .commentArea {
+    margin-top: 15px;
+    background: #E5E5E5;
+    width: 100%;
+    padding-left:27px;
+    padding-top: 21px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+}
+
+.writePost .profileImg {
+    width: 65px;
+    height: 65px;
+    border: 2px solid azure;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+    align-content: center;
+   position: absolute;
+
+}
+
+.profileImg  img {
+    width:90px;
+    position: relative;
+
+}
+
+.writePost .commentArea .textPost {
+
+    width:calc(100% - 65px);
+    margin-left: 80px;
+    font-family: Roboto I;
+    font-size: 28px;
+    color: #A1A1A1
+}
+
+.writePost .commentArea .textPost textarea {
+   width: 100%;
+    background-color: #e4e4e4;
+    border: none;
+    resize: none;
+    outline: none;
+    overflow: auto;
+}
+
+
+.writePost .commentArea .textPost textarea:focus {
+    font-family: Roboto R;
+    font-size: 11pt;
+}
+
+.writePost .commentArea .tags{
+
+    font-family: Roboto BI;
+    margin-left: 80px;
+    margin-right: 30%;
+    font-size: 22px;
+    color: #5F677D;
+
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1000px){
+    .writePost{
+        margin-left: 10%;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .writePost {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}

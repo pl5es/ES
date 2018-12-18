@@ -1,0 +1,61 @@
+.speedNav {
+
+    position: fixed;
+    width: 173px;
+    height: 240px;
+    left: calc(15% - 81px );
+    top: 206.32px;
+}
+
+
+
+
+
+.speedNav a {
+    width: 82px;
+    height: 82px;
+    background-size: 82px 82px;
+    display: inline-block;
+    position: relative;
+    margin:0;
+
+}
+
+
+.speedNav .groups {
+    background-image: url(../icons/group.svg);
+    background-repeat: no-repeat;
+
+
+
+}
+
+
+.speedNav .tags {
+    background-image: url(../icons/tags.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top:41px;
+
+}
+
+.speedNav .interests {
+    background-image: url(../icons/bookmarket.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+
+}
+
+.speedNav .chat {
+    background-image: url(../icons/mensages.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top:41px;
+
+}
+
+
+
+
+
