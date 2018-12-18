@@ -11,6 +11,10 @@ export default class Orcid extends Component {
     const params = new URLSearchParams(search);
     const code = params.get("code");
 
+    if(code){
+      orcidPost(code).then(res => console.log(res.data));
+    }
+    
   }
 
   render() {
@@ -18,7 +22,7 @@ export default class Orcid extends Component {
       <div>
         {this.state.response ? (
           <div>
-            <a href="https://orcid.org/oauth/authorize?client_id=APP-D7HK0ZRV7DLASQHI&response_type=code&scope=/authenticate&redirect_uri=http://localhost:3001/auth/orcid/callback">
+            <a href="https://orcid.org/oauth/authorize?client_id=APP-D7HK0ZRV7DLASQHI&response_type=code&scope=/authenticate&redirect_uri=http://localhost:3001/register">
               Authorize request
             </a>
           </div>

@@ -1,34 +1,9 @@
 import axios from "axios";
 import { API_URL, ORCID_CLIENT_ID, ORCID_CLIENT_SECRET } from "utils/config";
 
-var qs = require("qs");
-
 export const axiosInstance = axios.create({
   contentType: "application/json"
 });
-
-export const orcidPost = code => {
-  return axios
-    .post(
-      `https://orcid.org/oauth/token?client_id=APP-D7HK0ZRV7DLASQHI&client_secret=696a5ad5-faa5-46aa-9a7b-7ae3240827fd&grant_type=authorization_code&redirect_uri=http://localhost:3001/auth/orcid/callback&code=${code}`,
-      {
-        data: qs.stringify({
-          client_id: "APP-D7HK0ZRV7DLASQHI",
-          client_secret: "696a5ad5-faa5-46aa-9a7b-7ae3240827fd",
-          code: code,
-          grant_type: "authorization_code",
-          redirect_uri: "https://localhost:3001/auth/orcid/callback"
-        })
-      },
-      {
-        headers: {
-          "content-type": "application/x-www-form-urlencoded;charset=utf-8",
-          Accept: "application/json; charset=utf-8",
-          "Acces-Control-Allow-Origin": "*",
-        }
-      }
-    )
-};
 
 const postTest = (url = "") =>
   fetch(url, {
@@ -138,6 +113,9 @@ export const updateBookmark = (data, id) =>
 
 export const getRequestToken = () =>
   postNoData("api//auth/twitter/request_token");
+
+export const orcidPost = code => post("api/auth/orcid/reverse", { code: code });
+export const newOrcidPost = code => post("api/auth/orcid/reverse/login", { code: code });
 
 export const postToTwitter = message =>
   postItem("api/users/twitter/post_tweet", message);
