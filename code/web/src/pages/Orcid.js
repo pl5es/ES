@@ -10,12 +10,7 @@ export default class Orcid extends Component {
     const { search } = this.props.location;
     const params = new URLSearchParams(search);
     const code = params.get("code");
-    if (code) {
 
-      orcidPost(code)
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-    }
   }
 
   render() {
