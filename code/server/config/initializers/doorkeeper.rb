@@ -24,11 +24,10 @@ Doorkeeper.configure do
         )
       end
     when "orcid"
-      user = User.find_by(orcid_user_id: params[:orcid_user_id])
+      user = User.find_by(orcid: params[:orcid])
       if user
         user.update_columns(
-          orcid_oauth_token: params[:orcid_oauth_token],
-          orcid_oauth_token_secret: params[:orcid_oauth_token_secret]
+          orcid_access_token: params[:orcid_access_token]
         )
       end
     else
