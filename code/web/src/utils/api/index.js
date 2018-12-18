@@ -108,8 +108,8 @@ export const createBookmark = (data, id) =>
 export const deleteBookmark = (folderId, bookmarkId) =>
   deleteItem(`api/users/folders/${folderId}/bookmarks/${bookmarkId}.json`);
 
-export const updateBookmark = (data, id) =>
-  updateItem(`api/users/bookmarks/${id}.json`, data);
+export const updateBookmark = (data, folderId, bookmarkId) =>
+  updateItem(`api/users/folders/${folderId}/bookmarks/${bookmarkId}.json`, data);
 
 export const getRequestToken = () =>
   postNoData("api//auth/twitter/request_token");
