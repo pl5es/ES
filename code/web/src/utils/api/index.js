@@ -24,6 +24,7 @@ export const orcidPost = code => {
         headers: {
           "content-type": "application/x-www-form-urlencoded;charset=utf-8",
           Accept: "application/json; charset=utf-8",
+          "Acces-Control-Allow-Origin": "*",
         }
       }
     )
